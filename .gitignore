@@ -1,0 +1,30 @@
+# Sphinx build artifacts (ผลลัพธ์จากการ Build ห้ามเอาขึ้น Git)
+build/
+_build/
+*.pdf
+*.log
+*.aux
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# Python cache (ไฟล์ขยะของ Python)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+
+# VS Code settings (การตั้งค่าส่วนตัวของเครื่องเรา คนอื่นไม่ควรได้ไป)
+.vscode/
+*.code-workspace
+
+# OS generated files (ไฟล์ขยะของระบบปฏิบัติการ)
+.DS_Store
+Thumbs.db

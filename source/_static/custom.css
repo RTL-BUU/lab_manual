@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+
+/* --- 1. ตั้งค่าพื้นฐาน (Base) --- */
+body {
+    font-family: 'Sarabun', sans-serif;
+    color: #404040;
+    /* อย่าตั้งเล็กเกินไปตรงนี้ เพราะจะกระทบเมนูซ้าย */
+    font-size: 14px; 
+}
+
+/* --- 2. เจาะจงเนื้อหาหลัก (MAIN CONTENT) --- */
+/* นี่คือจุดที่แก้ปัญหาของอาจารย์ครับ */
+.rst-content {
+    font-size: 15px;      /* ขนาดตัวหนังสือเนื้อหา */
+    line-height: 1.7;
+}
+
+/* บังคับย่อหน้า (Paragraph) ให้เชื่อฟัง */
+.rst-content p {
+    font-size: 15px !important;
+    margin-bottom: 24px;  /* เพิ่มช่องไฟระหว่างย่อหน้าให้อ่านง่าย */
+}
+
+/* --- 3. กระชากหัวข้อ (HEADERS) ให้ใหญ่สวนทาง --- */
+/* ใช้ !important เพื่อทับค่าธีมเดิมแน่นอน */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Sarabun', sans-serif;
+    font-weight: 700 !important;
+    color: #2980B9; 
+    margin-top: 2em;
+}
+
+h1 { font-size: 200% !important; } /* บทที่ */
+h2 { 
+    font-size: 160% !important;    /* หัวข้อหลัก */
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+h3 { font-size: 130% !important; } /* หัวข้อย่อย */
+
+/* --- 4. ปรับเมนูซ้าย (SIDEBAR) --- */
+/* ปรับให้พอดีกับสายตา ไม่เล็กตาม Body */
+.wy-nav-side {
+    font-size: 100%; 
+}
+.wy-menu-vertical a {
+    line-height: 1.4;
+}
+
+/* --- 5. Code Block --- */
+code, pre, .rst-content tt, .rst-content code {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace !important;
+    font-size: 90%; 
+}
+
+/* --- FIX TABLE WRAPPING (แก้ตารางล้นจอ) --- */
+
+/* 1. บังคับให้เซลล์ในตารางยอมขึ้นบรรทัดใหม่ */
+.rst-content table.docutils td {
+    white-space: normal !important;
+    word-wrap: break-word !important;
+}
+
+/* 2. บังคับให้ Inline Code (กรอบสีแดง) ยอมตัดคำ */
+/* สำคัญมาก: ต้องใช้ break-all หรือ break-word เพื่อตัดชื่อยาวๆ */
+.rst-content table.docutils code.literal,
+.rst-content table.docutils tt.literal {
+    white-space: normal !important;  /* ยกเลิกห้ามตัดบรรทัด */
+    word-break: break-all;           /* ถ้าคำยาวเกินช่อง ให้หักลงมาเลย */
+    font-size: 85%;                  /* ย่อขนาดลงนิดนึงให้ดูสวยในตาราง */
+}
+
+/* --- BRANDING: BATLY THEME (Yellow & Dark Grey) --- */
+
+/* 1. ส่วนหัวเมนู (Top Sidebar) - พื้นหลังเหลือง */
+.wy-side-nav-search {
+    background-color: #ffe70e !important;
+}
+
+/* ปรับสีลิงก์ชื่อโปรเจกต์ (เผื่อกรณีโลโก้ไม่ขึ้น) ให้เป็นสีเทาเข้ม */
+.wy-side-nav-search > a, .wy-side-nav-search .wy-dropdown > a {
+    color: #303030 !important;
+    font-weight: bold;
+}
+
+/* ปรับกล่องค้นหา (Search Box) ให้เข้ากับพื้นเหลือง */
+.wy-side-nav-search input[type=text] {
+    border-color: transparent;
+    box-shadow: none;
+    background-color: #fff; /* พื้นกล่องขาว */
+    color: #303030;         /* พิมพ์ตัวหนังสือสีเทาเข้ม */
+}
+
+/* 2. ส่วนเมนูด้านล่าง (Sidebar Menu) - พื้นหลังเทาเข้ม */
+.wy-nav-side {
+    background-color: #303030 !important;
+}
+
+/* สีตัวหนังสือเมนู (ปกติ) - ให้เป็นขาวหม่นจะได้อ่านบนพื้นเทาออก */
+.wy-menu-vertical a {
+    color: #EEEEEE; 
+}
+
+/* 3. สีหัวข้อกลุ่ม (Captions) - ให้เป็นสีเหลือง Batly เพื่อความเด่น */
+.wy-menu-vertical p.caption {
+    color: #ffe70e; 
+    font-weight: 900; 
+    text-transform: uppercase; /* ตัวพิมพ์ใหญ่ทั้งหมด */
+}
+
+/* 4. เวลาเอาเมาส์ไปชี้ (Hover) หรือหน้าที่เลือกอยู่ (Current) */
+.wy-menu-vertical a:hover,
+.wy-menu-vertical a.current {
+    color: #ffe70e;            /* ตัวหนังสือเปลี่ยนเป็นเหลือง */
+    background-color: #404040; /* พื้นหลังสว่างขึ้นนิดนึง (เทาอ่อนลง) */
+    border-left: 4px solid #ffe70e; /* (Optional) เพิ่มแถบสีเหลืองด้านซ้ายให้รู้ว่าเลือกอยู่ */
+}
+
+/* 5. ปุ่ม Next/Previous ด้านล่างเนื้อหา */
+.rst-footer-buttons .btn-neutral {
+    color: #303030 !important; /* ตัวหนังสือสีเทาเข้ม */
+    background-color: #f0f0f0; /* พื้นปุ่มสีเทาอ่อน */
+}
