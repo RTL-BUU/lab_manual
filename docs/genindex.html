@@ -10,9 +10,10 @@
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=f72cfada" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=5a408a8c" />
 
   
+    <link rel="shortcut icon" href="_static/favicon_rtl.png"/>
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="_static/documentation_options.js?v=f2a433a1"></script>
@@ -36,6 +37,7 @@
           
           <a href="index.html">
             
+              <img src="_static/rtl_background.jpg" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -47,11 +49,62 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">ความปลอดภัยและไฟฟ้า:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="lipo_safety.html">LiPo Battery Safety &amp; Usage (คู่มือการใช้งานแบตเตอรี่ลิโพ)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="lipo_safety.html#specs">1. ข้อมูลจำเพาะทางไฟฟ้า (Specs)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lipo_safety.html#lipo-checker">2. การตรวจสอบสถานะแบตเตอรี่ (LiPo Checker)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lipo_safety.html#imax-b6ac">3. การชาร์จด้วยเครื่อง IMAX B6AC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lipo_safety.html#storage-mode">4. การเก็บรักษา (Storage Mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="battery_guide.html">Battery Technologies for Robotics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#technology-overview">Technology Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#battery-comparison">Battery Comparison</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#terminology-calculation">Terminology &amp; Calculation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#electrical-units">Electrical Units</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#battery-health-usage">Battery Health &amp; Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#configuration">Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#battery-pack-calculation">Battery Pack Calculation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#runtime-calculation">Runtime Calculation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#lifepo4-battery">LiFePO4 Battery</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#common-applications">Common Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#why-lifepo4-for-robotics">Why LiFePO4 for Robotics?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#technical-challenge-the-flat-discharge-curve">Technical Challenge: The “Flat” Discharge Curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#lifepo4-soc-table">LiFePO4 SOC Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#battery-specifications">Battery Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#connectors">Connectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#id1">Runtime Calculation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#lipo-battery">LiPo Battery</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#id2">Common Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#why-li-po-for-high-performance-robotics">Why Li-Po for High-Performance Robotics?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#technical-challenges-saftey-fragility">Technical Challenges: Saftey &amp; Fragility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#li-po-soc-table">Li-Po SOC Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#technical-insight-voltage-sag">Technical Insight: Voltage Sag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#id4">Battery Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#li-po-checker-low-voltage-alarm">Li-Po Checker &amp; Low Voltage Alarm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#id5">Runtime Calculation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#signs-of-failure">Signs of Failure</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#li-ion-battery">Li-ion Battery</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#applications-characteristics">Applications &amp; Characteristics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#why-li-ion-for-energy-density">Why Li-ion for Energy Density?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#technical-challenges-heat">Technical Challenges: Heat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#li-ion-soc-table">Li-ion SOC Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#id6">Battery Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#id7">Runtime Calculation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#disposal">Disposal (การกำจัดแบตเตอรี่เสื่อมสภาพ)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#standard-operating-procedure">ขั้นตอนการปฏิบัติ (Standard Operating Procedure)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#charging-with-imax-b6ac">Charging with IMAX B6AC (คู่มือการใช้งานเครื่องชาร์จ)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#device-specifications">Device Specifications (ข้อมูลจำเพาะของเครื่อง)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#control-buttons">Control Buttons (ปุ่มควบคุม)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#connections">Connections (การเชื่อมต่อสาย)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#operation-flow">Operation Flow (ขั้นตอนการตั้งค่า)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#monitoring-safety">Monitoring &amp; Safety (การดูค่าและการตัดการทำงาน)</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -61,7 +114,11 @@
 <li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#software-setup">1. Software Setup (เตรียมซอฟต์แวร์)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#file-formats">2. File Formats (ประเภทไฟล์งาน)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#workflow-from-cad-to-print">3. Workflow: From CAD to Print</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#material-profile-settings">4. Material &amp; Profile Settings (การตั้งค่าวัสดุ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#material-profile-settings">4. Material &amp; Profile Settings (การตั้งค่าวัสดุ)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="bambu_a1_guide.html#profile">วิธีโหลด Profile (สำคัญ)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bambu_a1_guide.html#id1">ความแตกต่างของวัสดุ</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#slicer-settings-intermediate">5. Slicer Settings (Intermediate)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#sending-to-printer">6. Sending to Printer (สั่งพิมพ์)</a></li>
 </ul>
@@ -106,7 +163,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2025, Intellihand LP. (Batly Robotics).</p>
+    <p>&#169; Copyright 2025, RTL (ICRT), Burapha University.</p>
   </div>
 
    

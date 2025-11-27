@@ -1,0 +1,1136 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Battery Technologies for Robotics &mdash; Batly R1 Manual 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d8a2add5" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=5a408a8c" />
+
+  
+    <link rel="shortcut icon" href="_static/favicon_rtl.png"/>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=30646c52"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Bambu Lab A1 Printing Guide (คู่มือการพิมพ์ 3 มิติ)" href="bambu_a1_guide.html" />
+    <link rel="prev" title="Welcome to RTL Lab Manual!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/rtl_background.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">ความปลอดภัยและไฟฟ้า:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Battery Technologies for Robotics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#technology-overview">Technology Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#battery-comparison">Battery Comparison</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#terminology-calculation">Terminology &amp; Calculation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#electrical-units">Electrical Units</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#battery-health-usage">Battery Health &amp; Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#battery-pack-calculation">Battery Pack Calculation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#runtime-calculation">Runtime Calculation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#lifepo4-battery">LiFePO4 Battery</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#common-applications">Common Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#why-lifepo4-for-robotics">Why LiFePO4 for Robotics?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#technical-challenge-the-flat-discharge-curve">Technical Challenge: The “Flat” Discharge Curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lifepo4-soc-table">LiFePO4 SOC Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#battery-specifications">Battery Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#connectors">Connectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Runtime Calculation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#lipo-battery">LiPo Battery</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Common Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#why-li-po-for-high-performance-robotics">Why Li-Po for High-Performance Robotics?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#technical-challenges-saftey-fragility">Technical Challenges: Saftey &amp; Fragility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#li-po-soc-table">Li-Po SOC Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#technical-insight-voltage-sag">Technical Insight: Voltage Sag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Battery Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#li-po-checker-low-voltage-alarm">Li-Po Checker &amp; Low Voltage Alarm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Runtime Calculation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#signs-of-failure">Signs of Failure</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#li-ion-battery">Li-ion Battery</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#applications-characteristics">Applications &amp; Characteristics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#why-li-ion-for-energy-density">Why Li-ion for Energy Density?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#technical-challenges-heat">Technical Challenges: Heat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#li-ion-soc-table">Li-ion SOC Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Battery Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">Runtime Calculation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#disposal">Disposal (การกำจัดแบตเตอรี่เสื่อมสภาพ)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#standard-operating-procedure">ขั้นตอนการปฏิบัติ (Standard Operating Procedure)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#charging-with-imax-b6ac">Charging with IMAX B6AC (คู่มือการใช้งานเครื่องชาร์จ)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#device-specifications">Device Specifications (ข้อมูลจำเพาะของเครื่อง)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#control-buttons">Control Buttons (ปุ่มควบคุม)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#connections">Connections (การเชื่อมต่อสาย)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operation-flow">Operation Flow (ขั้นตอนการตั้งค่า)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#monitoring-safety">Monitoring &amp; Safety (การดูค่าและการตัดการทำงาน)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">การผลิตชิ้นงาน (3D Printing):</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="bambu_a1_guide.html">Bambu Lab A1 Printing Guide (คู่มือการพิมพ์ 3 มิติ)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#software-setup">1. Software Setup (เตรียมซอฟต์แวร์)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#file-formats">2. File Formats (ประเภทไฟล์งาน)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#workflow-from-cad-to-print">3. Workflow: From CAD to Print</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#material-profile-settings">4. Material &amp; Profile Settings (การตั้งค่าวัสดุ)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="bambu_a1_guide.html#profile">วิธีโหลด Profile (สำคัญ)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bambu_a1_guide.html#id1">ความแตกต่างของวัสดุ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#slicer-settings-intermediate">5. Slicer Settings (Intermediate)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#sending-to-printer">6. Sending to Printer (สั่งพิมพ์)</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Batly R1 Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Battery Technologies for Robotics</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/battery_guide.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="battery-technologies-for-robotics">
+<h1>Battery Technologies for Robotics<a class="headerlink" href="#battery-technologies-for-robotics" title="Link to this heading"></a></h1>
+<p>หัวใจสำคัญของหุ่นยนต์เคลื่อนที่คือแหล่งพลังงาน ในห้องปฏิบัติการของเรามีการใช้งานแบตเตอรี่หลักๆ 3 ประเภท คือ <strong>LiFePO4</strong>, <strong>Li-Po</strong>, และ <strong>Li-ion</strong> ซึ่งแต่ละชนิดมีคุณสมบัติทางเคมี ข้อดี-ข้อเสีย และการใช้งานที่แตกต่างกัน</p>
+<section id="technology-overview">
+<h2>Technology Overview<a class="headerlink" href="#technology-overview" title="Link to this heading"></a></h2>
+<p>เพื่อให้เลือกใช้งานได้ถูกต้อง เราต้องเปรียบเทียบคุณสมบัติหลัก 3 ด้าน:</p>
+<ol class="arabic simple">
+<li><p><strong>Energy Density (ความหนาแน่นพลังงาน):</strong> น้ำหนักเบาแต่จุไฟได้เยอะ (สำคัญกับโดรนหรืออุปกรณ์พกพา)</p></li>
+<li><p><strong>Power Density (ความหนาแน่นกำลังงาน):</strong> ความสามารถในการจ่ายกระแสกระชาก (Burst) ได้แรงๆ (สำคัญกับหุ่นยนต์ต่อสู้หรือ Racing)</p></li>
+<li><p><strong>Safety &amp; Cycle Life (ความปลอดภัยและอายุการใช้งาน):</strong> ความทนทานต่อการใช้งานและความเสี่ยงในการลุกไหม้</p></li>
+</ol>
+<section id="battery-comparison">
+<h3>Battery Comparison<a class="headerlink" href="#battery-comparison" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 40.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Nominal Voltage</p></th>
+<th class="head"><p>Density</p></th>
+<th class="head"><p>Characteristics</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Li-ion</strong> (Lithium-ion)</p></td>
+<td><p>3.6V / 3.7V</p></td>
+<td><p><strong>High Energy</strong></p></td>
+<td><p>จุไฟเยอะที่สุดต่อน้ำหนัก เหมาะกับงานที่ต้องการเปิดนานๆ แต่กินกระแสไม่กระชากมาก</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Li-Po</strong> (Lithium Polymer)</p></td>
+<td><p>3.7V</p></td>
+<td><p><strong>High Power</strong></p></td>
+<td><p>จ่ายกระแส (C-Rate) ได้รุนแรงที่สุด น้ำหนักเบา แต่บวมง่ายและเสี่ยงต่อการลุกไหม้หากดูแลผิดวิธี</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>LiFePO4</strong> (Lithium Iron Phosphate)</p></td>
+<td><p>3.2V</p></td>
+<td><p><strong>High Safety</strong></p></td>
+<td><p>ปลอดภัยที่สุด ทนทาน (Cycle Life สูง &gt; 2000 รอบ) ราคาประหยัด แต่มีน้ำหนักเยอะและขนาดใหญ่</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="terminology-calculation">
+<h2>Terminology &amp; Calculation<a class="headerlink" href="#terminology-calculation" title="Link to this heading"></a></h2>
+<p>การเลือกใช้แบตเตอรี่ให้เหมาะสมกับหุ่นยนต์ จำเป็นต้องเข้าใจความหมายของค่าทางไฟฟ้าต่างๆ เพื่อคำนวณระยะเวลาการใช้งานและความปลอดภัย</p>
+<section id="electrical-units">
+<h3>Electrical Units<a class="headerlink" href="#electrical-units" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Nominal Voltage (แรงดันปกติ/แรงดันที่ระบุ):</strong>
+คือค่าแรงดันไฟฟ้า “กลาง” ที่ใช้เรียกชื่อแบตเตอรี่ (ไม่ใช่แรงดันตอนชาร์จเต็ม) เช่น LiFePO4 มี Nominal Voltage ที่ 3.2V แต่ชาร์จเต็มที่ 3.65V และหมดที่ 2.5V การคำนวณพลังงานจะใช้ค่านี้เป็นหลัก</p></li>
+<li><p><strong>Amp Hours - Ah (ความจุแบตเตอรี่):</strong>
+คือหน่วยวัดปริมาณประจุไฟฟ้าที่แบตเตอรี่เก็บได้ บอกว่าแบตเตอรี่สามารถจ่ายกระแสได้มากแค่ไหนใน 1 ชั่วโมง</p>
+<ul>
+<li><p><em>ตัวอย่าง:</em> แบตเตอรี่ <strong>20Ah</strong> สามารถจ่ายไฟ <strong>20A ได้นาน 1 ชั่วโมง</strong> (หรือจ่าย 10A ได้นาน 2 ชั่วโมง)</p></li>
+</ul>
+</li>
+<li><p><strong>Watt Hours - Wh (พลังงานรวม):</strong>
+คือหน่วยวัดพลังงานไฟฟ้าที่แท้จริง (เอาแรงดันมาคิดด้วย) ใช้เปรียบเทียบความจุระหว่างแบตต่างชนิดกันได้ดีที่สุด</p>
+<ul>
+<li><p><em>สูตร:</em> <span class="math notranslate nohighlight">\(Wh = Nominal Voltage (V) \times Capacity (Ah)\)</span></p></li>
+<li><p><em>ตัวอย่าง:</em> แบต 12V 100Ah มีพลังงาน <span class="math notranslate nohighlight">\(12 \times 100 = 1200\text{Wh}\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>Power Consumption (การใช้พลังงาน/กำลังไฟฟ้า):</strong>
+คืออัตราการกินไฟของหุ่นยนต์ (หน่วยเป็น Watt) หาได้จาก <span class="math notranslate nohighlight">\(P = V \times I\)</span></p>
+<ul>
+<li><p><em>ประโยชน์:</em> ใช้คำนวณว่าหุ่นยนต์จะวิ่งได้นานแค่ไหน (Run time = Battery Wh / Robot Watt)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="battery-health-usage">
+<h3>Battery Health &amp; Usage<a class="headerlink" href="#battery-health-usage" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Depth of Discharge - DOD (ระดับการคายประจุ):</strong>
+บอกว่าเราใช้แบตเตอรี่ไปแล้วกี่ % (ตรงข้ามกับ SOC ที่บอกว่าเหลือเท่าไหร่)</p>
+<ul>
+<li><p><em>ข้อแนะนำ:</em> แบตเตอรี่ส่วนใหญ่ไม่ควรใช้งานจนถึง <strong>100% DOD</strong> (หมดเกลี้ยง) เพราะจะทำให้อายุการใช้งานสั้นลง ควรเหลือไว้อย่างน้อย 10-20%</p></li>
+</ul>
+</li>
+<li><p><strong>Deep Cycling (การใช้งานรอบลึก):</strong>
+คือการใช้งานแบตเตอรี่จนเกือบหมด (เช่น 80-90% DOD) แล้วชาร์จกลับให้เต็ม แบตเตอรี่ <strong>LiFePO4</strong> ถูกออกแบบมาให้รองรับ Deep Cycling ได้ดีกว่าแบตเตอรี่ตะกั่วกรด</p></li>
+<li><p><strong>BMS - Battery Management System (ระบบจัดการแบตเตอรี่):</strong>
+คือวงจรอิเล็กทรอนิกส์ที่เป็น “สมอง” คอยควบคุมความปลอดภัย หน้าที่หลักคือ:</p>
+<ol class="arabic simple">
+<li><p>ตัดไฟเมื่อชาร์จเกิน (Overcharge)</p></li>
+<li><p>ตัดไฟเมื่อใช้จนหมดเกินไป (Over-discharge)</p></li>
+<li><p>ป้องกันการลัดวงจร (Short Circuit)</p></li>
+<li><p>ปรับสมดุลแรงดันแต่ละเซลล์ (Balancing) ให้เท่ากัน</p></li>
+</ol>
+</li>
+</ul>
+</section>
+<section id="configuration">
+<h3>Configuration<a class="headerlink" href="#configuration" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Battery Pack (แพคแบตเตอรี่):</strong>
+คือการนำเซลล์แบตเตอรี่ก้อนเล็กๆ (Cells) มาเชื่อมต่อกันเพื่อให้ได้แรงดันหรือความจุตามต้องการ โดยมีการห่อหุ้มและติด BMS เรียบร้อยพร้อมใช้งาน</p></li>
+<li><p><strong>Series - S (การต่ออนุกรม):</strong>
+คือการต่อขั้วบวกชนขั้วลบ</p>
+<ul>
+<li><p><strong>ผลลัพธ์:</strong> แรงดัน (V) <strong>เพิ่มขึ้น</strong>, ความจุ (Ah) <strong>เท่าเดิม</strong></p></li>
+<li><p><em>ใช้สำหรับ:</em> ต้องการให้หุ่นยนต์มีแรงขับเคลื่อนสูงขึ้น (เช่น ระบบ 24V, 48V)</p></li>
+</ul>
+</li>
+<li><p><strong>Parallel - P (การต่อขนาน):</strong>
+คือการต่อขั้วบวกชนบวก ขั้วลบชนลบ</p>
+<ul>
+<li><p><strong>ผลลัพธ์:</strong> แรงดัน (V) <strong>เท่าเดิม</strong>, ความจุ (Ah) <strong>เพิ่มขึ้น</strong></p></li>
+<li><p><em>ใช้สำหรับ:</em> ต้องการให้หุ่นยนต์วิ่งได้นานขึ้น</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="battery-pack-calculation">
+<h3>Battery Pack Calculation<a class="headerlink" href="#battery-pack-calculation" title="Link to this heading"></a></h3>
+<p>สมมติเราใช้เซลล์ LiFePO4 ขนาด <strong>3.2V 6000mAh (6Ah)</strong> นำมาประกอบแบบ <strong>8S2P</strong></p>
+<ol class="arabic simple">
+<li><p><strong>คำนวณแรงดัน (Series 8S):</strong>
+$<span class="math notranslate nohighlight">\(3.2\text{V} \times 8 = 25.6\text{V} \text{ (Nominal Voltage)}\)</span>$</p></li>
+<li><p><strong>คำนวณความจุ (Parallel 2P):</strong>
+$<span class="math notranslate nohighlight">\(6\text{Ah} \times 2 = 12\text{Ah}\)</span>$</p></li>
+<li><p><strong>คำนวณพลังงานรวม (Watt-Hours):</strong>
+$<span class="math notranslate nohighlight">\(25.6\text{V} \times 12\text{Ah} = 307.2\text{Wh}\)</span>$</p></li>
+</ol>
+<p><strong>สรุป:</strong> แบตเตอรี่แพคนี้คือ <strong>24V (25.6V) 12Ah</strong></p>
+</section>
+<section id="runtime-calculation">
+<h3>Runtime Calculation<a class="headerlink" href="#runtime-calculation" title="Link to this heading"></a></h3>
+<p>สมมติเรามีหุ่นยนต์ AMR ที่ใช้พลังงานเฉลี่ย <strong>50 วัตต์ (W)</strong> และใช้แบตเตอรี่ LiFePO4 ขนาด <strong>24V 15Ah</strong></p>
+<p><strong>1. คำนวณพลังงานรวมของแบตเตอรี่ (Total Energy):</strong>
+$<span class="math notranslate nohighlight">\(E_{batt} = 24\text{V} \times 15\text{Ah} = 360\text{Wh (Watt-Hours)}\)</span>$</p>
+<p><strong>2. คำนวณระยะเวลาใช้งานทางทฤษฎี (Theoretical Runtime):</strong>
+$<span class="math notranslate nohighlight">\(Time = \frac{E_{batt}}{Power} = \frac{360\text{Wh}}{50\text{W}} = 7.2\text{ ชั่วโมง}\)</span>$</p>
+<p><strong>3. คำนวณระยะเวลาใช้งานจริง (Practical Runtime):</strong>
+ในความเป็นจริง เราไม่ควรใช้แบตเตอรี่จนหมดเกลี้ยง (100% DOD) และต้องเผื่อค่าความสูญเสียในระบบแปลงไฟ (Efficiency ~85-90%)</p>
+<ul class="simple">
+<li><p>สมมติเราต้องการเหลือแบตไว้ 20% (ใช้ได้จริง 80%) และประสิทธิภาพระบบ 90%</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[Real\ Time = 7.2\text{ h} \times 0.80 \times 0.90 \approx 5.18\text{ ชั่วโมง}\]</div>
+<p><strong>สรุป:</strong> หุ่นยนต์ตัวนี้จะวิ่งได้ต่อเนื่องประมาณ <strong>5 ชั่วโมง 10 นาที</strong> ก่อนที่แบตเตอรี่จะลดเหลือ 20%</p>
+</section>
+</section>
+<section id="lifepo4-battery">
+<h2>LiFePO4 Battery<a class="headerlink" href="#lifepo4-battery" title="Link to this heading"></a></h2>
+<p>แบตเตอรี่ <strong>LiFePO4</strong> (ลิเธียมฟอสเฟต) ได้รับความนิยมอย่างแพร่หลายในอุตสาหกรรมพลังงาน เนื่องจากจุดเด่นเรื่องความปลอดภัยและอายุการใช้งานที่ยาวนาน (Cycle Life &gt; 2000 รอบ)</p>
+<section id="common-applications">
+<h3>Common Applications<a class="headerlink" href="#common-applications" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Energy Storage:</strong> ระบบโซล่าเซลล์และโรงไฟฟ้าพลังงานแสงอาทิตย์ นิยมใช้เพราะทนแดดทนร้อนได้ดีและคุ้มค่าในระยะยาว</p></li>
+<li><p><strong>Electric Vehicles (EVs):</strong> รถกอล์ฟ, รถจักรยานไฟฟ้า, และรถยนต์ไฟฟ้าบางรุ่น (เช่น BYD, Tesla รุ่น Standard)</p></li>
+<li><p><strong>Backup Power:</strong> เครื่องสำรองไฟ (UPS) สำหรับ Server หรือสถานีฐานโทรคมนาคม</p></li>
+<li><p><strong>Robotics (AMR/AGV):</strong> หุ่นยนต์ขนส่งในโรงงานและอาคาร</p></li>
+</ul>
+</section>
+<section id="why-lifepo4-for-robotics">
+<h3>Why LiFePO4 for Robotics?<a class="headerlink" href="#why-lifepo4-for-robotics" title="Link to this heading"></a></h3>
+<p>ในบริบทของหุ่นยนต์ภาคพื้นดิน (Ground Robot) หรือ AMR แบตเตอรี่ชนิดนี้มีข้อได้เปรียบคือ:</p>
+<ol class="arabic simple">
+<li><p><strong>Safety First:</strong> การเดินในอาคารร่วมกับมนุษย์ ความปลอดภัยคือสิ่งสำคัญที่สุด โครงสร้างเคมีของ LiFePO4 มีพันธะที่แข็งแรง (P-O Bond) ทำให้ไม่เกิดการลุกไหม้ (Thermal Runaway) ง่ายๆ แม้จะถูกชนหรือเจาะ</p></li>
+<li><p><strong>Weight as Stability:</strong> แม้จะมีน้ำหนักเยอะกว่า Li-Po (ที่ความจุเท่ากัน) แต่สำหรับหุ่นยนต์ล้อเลื่อน น้ำหนักแบตเตอรี่ที่วางไว้ฐานล่างจะช่วยถ่วงจุดศูนย์ถ่วง (Center of Gravity) ให้ต่ำลง ทำให้หุ่นยนต์เดินนิ่งและไม่ล้มง่าย</p></li>
+<li><p><strong>Cost-Effective:</strong> ราคาต่อรอบการใช้งาน (Cost per Cycle) ต่ำที่สุด ช่วยประหยัดงบประมาณในการบำรุงรักษา</p></li>
+</ol>
+</section>
+<section id="technical-challenge-the-flat-discharge-curve">
+<h3>Technical Challenge: The “Flat” Discharge Curve<a class="headerlink" href="#technical-challenge-the-flat-discharge-curve" title="Link to this heading"></a></h3>
+<p>สิ่งหนึ่งที่นักพัฒนาหุ่นยนต์ต้องรู้คือ <strong>“กราฟการจ่ายไฟที่เรียบแบน”</strong></p>
+<ul class="simple">
+<li><p><strong>ข้อดี:</strong> มอเตอร์จะได้รับแรงดันไฟฟ้าที่คงที่ตลอดการใช้งาน (3.2V - 3.3V) ทำให้ความเร็วหุ่นยนต์สม่ำเสมอ ไม่แผ่วปลาย</p></li>
+<li><p><strong>ความท้าทาย:</strong> <strong>“ดูเปอร์เซ็นต์แบตยากมาก”</strong> หากใช้แค่มิเตอร์วัดแรงดัน (Voltmeter) เราแทบจะแยกไม่ออกเลยว่าแบตเตอรี่เหลือ 70%, 50% หรือ 30% เพราะแรงดันแทบจะไม่ต่างกัน (ดูตาราง SOC ประกอบ)</p>
+<ul>
+<li><p><em>วิธีแก้:</em> ในหุ่นยนต์ระดับสูง จะใช้วงจรนับประจุ (Coulomb Counting) เพื่อคำนวณปริมาณกระแสที่ไหลออกจริงแทนการวัดแค่แรงดัน</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>ข้อควรระวังในการใช้งาน:</strong></p>
+<ul class="simple">
+<li><p><strong>ห้ามเสียบสายทิ้งไว้:</strong> วงจรในหุ่นยนต์ (เช่น Step-down, Motor Driver) อาจมีการกินกระแสไฟเลี้ยง (Standby Current) ตลอดเวลา หากจอดทิ้งไว้นานอาจทำให้แบตเตอรี่หมดเกลี้ยงจนเซลล์ตายได้ <strong>ต้องถอดสายขั้วแบตออกเสมอเมื่อเลิกใช้งาน</strong></p></li>
+<li><p><strong>การเก็บรักษา:</strong> หากไม่ใช้งานนานเกิน 1 สัปดาห์ ให้ชาร์จให้อยู่ในระดับ <strong>Storage Voltage</strong> (ประมาณ 3.3V ต่อเซลล์) เพื่อรักษาสภาพเคมีภายใน</p></li>
+</ul>
+</section>
+<section id="lifepo4-soc-table">
+<h3>LiFePO4 SOC Table<a class="headerlink" href="#lifepo4-soc-table" title="Link to this heading"></a></h3>
+<p>ตารางนี้แสดงความสัมพันธ์ระหว่างเปอร์เซ็นต์ความจุแบตเตอรี่ (State of Charge - SOC) และแรงดันไฟฟ้า (Voltage) ขณะพัก (Rest Voltage) ของแบตเตอรี่ชนิด LiFePO4</p>
+<table class="docutils align-center">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Percentage (SOC)</p></th>
+<th class="head"><p>1 Cell (3.2V)</p></th>
+<th class="head"><p>12V System (4S)</p></th>
+<th class="head"><p>24V System (8S)</p></th>
+<th class="head"><p>48V System (16S)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>100% (Charging)</strong></p></td>
+<td><p><strong>3.65 V</strong></p></td>
+<td><p><strong>14.6 V</strong></p></td>
+<td><p><strong>29.2 V</strong></p></td>
+<td><p><strong>58.4 V</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>100% (Rest)</p></td>
+<td><p>3.40 V</p></td>
+<td><p>13.6 V</p></td>
+<td><p>27.2 V</p></td>
+<td><p>54.4 V</p></td>
+</tr>
+<tr class="row-even"><td><p>90%</p></td>
+<td><p>3.35 V</p></td>
+<td><p>13.4 V</p></td>
+<td><p>26.8 V</p></td>
+<td><p>53.6 V</p></td>
+</tr>
+<tr class="row-odd"><td><p>80%</p></td>
+<td><p>3.32 V</p></td>
+<td><p>13.3 V</p></td>
+<td><p>26.6 V</p></td>
+<td><p>53.1 V</p></td>
+</tr>
+<tr class="row-even"><td><p>70%</p></td>
+<td><p>3.30 V</p></td>
+<td><p>13.2 V</p></td>
+<td><p>26.4 V</p></td>
+<td><p>52.8 V</p></td>
+</tr>
+<tr class="row-odd"><td><p>60%</p></td>
+<td><p>3.27 V</p></td>
+<td><p>13.1 V</p></td>
+<td><p>26.1 V</p></td>
+<td><p>52.3 V</p></td>
+</tr>
+<tr class="row-even"><td><p>50%</p></td>
+<td><p>3.26 V</p></td>
+<td><p>13.0 V</p></td>
+<td><p>26.0 V</p></td>
+<td><p>52.0 V</p></td>
+</tr>
+<tr class="row-odd"><td><p>40%</p></td>
+<td><p>3.25 V</p></td>
+<td><p>13.0 V</p></td>
+<td><p>26.0 V</p></td>
+<td><p>52.0 V</p></td>
+</tr>
+<tr class="row-even"><td><p>30%</p></td>
+<td><p>3.22 V</p></td>
+<td><p>12.9 V</p></td>
+<td><p>25.8 V</p></td>
+<td><p>51.5 V</p></td>
+</tr>
+<tr class="row-odd"><td><p>20%</p></td>
+<td><p>3.20 V</p></td>
+<td><p>12.8 V</p></td>
+<td><p>25.6 V</p></td>
+<td><p>51.2 V</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>10% (Critical)</strong></p></td>
+<td><p><strong>3.00 V</strong></p></td>
+<td><p><strong>12.0 V</strong></p></td>
+<td><p><strong>24.0 V</strong></p></td>
+<td><p><strong>48.0 V</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>0% (Empty)</strong></p></td>
+<td><p><strong>2.50 V</strong></p></td>
+<td><p><strong>10.0 V</strong></p></td>
+<td><p><strong>20.0 V</strong></p></td>
+<td><p><strong>40.0 V</strong></p></td>
+</tr>
+</tbody>
+</table>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="_images/lifepo4_chart.png"><img alt="LiFePO4 SOC Chart" src="_images/lifepo4_chart.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">กราฟแสดงความสัมพันธ์ระหว่างแรงดันและความจุของแบตเตอรี่ LiFePO4 (SOC Curve)</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>ข้อสังเกต:</strong> แบตเตอรี่ LiFePO4 มีช่วงแรงดันที่คงที่มาก (Flat Discharge Curve) สังเกตว่าในช่วง <strong>40% - 70%</strong> แรงดันแทบจะไม่เปลี่ยนแปลงเลย (3.25V - 3.30V ต่อเซลล์) ซึ่งเป็นข้อดีที่ทำให้จ่ายไฟได้เสถียร แต่ก็ทำให้การวัดเปอร์เซ็นต์แบตเตอรี่ด้วยแรงดันเพียงอย่างเดียวทำได้ยาก</p>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="_images/lifepo4_24V15Ah.jpg"><img alt="แบตเตอรี่ LiFePO4 24V 15Ah" src="_images/lifepo4_24V15Ah.jpg" style="width: 60%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">แบตเตอรี่ LiFePO4 รุ่น 24V 15Ah ที่ใช้ในห้องปฏิบัติการ พร้อมสายไฟ XT60 (Discharge) และ DC Jack (Charge)</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="battery-specifications">
+<h3>Battery Specifications<a class="headerlink" href="#battery-specifications" title="Link to this heading"></a></h3>
+<p>จากแบตเตอรี่รุ่น <strong>24V 15</strong> ที่เราใช้งานจริง มีรายละเอียดทางเทคนิคดังนี้:</p>
+<ul class="simple">
+<li><p><strong>Battery Model:</strong> 24V 15</p></li>
+<li><p><strong>Nominal Capacity:</strong> 25.6V 15Ah</p>
+<ul>
+<li><p><em>ความหมาย:</em> แรงดันปกติคือ 25.6V (เกิดจากเซลล์ 3.2V อนุกรมกัน 8 ก้อน หรือ 8S) และมีความจุ 15 แอมป์-ชั่วโมง</p></li>
+</ul>
+</li>
+<li><p><strong>Charge Voltage:</strong> 29.4V</p>
+<ul>
+<li><p><em>ความหมาย:</em> ต้องใช้เครื่องชาร์จที่จ่ายไฟได้สูงสุด 29.4V (ห้ามใช้ Adapter 24V ทั่วไปชาร์จ เพราะไฟจะไม่เข้าเต็มที่)</p></li>
+</ul>
+</li>
+<li><p><strong>BMS:</strong> 30A, Balance 2.0A</p>
+<ul>
+<li><p><em>ความหมาย:</em> วงจร BMS จ่ายกระแสต่อเนื่องได้สูงสุด 30A (เหมาะกับมอเตอร์ขนาดกลาง) และมีระบบปรับสมดุลแรงดัน (Balance) ในตัว</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="connectors">
+<h3>Connectors<a class="headerlink" href="#connectors" title="Link to this heading"></a></h3>
+<p>แบตเตอรี่แพคนี้จะมีสายไฟออกมา 2 ชุด ซึ่งทำหน้าที่ต่างกันอย่างชัดเจน:</p>
+<ol class="arabic simple">
+<li><p><strong>XT60 (หัวสีเหลือง):</strong> สำหรับ <strong>“จ่ายไฟ” (Discharge)</strong></p>
+<ul class="simple">
+<li><p>ใช้เสียบเข้ากับบอร์ดควบคุมหุ่นยนต์ หรือ Motor Driver</p></li>
+<li><p>รองรับกระแสสูง (60A+)</p></li>
+</ul>
+</li>
+<li><p><strong>DC Jack 5.5x2.5mm (หัวกลม):</strong> สำหรับ <strong>“ชาร์จไฟ” (Charge)</strong></p>
+<ul class="simple">
+<li><p>ใช้เสียบกับ Adapter ชาร์จไฟบ้าน</p></li>
+<li><p>รองรับกระแสต่ำ (ไม่ควรนำไปจ่ายไฟให้มอเตอร์ เพราะขั้วอาจละลายได้)</p></li>
+</ul>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>ข้อควรระวัง:</strong> ห้ามนำสาย DC Jack ไปเสียบเข้ากับมอเตอร์โดยตรง เพราะอาจทำให้ขั้วต่อไหม้เนื่องจากทนกระแสสูงไม่ได้ ให้ใช้ XT60 เท่านั้น</p>
+</div>
+</section>
+<section id="id1">
+<h3>Runtime Calculation<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>เพื่อให้เห็นภาพการใช้งานจริง เราจะลองคำนวณว่าหุ่นยนต์ AMR ของเราจะวิ่งได้นานแค่ไหน</p>
+<p><strong>โจทย์:</strong> หุ่นยนต์ใช้พลังงานเฉลี่ย <strong>50 วัตต์ (W)</strong> ใช้แบตเตอรี่ก้อนนี้ (25.6V 15Ah)</p>
+<p><strong>1. คำนวณพลังงานรวม (Total Energy):</strong>
+$<span class="math notranslate nohighlight">\(E_{batt} = 25.6\text{V} \times 15\text{Ah} = 384\text{Wh (Watt-Hours)}\)</span>$</p>
+<p><strong>2. คำนวณระยะเวลาใช้งานทางทฤษฎี:</strong>
+$<span class="math notranslate nohighlight">\(Time = \frac{384\text{Wh}}{50\text{W}} = 7.68\text{ ชั่วโมง}\)</span>$</p>
+<p><strong>3. คำนวณระยะเวลาใช้งานจริง (Safety Margin 20%):</strong>
+เพื่อถนอมแบตเตอรี่ เราไม่ควรใช้จนหมดเกลี้ยง (0%) ควรเหลือไว้สัก 20% และเผื่อความสูญเสียในระบบ (Efficiency 90%)</p>
+<div class="math notranslate nohighlight">
+\[Real\ Time \approx 7.68 \times 0.80 \times 0.90 \approx 5.5\text{ ชั่วโมง}\]</div>
+<p><strong>สรุป:</strong> ด้วยแบตเตอรี่ก้อนนี้ หุ่นยนต์จะสามารถเดินลาดตระเวนได้ต่อเนื่องประมาณ <strong>5 ชั่วโมงครึ่ง</strong></p>
+</section>
+</section>
+<section id="lipo-battery">
+<h2>LiPo Battery<a class="headerlink" href="#lipo-battery" title="Link to this heading"></a></h2>
+<p>แบตเตอรี่ <strong>Li-Po</strong> (Lithium Polymer) โดดเด่นในเรื่องน้ำหนักที่เบาและการจ่ายพลังงานที่รุนแรง จึงเป็นที่นิยมในวงการ RC (Radio Control) และอุปกรณ์พกพา</p>
+<section id="id2">
+<h3>Common Applications<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>UAVs &amp; Drones:</strong> โดรนและเครื่องบินบังคับวิทยุเกือบทั้งหมดใช้ Li-Po เพราะต้องการน้ำหนักเบาที่สุด (High Energy-to-Weight Ratio)</p></li>
+<li><p><strong>Competitive Robotics:</strong> หุ่นยนต์ต่อสู้ (Combat Robots), หุ่นยนต์เตะบอล, หรือหุ่นยนต์วิ่งแข่งที่ต้องการอัตราเร่งสูง</p></li>
+<li><p><strong>Wearable Devices:</strong> นาฬิกาอัจฉริยะหรืออุปกรณ์สวมใส่ เพราะ Li-Po สามารถผลิตเป็นรูปทรงแบนบางหรือรูปทรงอิสระ (Pouch cell) ได้ง่ายกว่า Li-ion ทรงกระบอก</p></li>
+</ul>
+</section>
+<section id="why-li-po-for-high-performance-robotics">
+<h3>Why Li-Po for High-Performance Robotics?<a class="headerlink" href="#why-li-po-for-high-performance-robotics" title="Link to this heading"></a></h3>
+<p>ในบริบทของหุ่นยนต์แข่งขันที่ต้องใช้มอเตอร์กำลังสูง Li-Po มีข้อได้เปรียบที่หาตัวจับยากคือ:</p>
+<ol class="arabic simple">
+<li><p><strong>Extreme Discharge Rate (C-Rate):</strong> Li-Po สามารถจ่ายกระแสได้สูงถึง 50C - 100C ในระยะเวลาสั้นๆ ทำให้หุ่นยนต์สามารถออกตัวกระชากหรือหยุดกะทันหันได้ดีเยี่ยม (ในขณะที่ Li-ion ปกติทำได้เพียง 5C-10C)</p></li>
+<li><p><strong>Low Internal Resistance:</strong> ความต้านทานภายในต่ำทำให้เกิดความร้อนน้อยกว่าเมื่อจ่ายกระแสสูง ช่วยลดการสูญเสียพลังงาน (Voltage Sag)</p></li>
+<li><p><strong>Form Factor Flexibility:</strong> เนื่องจากเป็นซองนิ่ม (Soft Pouch) จึงสามารถจัดวางในพื้นที่จำกัดของหุ่นยนต์ได้ง่ายกว่าแบตเตอรี่ทรงแข็ง</p></li>
+</ol>
+</section>
+<section id="technical-challenges-saftey-fragility">
+<h3>Technical Challenges: Saftey &amp; Fragility<a class="headerlink" href="#technical-challenges-saftey-fragility" title="Link to this heading"></a></h3>
+<p>แม้จะมีสมรรถนะสูง แต่ Li-Po ก็มีความเปราะบางที่ต้องดูแลเป็นพิเศษ:</p>
+<ul class="simple">
+<li><p><strong>Puffing (อาการบวม):</strong> หากใช้งานหนักเกินกำลัง (Over-discharge) หรือเก็บในที่ร้อน สารเคมีภายในจะเกิดก๊าซทำให้แบตเตอรี่บวมเป่ง ซึ่งเป็นสัญญาณอันตราย <strong>ห้ามเจาะ</strong> และควรเลิกใช้งานทันที</p></li>
+<li><p><strong>Physical Fragility:</strong> เปลือกหุ้มเป็นเพียงพลาสติกบางๆ หากหุ่นยนต์ชนกันรุนแรงจนแบตเตอรี่ถูกเจาะ ลิเธียมจะทำปฏิกิริยากับอากาศและลุกไหม้อย่างรุนแรง (Thermal Runaway)</p></li>
+<li><p><strong>Storage Maintenance:</strong> Li-Po เสื่อมสภาพเร็วมากหากเก็บแบบ “เต็มร้อย” (Full Charge) หรือ “หมดเกลี้ยง” (Empty) เป็นเวลานาน ต้องเก็บที่แรงดัน <strong>Storage (3.80V - 3.85V)</strong> เท่านั้นหากไม่ใช้งานเกิน 3 วัน</p></li>
+</ul>
+</section>
+<section id="li-po-soc-table">
+<h3>Li-Po SOC Table<a class="headerlink" href="#li-po-soc-table" title="Link to this heading"></a></h3>
+<p>ตารางแสดงความสัมพันธ์ระหว่างความจุ (SOC) และแรงดันไฟฟ้าขณะพัก (Rest Voltage) ของแบตเตอรี่ Li-Po มาตรฐาน</p>
+<table class="docutils align-center">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Percentage (SOC)</p></th>
+<th class="head"><p>1 Cell (3.7V)</p></th>
+<th class="head"><p>2S (7.4V)</p></th>
+<th class="head"><p>3S (11.1V)</p></th>
+<th class="head"><p>6S (22.2V)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>100% (Full)</strong></p></td>
+<td><p><strong>4.20 V</strong></p></td>
+<td><p><strong>8.40 V</strong></p></td>
+<td><p><strong>12.60 V</strong></p></td>
+<td><p><strong>25.20 V</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>90%</p></td>
+<td><p>4.13 V</p></td>
+<td><p>8.26 V</p></td>
+<td><p>12.39 V</p></td>
+<td><p>24.78 V</p></td>
+</tr>
+<tr class="row-even"><td><p>80%</p></td>
+<td><p>4.06 V</p></td>
+<td><p>8.12 V</p></td>
+<td><p>12.18 V</p></td>
+<td><p>24.36 V</p></td>
+</tr>
+<tr class="row-odd"><td><p>70%</p></td>
+<td><p>3.99 V</p></td>
+<td><p>7.98 V</p></td>
+<td><p>11.97 V</p></td>
+<td><p>23.94 V</p></td>
+</tr>
+<tr class="row-even"><td><p>60%</p></td>
+<td><p>3.92 V</p></td>
+<td><p>7.84 V</p></td>
+<td><p>11.76 V</p></td>
+<td><p>23.52 V</p></td>
+</tr>
+<tr class="row-odd"><td><p>50% (Storage)</p></td>
+<td><p>3.85 V</p></td>
+<td><p>7.70 V</p></td>
+<td><p>11.55 V</p></td>
+<td><p>23.10 V</p></td>
+</tr>
+<tr class="row-even"><td><p>40%</p></td>
+<td><p>3.79 V</p></td>
+<td><p>7.58 V</p></td>
+<td><p>11.37 V</p></td>
+<td><p>22.74 V</p></td>
+</tr>
+<tr class="row-odd"><td><p>30%</p></td>
+<td><p>3.73 V</p></td>
+<td><p>7.46 V</p></td>
+<td><p>11.19 V</p></td>
+<td><p>22.38 V</p></td>
+</tr>
+<tr class="row-even"><td><p>20% (Low)</p></td>
+<td><p>3.68 V</p></td>
+<td><p>7.36 V</p></td>
+<td><p>11.04 V</p></td>
+<td><p>22.08 V</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>10% (Critical)</strong></p></td>
+<td><p><strong>3.60 V</strong></p></td>
+<td><p><strong>7.20 V</strong></p></td>
+<td><p><strong>10.80 V</strong></p></td>
+<td><p><strong>21.60 V</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>0% (Empty)</strong></p></td>
+<td><p><strong>3.20 V</strong></p></td>
+<td><p><strong>6.40 V</strong></p></td>
+<td><p><strong>9.60 V</strong></p></td>
+<td><p><strong>19.20 V</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="technical-insight-voltage-sag">
+<h3>Technical Insight: Voltage Sag<a class="headerlink" href="#technical-insight-voltage-sag" title="Link to this heading"></a></h3>
+<p>เคยสงสัยไหมครับว่า <strong>“ทำไมแบตเตอรี่เพิ่งชาร์จมาเต็ม 100% แต่พอหุ่นยนต์ออกตัวแรงๆ สัญญาณเตือนแบตหมดกลับดังขึ้น?”</strong></p>
+<p>ปรากฏการณ์นี้เรียกว่า <strong>Voltage Sag</strong></p>
+<section id="id3">
+<h4>สาเหตุทางฟิสิกส์<a class="headerlink" href="#id3" title="Link to this heading"></a></h4>
+<p>แบตเตอรี่ทุกก้อนมีความต้านทานภายใน (<strong>Internal Resistance</strong>) เปรียบเสมือนท่อน้ำที่ไม่ได้โล่งตลอดแต่มีตะกอนขวางอยู่ ตามกฎของโอห์ม:</p>
+<div class="math notranslate nohighlight">
+\[V_{load} = V_{rest} - (I_{current} \times R_{internal})\]</div>
+<ul class="simple">
+<li><p><strong><span class="math notranslate nohighlight">\(V_{load}\)</span>:</strong> แรงดันที่เราวัดได้จริงขณะใช้งาน</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(V_{rest}\)</span>:</strong> แรงดันจริงของแบตเตอรี่ (ตามตาราง SOC)</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(I \times R\)</span>:</strong> แรงดันที่หายไป (Voltage Drop)</p></li>
+</ul>
+<p><strong>สถานการณ์ตัวอย่าง:</strong>
+แบตเตอรี่ Li-Po 6S (25.2V) มีความต้านทานภายใน <span class="math notranslate nohighlight">\(0.02\Omega\)</span></p>
+<ul class="simple">
+<li><p><strong>จอดนิ่ง (0A):</strong> แรงดันวัดได้ <strong>25.2V</strong> (เต็ม 100%)</p></li>
+<li><p><strong>ออกตัวกระชาก (50A):</strong> แรงดันจะหายไป <span class="math notranslate nohighlight">\(50 \times 0.02 = 1.0\text{V}\)</span></p></li>
+<li><p><strong>แรงดันที่วัดได้:</strong> เหลือแค่ <strong>24.2V</strong> (ดูเหมือนแบตลดลงชั่วคราว)</p></li>
+</ul>
+</section>
+<section id="soc">
+<h4>วิธีดูค่า SOC ที่ถูกต้อง<a class="headerlink" href="#soc" title="Link to this heading"></a></h4>
+<p>ตาราง SOC (State of Charge) ด้านบน ใช้อ้างอิงได้เฉพาะตอน <strong>Resting (แบตเตอรี่อยู่นิ่งๆ ไม่มีการจ่ายไฟ)</strong> เท่านั้น</p>
+<ul class="simple">
+<li><p><strong>ขณะหุ่นยนต์วิ่ง:</strong> ห้ามเชื่อค่า Voltage ที่อ่านได้ 100% เพราะมันคือค่าที่รวม Voltage Sag เข้าไปแล้ว (ค่าจะต่ำกว่าความเป็นจริง)</p></li>
+<li><p><strong>ขณะจอดพัก:</strong> ให้หยุดหุ่นยนต์ประมาณ 10-20 วินาที เพื่อให้เคมีภายในแบตเตอรี่คืนตัว (Recovery) แรงดันจะเด้งกลับมาเป็นค่าจริง แล้วค่อยเทียบกับตาราง</p></li>
+</ul>
+</section>
+<section id="low-voltage-alarm">
+<h4>การตั้งค่า Low Voltage Alarm<a class="headerlink" href="#low-voltage-alarm" title="Link to this heading"></a></h4>
+<p>เนื่องจากมี Voltage Sag เราจึงไม่ควรตั้งค่าเตือนที่จุดวิกฤตพอดีเป๊ะ</p>
+<ul class="simple">
+<li><p><strong>Li-Po Critical (Rest):</strong> 3.50V ต่อเซลล์ (แบตเกือบหมด)</p></li>
+<li><p><strong>Alarm Setting (Load):</strong> ควรตั้งเผื่อ Sag ไว้ที่ <strong>3.30V - 3.40V</strong> ต่อเซลล์</p>
+<ul>
+<li><p>หากตั้งไว้สูงเกินไป (เช่น 3.6V) หุ่นยนต์จะร้องเตือนตลอดเวลาที่เร่งเครื่อง ทั้งที่แบตยังไม่หมดจริง</p></li>
+</ul>
+</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>Pro Tip:</strong> สำหรับหุ่นยนต์แข่งขัน การดู <strong>กระแสรวม (mAh Consumed)</strong> ที่ใช้ไป แม่นยำกว่าการดูแรงดัน (Voltage) เพราะไม่ขึ้นกับแรงดันตก</p>
+</div>
+</section>
+</section>
+<section id="id4">
+<h3>Battery Specifications<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<p>จากแบตเตอรี่รุ่น <strong>BT BEAT LIPO</strong> ที่ใช้ในแลป มีรายละเอียดดังนี้:</p>
+<figure class="align-center" id="id10">
+<a class="reference internal image-reference" href="_images/lipo_24V_5200mAh.jpg"><img alt="แบตเตอรี่ Li-Po 22.2V 5200mAh" src="_images/lipo_24V_5200mAh.jpg" style="width: 60%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">แบตเตอรี่ Li-Po 6S 22.2V 5200mAh (65C) พร้อมสายไฟ XT90 และ Balance Plug</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p><strong>Capacity:</strong> 5200 mAh (5.2 Ah)</p></li>
+<li><p><strong>Voltage:</strong> 22.2V (6S)</p>
+<ul>
+<li><p><em>ความหมาย:</em> เกิดจากเซลล์ Li-Po 3.7V อนุกรมกัน 6 ก้อน</p></li>
+<li><p><strong>Fully Charged:</strong> 25.2V (4.2V ต่อเซลล์)</p></li>
+</ul>
+</li>
+<li><p><strong>C-Rate (Discharge):</strong> 65C</p>
+<ul>
+<li><p><em>ความหมาย:</em> จ่ายกระแสต่อเนื่องได้สูงสุดถึง <span class="math notranslate nohighlight">\(5.2\text{Ah} \times 65 = 338\text{A}\)</span> !! (เหมาะมากสำหรับมอเตอร์ที่กินกระแสกระชากสูงๆ)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="li-po-checker-low-voltage-alarm">
+<h3>Li-Po Checker &amp; Low Voltage Alarm<a class="headerlink" href="#li-po-checker-low-voltage-alarm" title="Link to this heading"></a></h3>
+<p>เนื่องจาก Li-Po มีความเปราะบาง หากแรงดันต่ำกว่า <strong>3.0V</strong> เซลล์จะเสียหายถาวรทันที เราจึงต้องใช้อุปกรณ์ <strong>Li-Po Checker</strong> เสียบติดไว้ตลอดการใช้งาน</p>
+<figure class="align-center" id="id11">
+<a class="reference internal image-reference" href="_images/lipo_checker.jpg"><img alt="Li-Po Checker" src="_images/lipo_checker.jpg" style="width: 40%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">อุปกรณ์ Li-Po Checker สำหรับวัดแรงดันและแจ้งเตือนเมื่อแบตเตอรี่อ่อน</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>วิธีใช้งานและการตั้งค่า:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>การเสียบ:</strong> หันด้านเรียบของ Checker ขึ้น และเสียบสาย Balance ของแบตเตอรี่โดยเริ่มจาก <strong>ขาสุดท้าย</strong> (ขั้วลบ/สายสีดำ) ให้ตรงกับขา <strong>(-) GND</strong> ของ Checker</p></li>
+<li><p><strong>การอ่านค่า:</strong> หน้าจอจะวนแสดงค่าแรงดันรวม (ALL) และแรงดันทีละเซลล์ (รุ่นในภาพเช็คได้สุงสุด 8S) ให้ตรวจสอบว่าทุกเซลล์มีแรงดัน <strong>มากกว่า 3.7V</strong> ก่อนเริ่มใช้งาน</p></li>
+<li><p><strong>การตั้งค่าเสียงเตือน (Buzzer):</strong></p>
+<ul class="simple">
+<li><p>กดปุ่มเล็กๆ ระหว่างลำโพงเพื่อตั้งค่าแรงดันเตือน</p></li>
+<li><p>แนะนำให้ตั้งไว้ที่ <strong>3.50V</strong> หรือ <strong>3.60V</strong></p></li>
+<li><p>เมื่อเซลล์ใดเซลล์หนึ่งต่ำกว่าค่าที่ตั้งไว้ ลำโพงจะส่งเสียงดังมาก ให้รีบนำหุ่นยนต์กลับมาชาร์จทันที</p></li>
+</ul>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>ระวัง! ห้ามลืมถอด:</strong> Li-Po Checker กินไฟจากแบตเตอรี่ตลอดเวลา หากเสียบทิ้งไว้ข้ามวัน แบตเตอรี่จะถูกดึงไฟจนหมดเกลี้ยง (Deep Discharge) และเสียหายถาวรทันที <strong>ต้องถอดออกเมื่อเลิกใช้งาน</strong></p>
+</div>
+</section>
+<section id="id5">
+<h3>Runtime Calculation<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<p><strong>โจทย์:</strong> หุ่นยนต์ Mecanum แข่งขัน ใช้พลังงานเฉลี่ย <strong>50 วัตต์ (W)</strong> ใช้แบตเตอรี่ก้อนนี้ (22.2V 5.2Ah)</p>
+<p><strong>1. คำนวณพลังงานรวม (Total Energy):</strong>
+$<span class="math notranslate nohighlight">\(E_{batt} = 22.2\text{V} \times 5.2\text{Ah} \approx 115.4\text{Wh}\)</span>$</p>
+<p><strong>2. คำนวณระยะเวลาใช้งาน (Practical Runtime):</strong>
+สำหรับ Li-Po เพื่อความปลอดภัยและยืดอายุการใช้งาน เราไม่ควรใช้จนหมดเกลี้ยง ควรเหลือไว้ประมาณ 30%</p>
+<div class="math notranslate nohighlight">
+\[Time = \frac{115.4\text{Wh}}{50\text{W}} = 2.3\text{ ชั่วโมง}\]</div>
+<div class="math notranslate nohighlight">
+\[Real\ Time \approx 2.3 \times 0.70 \approx 1.6\text{ ชั่วโมง}\]</div>
+<p><strong>สรุป:</strong> หุ่นยนต์จะวิ่งได้ประมาณ <strong>1 ชั่วโมง 30 นาที</strong> ซึ่งเพียงพอสำหรับการแข่งขัน 1-2 แมตช์ แต่ต้องเตรียมแบตสำรองไว้เปลี่ยนเสมอ</p>
+</section>
+<section id="signs-of-failure">
+<h3>Signs of Failure<a class="headerlink" href="#signs-of-failure" title="Link to this heading"></a></h3>
+<p>Li-Po เป็นแบตเตอรี่ที่มีความเสี่ยงสูง หากพบอาการดังต่อไปนี้ <strong>ห้ามนำมาชาร์จหรือใช้งานเด็ดขาด</strong>:</p>
+<ol class="arabic simple">
+<li><p><strong>อาการบวม (Puffing):</strong> เกิดจากก๊าซที่สะสมภายในเนื่องจากความร้อนหรือเสื่อมสภาพ หากฝืนใช้ต่ออาจระเบิดได้</p></li>
+<li><p><strong>รอยเจาะ/ถลอกลึก:</strong> หากเปลือกหุ้มฉีกขาดจนเห็นเนื้อใน ลิเธียมอาจทำปฏิกิริยากับอากาศและลุกไหม้</p></li>
+<li><p><strong>ชาร์จไม่เข้า/แรงดันไม่เท่ากัน:</strong> หากเซลล์ใดเซลล์หนึ่งมีแรงดันต่ำผิดปกติ (เช่น 2.0V ขณะที่ก้อนอื่น 3.8V) แสดงว่าเซลล์ตายแล้ว</p></li>
+</ol>
+<p><strong>วิธีกำจัด (Disposal):</strong>
+ต้องทำลายปฏิกิริยาเคมีก่อนทิ้ง โดยการแช่ใน <strong>น้ำเกลือเข้มข้น</strong> เป็นเวลา 1 คืน จนไม่มีฟองอากาศผุดออกมา แล้วจึงนำไปทิ้งในถังขยะอันตราย (สีแดง) หรือจุดรับทิ้ง E-Waste</p>
+</section>
+</section>
+<section id="li-ion-battery">
+<h2>Li-ion Battery<a class="headerlink" href="#li-ion-battery" title="Link to this heading"></a></h2>
+<p>แบตเตอรี่ <strong>Li-ion (Lithium-ion)</strong> เป็นมาตรฐานของโลกแบตเตอรี่ในปัจจุบัน โดยเฉพาะรูปทรงกระบอก (Cylindrical Cell) เช่นขนาด <strong>18650</strong> และขนาดใหม่ <strong>21700</strong> ที่นิยมใช้ในรถยนต์ไฟฟ้าและอุปกรณ์อิเล็กทรอนิกส์</p>
+<section id="applications-characteristics">
+<h3>Applications &amp; Characteristics<a class="headerlink" href="#applications-characteristics" title="Link to this heading"></a></h3>
+<p>ด้วยคุณสมบัติที่สมดุลระหว่างน้ำหนักและความจุ Li-ion จึงถูกใช้งานในหลากหลายอุตสาหกรรม:</p>
+<ul class="simple">
+<li><p><strong>Electric Vehicles (EVs):</strong> รถยนต์ไฟฟ้า (เช่น Tesla Model 3/Y) และมอเตอร์ไซค์ไฟฟ้า นิยมใช้เซลล์ 21700 มาประกอบเป็นแพคใหญ่ใต้ท้องรถ</p></li>
+<li><p><strong>Micromobility:</strong> สกู๊ตเตอร์ไฟฟ้า และจักรยานไฟฟ้า (E-Bike)</p></li>
+<li><p><strong>Long-Endurance Drones:</strong> โดรนสำรวจที่เน้นบินนาน (30-60 นาที) และไม่ได้บินผาดโผน</p></li>
+<li><p><strong>IoT &amp; Portable Devices:</strong> Power Bank, ไฟฉายแรงสูง, และอุปกรณ์ Smart Home</p></li>
+</ul>
+</section>
+<section id="why-li-ion-for-energy-density">
+<h3>Why Li-ion for Energy Density?<a class="headerlink" href="#why-li-ion-for-energy-density" title="Link to this heading"></a></h3>
+<p>จุดเด่นที่สุดของ Li-ion คือ <strong>Energy Density (ความหนาแน่นพลังงาน)</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Lightweight High Capacity:</strong> ในน้ำหนักที่เท่ากัน Li-ion สามารถเก็บไฟได้มากกว่า LiFePO4 ถึง 1.5 - 2 เท่า ทำให้เหมาะกับอุปกรณ์ที่ต้องพกพาหรือบิน</p></li>
+<li><p><strong>Standard Form Factor:</strong> รูปทรงกระบอกมาตรฐาน (21700) แข็งแรงทนทานต่อแรงกระแทกมากกว่าแบบซอง (Li-Po) และระบายความร้อนได้ดีกว่าเมื่อจัดเรียงแบบเว้นช่องว่าง</p></li>
+<li><p><strong>Low Self-Discharge:</strong> เก็บไฟได้นานโดยประจุไม่หายไปเอง (ต่ำกว่า 5% ต่อเดือน)</p></li>
+</ol>
+</section>
+<section id="technical-challenges-heat">
+<h3>Technical Challenges: Heat<a class="headerlink" href="#technical-challenges-heat" title="Link to this heading"></a></h3>
+<p>จากการใช้งานจริงในห้องปฏิบัติการ พบข้อจำกัดที่ผู้ใช้ต้องระวัง:</p>
+<ul class="simple">
+<li><p><strong>Heat Generation (ความร้อนสะสม):</strong></p>
+<ul>
+<li><p>แบตเตอรี่ Li-ion รุ่นเน้นความจุสูง (High Capacity) มักมีความต้านทานภายในสูงกว่ารุ่นเน้นจ่ายกระแส (High Discharge)</p></li>
+<li><p><em>กรณีศึกษา:</em> การนำเซลล์ความจุสูงไปทำแบตเตอรี่โดรน (6S2P) แล้วบินต่อเนื่อง 30 นาที (Discharge ~2C) อาจพบว่าแบตเตอรี่ <strong>ร้อนจัด</strong> จนจับไม่ได้ นี่คือผลของ <span class="math notranslate nohighlight">\(I^2R\)</span> Loss</p></li>
+<li><p><em>คำแนะนำ:</em> หากใช้งานที่กระแสสูงต่อเนื่อง ควรเลือกเกรด <strong>High Discharge Cell</strong> (ยอมลดความจุลงเพื่อแลกกับการจ่ายกระแสได้เย็นขึ้น)</p></li>
+</ul>
+</li>
+<li><p><strong>Counterfeits (ของปลอม):</strong></p>
+<ul>
+<li><p>ในตลาดมีเซลล์ปลอมระบาดมาก โดยเฉพาะการอ้างชื่อแบรนด์ดัง หรือระบุสเปคเกินจริง (เช่น 18650 9900mAh ซึ่งเป็นไปไม่ได้ในทางฟิสิกส์)</p></li>
+<li><p>เซลล์ที่อ้างว่าเป็น “เกรด Tesla” หรือ “ถอดจากรถ” มักเป็นของตกเกรด (Reject) หรือของมือสองที่มีคุณภาพไม่สม่ำเสมอ</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="li-ion-soc-table">
+<h3>Li-ion SOC Table<a class="headerlink" href="#li-ion-soc-table" title="Link to this heading"></a></h3>
+<p>ตารางแสดงความสัมพันธ์ระหว่างความจุและแรงดันของ Li-ion (NMC/NCA Chemistry)</p>
+<table class="docutils align-center">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Percentage (SOC)</p></th>
+<th class="head"><p>1 Cell (3.7V)</p></th>
+<th class="head"><p>2S (7.4V)</p></th>
+<th class="head"><p>3S (11.1V)</p></th>
+<th class="head"><p>4S (14.8V)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>100% (Full)</strong></p></td>
+<td><p><strong>4.20 V</strong></p></td>
+<td><p><strong>8.40 V</strong></p></td>
+<td><p><strong>12.60 V</strong></p></td>
+<td><p><strong>16.80 V</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>90%</p></td>
+<td><p>4.10 V</p></td>
+<td><p>8.20 V</p></td>
+<td><p>12.30 V</p></td>
+<td><p>16.40 V</p></td>
+</tr>
+<tr class="row-even"><td><p>80%</p></td>
+<td><p>4.00 V</p></td>
+<td><p>8.00 V</p></td>
+<td><p>12.00 V</p></td>
+<td><p>16.00 V</p></td>
+</tr>
+<tr class="row-odd"><td><p>70%</p></td>
+<td><p>3.90 V</p></td>
+<td><p>7.80 V</p></td>
+<td><p>11.70 V</p></td>
+<td><p>15.60 V</p></td>
+</tr>
+<tr class="row-even"><td><p>60%</p></td>
+<td><p>3.80 V</p></td>
+<td><p>7.60 V</p></td>
+<td><p>11.40 V</p></td>
+<td><p>15.20 V</p></td>
+</tr>
+<tr class="row-odd"><td><p>50% (Nominal)</p></td>
+<td><p>3.70 V</p></td>
+<td><p>7.40 V</p></td>
+<td><p>11.10 V</p></td>
+<td><p>14.80 V</p></td>
+</tr>
+<tr class="row-even"><td><p>40%</p></td>
+<td><p>3.60 V</p></td>
+<td><p>7.20 V</p></td>
+<td><p>10.80 V</p></td>
+<td><p>14.40 V</p></td>
+</tr>
+<tr class="row-odd"><td><p>30%</p></td>
+<td><p>3.50 V</p></td>
+<td><p>7.00 V</p></td>
+<td><p>10.50 V</p></td>
+<td><p>14.00 V</p></td>
+</tr>
+<tr class="row-even"><td><p>20% (Low)</p></td>
+<td><p>3.40 V</p></td>
+<td><p>6.80 V</p></td>
+<td><p>10.20 V</p></td>
+<td><p>13.60 V</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>10% (Critical)</strong></p></td>
+<td><p><strong>3.30 V</strong></p></td>
+<td><p><strong>6.60 V</strong></p></td>
+<td><p><strong>9.90 V</strong></p></td>
+<td><p><strong>13.20 V</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>0% (Empty)</strong></p></td>
+<td><p><strong>3.00 V</strong></p></td>
+<td><p><strong>6.00 V</strong></p></td>
+<td><p><strong>9.00 V</strong></p></td>
+<td><p><strong>12.00 V</strong></p></td>
+</tr>
+</tbody>
+</table>
+<figure class="align-center" id="id12">
+<a class="reference internal image-reference" href="_images/liion_chart.png"><img alt="Li-ion SOC Chart" src="_images/liion_chart.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">กราฟแสดงความสัมพันธ์ระหว่างแรงดันและความจุของแบตเตอรี่ Li-ion (SOC Curve)</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>ข้อสังเกต:</strong></p>
+<ul class="simple">
+<li><p>กราฟนี้จะโชว์ให้เห็นว่า Li-ion มีการลดลงของแรงดันที่ <strong>“ชันและต่อเนื่อง” (Linear Drop)</strong> มากกว่า LiFePO4 ทำให้เราสามารถกะปริมาณแบตเตอรี่ที่เหลือจากแรงดันได้ง่ายกว่า</p></li>
+</ul>
+</section>
+<section id="id6">
+<h3>Battery Specifications<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<p>จากแบตเตอรี่รุ่น <strong>NCR21700</strong> ที่ใช้ในแลป มีรายละเอียดดังนี้:</p>
+<figure class="align-center" id="id13">
+<a class="reference internal image-reference" href="_images/li-ion_NCR21700_4800.jpg"><img alt="แบตเตอรี่ Panasonic NCR21700 4800mAh" src="_images/li-ion_NCR21700_4800.jpg" style="width: 60%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">แบตเตอรี่ Li-ion ขนาด 21700 รุ่นความจุสูง (4800mAh) สำหรับงาน IoT และงานทั่วไป</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p><strong>Model:</strong> NCR21700 (รหัส NCR มักหมายถึงเคมี Nickel Cobalt Aluminum - NCA ของ Panasonic/Sanyo)</p></li>
+<li><p><strong>Nominal Voltage:</strong> 3.7V</p></li>
+<li><p><strong>Capacity:</strong> 4800mAh (4.8Ah)</p></li>
+<li><p><strong>Energy:</strong> 17.8Wh (คำนวณจาก <span class="math notranslate nohighlight">\(3.7\text{V} \times 4.8\text{Ah}\)</span>)</p></li>
+<li><p><strong>Standard Charge/Discharge:</strong> แนะนำใช้งานที่ 0.5C - 1C เพื่อยืดอายุการใช้งาน</p></li>
+</ul>
+</section>
+<section id="id7">
+<h3>Runtime Calculation<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<p><strong>โจทย์:</strong> ใช้งานเซลล์นี้ (1 ก้อน) จ่ายไฟให้กับ <strong>ระบบ IoT</strong> ที่กินพลังงาน <strong>5 วัตต์ (W)</strong></p>
+<p><strong>1. พลังงานรวม (Total Energy):</strong>
+ระบุบนฉลาก = <strong>17.8 Wh</strong></p>
+<p><strong>2. คำนวณระยะเวลาใช้งาน (Practical Runtime):</strong>
+กำหนดให้ใช้แบตเตอรี่ได้ 85% (เหลือ 15%) และประสิทธิภาพวงจรแปลงไฟ 90%</p>
+<div class="math notranslate nohighlight">
+\[Time = \frac{17.8\text{Wh}}{5\text{W}} \times 0.85 \times 0.90 \approx 2.72\text{ ชั่วโมง}\]</div>
+<p><strong>สรุป:</strong> แบตเตอรี่ก้อนเดียวสามารถขับเคลื่อนอุปกรณ์ IoT 5W ได้นานประมาณ <strong>2 ชั่วโมง 40 นาที</strong></p>
+</section>
+</section>
+<section id="disposal">
+<h2>Disposal (การกำจัดแบตเตอรี่เสื่อมสภาพ)<a class="headerlink" href="#disposal" title="Link to this heading"></a></h2>
+<p>แบตเตอรี่ลิเธียมที่บวม เสื่อมสภาพ หรือชำรุด ถือเป็น “วัตถุระเบิด” หากยังมีประจุไฟค้างอยู่ การทิ้งลงถังขยะทันที (แม้จะเป็นถังแดง) มีความเสี่ยงสูงที่แบตเตอรี่จะถูกกระแทกจนไฟลุกไหม้ได้</p>
+<p>ทางห้องปฏิบัติการ RTL จึงกำหนดมาตรฐานการกำจัดด้วยวิธี <strong>Saltwater Immersion (การแช่น้ำเกลือ)</strong> เพื่อคายประจุให้เหลือ 0V อย่างสมบูรณ์ก่อนนำไปทิ้ง</p>
+<section id="standard-operating-procedure">
+<h3>ขั้นตอนการปฏิบัติ (Standard Operating Procedure)<a class="headerlink" href="#standard-operating-procedure" title="Link to this heading"></a></h3>
+<p>วิธีนี้ใช้ได้กับแบตเตอรี่ลิเธียมทุกชนิด (<strong>Li-Po, Li-ion, LiFePO4</strong>)</p>
+<p><strong>1. เตรียมสถานที่และอุปกรณ์:</strong></p>
+<ul class="simple">
+<li><p><strong>สถานที่:</strong> ต้องทำในที่ <strong>อากาศถ่ายเทสะดวก (Well-ventilated)</strong> หรือภายนอกอาคารเท่านั้น ห้ามทำในห้องปิดทึบ</p></li>
+<li><p><strong>ภาชนะ:</strong> ใช้ถัง <strong>พลาสติก</strong> เท่านั้น (ห้ามใช้ถังโลหะเพราะเกลือจะกัดกร่อนและนำไฟฟ้า)</p></li>
+<li><p><strong>น้ำเกลือ:</strong> ผสมเกลือแกง (Salt) กับน้ำเปล่าในอัตราส่วน <strong>เกลือ 1 ส่วน ต่อน้ำ 10 ส่วน</strong> (จนอิ่มตัว)</p></li>
+</ul>
+<p><strong>2. ขั้นตอนการแช่ (Submersion):</strong></p>
+<ul class="simple">
+<li><p>หย่อนแบตเตอรี่ลงในถังน้ำเกลือที่เตรียมไว้ให้ท่วมมิดทั้งก้อนและสายไฟ</p></li>
+<li><p><strong>ปฏิกิริยา:</strong> จะสังเกตเห็นฟองอากาศผุดออกมาทางขั้วแบตเตอรี่ นี่คือกระบวนการ Electrolysis ที่กำลังคายประจุไฟฟ้า</p></li>
+<li><p><strong>ระยะเวลา:</strong> แช่ทิ้งไว้อย่างน้อย <strong>24 - 48 ชั่วโมง</strong> หรือจนกว่าจะไม่มีฟองอากาศผุดขึ้นมาอีก</p></li>
+</ul>
+<p><strong>3. การตรวจสอบ (Verification):</strong></p>
+<ul class="simple">
+<li><p>นำแบตเตอรี่ขึ้นมาเช็ดให้แห้ง</p></li>
+<li><p>ใช้ Multimeter วัดแรงดันที่ขั้วแบตเตอรี่</p></li>
+<li><p><strong>Pass:</strong> แรงดันต้องเป็น <strong>0.0V</strong> (ถือว่าปลอดภัย กลายเป็นขยะธรรมดาที่ไม่ระเบิดแล้ว)</p></li>
+</ul>
+<p><strong>4. การแยกทิ้ง (Final Disposal):</strong></p>
+<ul class="simple">
+<li><p><strong>ตัวแบตเตอรี่ (ของแข็ง):</strong> เมื่อแรงดันเป็น 0V แล้ว ให้ตัดขั้วสายไฟออก แล้วนำไปทิ้งใน <strong>“ถังขยะสำหรับซากแบตเตอรี่”</strong> ที่แลปจัดเตรียมไว้ (ห้ามทิ้งรวมกับถังแดงคณะ เพื่อป้องกันการปนเปื้อน)</p></li>
+<li><p><strong>น้ำเกลือ (ของเหลว):</strong> น้ำเกลือที่ผ่านการแช่จะมีสารเคมีและโลหะหนักปนเปื้อน <strong>ห้ามเทลงท่อระบายน้ำทั่วไป</strong> ให้เทใส่ <strong>“ถังเก็บสารเคมีอันตราย (Chemical Waste)”</strong> ของแลป</p></li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>ข้อควรระวังและอันตราย (Hazards):</strong></p>
+<ol class="arabic simple">
+<li><p><strong>แก๊สพิษ/ไวไฟ:</strong> กระบวนการแช่น้ำเกลือจะเกิดก๊าซ <strong>Hydrogen (ติดไฟได้)</strong> และอาจมีก๊าซ <strong>Chlorine (มีกลิ่นฉุน/ระคายเคือง)</strong> เกิดขึ้นเล็กน้อย จึง<strong>ห้าม</strong>สูบบุหรี่หรือจุดไฟใกล้ถังแช่ และต้องวางถังในที่อากาศถ่ายเท</p></li>
+<li><p><strong>การกัดกร่อน:</strong> น้ำเกลือจะกัดกร่อนขั้วโลหะจนละลาย ห้ามนำแบตเตอรี่ที่แช่แล้วกลับมาใช้งานเด็ดขาด</p></li>
+<li><p><strong>สารพิษตกค้าง:</strong> ห้ามสัมผัสน้ำในถังด้วยมือเปล่า ควรใส่ถุงมือยางทุกครั้ง</p></li>
+</ol>
+</div>
+</section>
+</section>
+<section id="charging-with-imax-b6ac">
+<h2>Charging with IMAX B6AC (คู่มือการใช้งานเครื่องชาร์จ)<a class="headerlink" href="#charging-with-imax-b6ac" title="Link to this heading"></a></h2>
+<p>เครื่องชาร์จ <strong>IMAX B6AC</strong> เป็นอุปกรณ์มาตรฐานในห้องปฏิบัติการ รองรับแบตเตอรี่หลากหลายชนิดและมีระบบความปลอดภัยพื้นฐาน แต่เนื่องจากอินเทอร์เฟซเป็นปุ่มกดและมีข้อจำกัดด้านกำลังไฟ ผู้ใช้จึงต้องเข้าใจสเปคของเครื่องให้ชัดเจน</p>
+<section id="device-specifications">
+<h3>Device Specifications (ข้อมูลจำเพาะของเครื่อง)<a class="headerlink" href="#device-specifications" title="Link to this heading"></a></h3>
+<p>ข้อมูลจากหน้าเครื่องและคู่มือระบุขีดความสามารถไว้ดังนี้:</p>
+<ul class="simple">
+<li><p><strong>Input Voltage (ไฟเข้า):</strong></p>
+<ul>
+<li><p><strong>AC:</strong> 100-240V (เสียบปลั๊กไฟบ้านได้เลย)</p></li>
+<li><p><strong>DC:</strong> 11-18V (สามารถใช้แบตเตอรี่รถยนต์หรือ Adapter จ่ายไฟให้เครื่องได้ทางช่องด้านซ้าย)</p></li>
+</ul>
+</li>
+<li><p><strong>Supported Batteries (แบตเตอรี่ที่รองรับ):</strong></p>
+<ul>
+<li><p><strong>Li-ion / LiPo / LiFe:</strong> 1 - 6 Cells (Series)</p></li>
+<li><p><strong>NiCd / NiMH:</strong> 1 - 15 Cells</p></li>
+<li><p><strong>Pb (Lead-Acid):</strong> 2 - 20V</p></li>
+</ul>
+</li>
+<li><p><strong>Circuit Power (กำลังงาน):</strong></p>
+<ul>
+<li><p><strong>Max Charge:</strong> 80 Watts</p></li>
+<li><p><strong>Max Discharge:</strong> 5 Watts (ค่อนข้างน้อย)</p></li>
+</ul>
+</li>
+<li><p><strong>Current Range (ย่านกระแส):</strong></p>
+<ul>
+<li><p><strong>Charge:</strong> 0.1 - 6.0 A</p></li>
+<li><p><strong>Discharge:</strong> 0.1 - 2.0 A</p></li>
+</ul>
+</li>
+</ul>
+<figure class="align-center" id="id14">
+<a class="reference internal image-reference" href="_images/imax_6bac.jpg"><img alt="IMAX B6AC Charger" src="_images/imax_6bac.jpg" style="width: 70%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">หน้าจอขณะตั้งค่าโหมด <strong>LiPo BALANCE</strong> ด้วยกระแส <strong>2.5A</strong> สำหรับแบตเตอรี่ <strong>11.1V (3S)</strong></span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>ความเข้าใจผิดเรื่อง “Max Current” vs “Max Watt”</strong></p>
+<p>เครื่องระบุว่าชาร์จได้สูงสุด <strong>6A</strong> ก็จริง แต่ต้องไม่เกิน <strong>80W</strong></p>
+<ul class="simple">
+<li><p><strong>แบต 3S (12.6V):</strong> ชาร์จ 6A ได้ (กินไฟ <span class="math notranslate nohighlight">\(\approx 75W\)</span>)</p></li>
+<li><p><strong>แบต 6S (25.2V):</strong> ชาร์จได้สูงสุดเพียง <strong>3.1A</strong> เท่านั้น (<span class="math notranslate nohighlight">\(80W / 25.2V\)</span>) หากตั้งเกิน เครื่องจะลดกระแสลงอัตโนมัติ</p></li>
+</ul>
+<p>เช่นเดียวกันกับ <strong>Discharge</strong> ที่ระบุ <strong>2A</strong> แต่จำกัดที่ <strong>5W</strong></p>
+<ul class="simple">
+<li><p><strong>แบต 6S (24V):</strong> จะดึงกระแสได้จริงแค่ <strong>0.2A</strong> เท่านั้น (<span class="math notranslate nohighlight">\(5W / 24V\)</span>) การใช้เครื่องนี้ Discharge แบตก้อนใหญ่จึงใช้เวลานานมาก</p></li>
+</ul>
+</div>
+</section>
+<section id="control-buttons">
+<h3>Control Buttons (ปุ่มควบคุม)<a class="headerlink" href="#control-buttons" title="Link to this heading"></a></h3>
+<p>เครื่องมีปุ่มเรียงจากซ้ายไปขวา 4 ปุ่ม ให้จำหน้าที่ดังนี้:</p>
+<ol class="arabic simple">
+<li><p><strong>Type / Stop (ปุ่มซ้ายสุด):</strong> เลือกชนิดแบตเตอรี่ / ย้อนกลับ / หยุดทำงาน</p></li>
+<li><p><strong>Dec / &lt; (ปุ่มลบ/ซ้าย):</strong> ลดตัวเลข / เลื่อนเมนูซ้าย</p></li>
+<li><p><strong>Inc / &gt; (ปุ่มบวก/ขวา):</strong> เพิ่มตัวเลข / เลื่อนเมนูขวา / ดูค่าแต่ละเซลล์</p></li>
+<li><p><strong>Start / Enter (ปุ่มขวาสุด):</strong> ตกลง / <strong>กดค้างเพื่อเริ่มทำงาน</strong></p></li>
+</ol>
+</section>
+<section id="connections">
+<h3>Connections (การเชื่อมต่อสาย)<a class="headerlink" href="#connections" title="Link to this heading"></a></h3>
+<p>ก่อนเปิดเครื่อง ต้องต่อสายให้ครบถ้วนถูกต้อง:</p>
+<ol class="arabic simple">
+<li><p><strong>Power Input:</strong> เสียบปลั๊กไฟบ้าน (AC) หรือเสียบสาย DC ด้านข้าง (อย่างใดอย่างหนึ่ง)</p></li>
+<li><p><strong>Main Output:</strong></p>
+<ul class="simple">
+<li><p>เสียบสายหัวกล้วย (Banana Plug) สีแดง (+) และดำ (-) เข้าหน้าเครื่อง</p></li>
+<li><p>ปลายสายเป็นหัว <strong>XT60</strong> หรือ <strong>XT90</strong> ตามรุ่นแบตเตอรี่</p></li>
+</ul>
+</li>
+<li><p><strong>Battery Connection:</strong></p>
+<ul class="simple">
+<li><p><strong>สายหลัก (Power):</strong> เสียบหัว XT60 ของแบตเตอรี่เข้ากับสายชาร์จ</p></li>
+<li><p><strong>สายบาลานซ์ (Balance Plug):</strong> (สำคัญมาก!) หัวสีขาวเล็กๆ ต้องเสียบเข้ากับช่องด้านข้างเครื่อง เลือกช่องที่มีจำนวนรูเท่ากับแบตเตอรี่ (เช่น 3S, 4S, 6S)</p></li>
+</ul>
+</li>
+</ol>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>คำเตือน:</strong> สำหรับแบตเตอรี่ <strong>Li-Po, LiFePO4, Li-ion แพค</strong> ต้องเสียบสาย Balance ทุกครั้ง เพื่อให้เครื่องตรวจสอบแรงดันรายเซลล์ หากไม่เสียบ เครื่องอาจชาร์จเกินจนไฟไหม้ได้</p>
+</div>
+</section>
+<section id="operation-flow">
+<h3>Operation Flow (ขั้นตอนการตั้งค่า)<a class="headerlink" href="#operation-flow" title="Link to this heading"></a></h3>
+<p><strong>Step 1: เลือกชนิดแบตเตอรี่ (Battery Type)</strong>
+กด <strong>Stop</strong> หรือ <strong>&lt; &gt;</strong> จนเจอเมนู <code class="docutils literal notranslate"><span class="pre">PROGRAM</span> <span class="pre">SELECT</span></code> และกด <strong>Enter</strong> เลือกให้ตรงชนิดแบต (สำคัญมาก เพราะแรงดันตัดต่างกัน):</p>
+<ul class="simple">
+<li><p><strong>LiPo BATT:</strong> 3.7V (ตัด 4.2V)</p></li>
+<li><p><strong>LiFe BATT:</strong> 3.2V (ตัด 3.6V) -&gt; <strong>ใช้สำหรับแบตหุ่นยนต์ AMR</strong></p></li>
+<li><p><strong>LiIo BATT:</strong> 3.6V (ตัด 4.1V)</p></li>
+</ul>
+<p><strong>Step 2: เลือกโหมดการทำงาน (Select Mode)</strong>
+กด <strong>Enter</strong> เข้ามาแล้ว กด <strong>&lt; &gt;</strong> เพื่อเปลี่ยนโหมด:</p>
+<ul class="simple">
+<li><p><strong>BALANCE:</strong> <strong>(แนะนำ)</strong> ชาร์จพร้อมเกลี่ยแรงดันทุกเซลล์ให้เท่ากัน</p></li>
+<li><p><strong>CHARGE:</strong> ชาร์จธรรมดา (ไม่แนะนำสำหรับแพคหลายเซลล์)</p></li>
+<li><p><strong>STORAGE:</strong> ปรับแรงดันให้อยู่ระดับกึ่งกลาง (3.8V หรือ 3.3V) สำหรับเก็บรักษาระยะยาว</p></li>
+</ul>
+<p><strong>Step 3: ตั้งค่าพารามิเตอร์ (Settings)</strong>
+ดูตัวอย่างจาก (<code class="docutils literal notranslate"><span class="pre">2.5A</span>&#160; <span class="pre">11.1V(3S)</span></code>)</p>
+<ol class="arabic simple">
+<li><p><strong>Current (A):</strong> กด <strong>Enter</strong> ให้ตัวเลขกระพริบ ปรับ <strong>+ / -</strong> ตามความจุแบต (แนะนำ 0.5C - 1C)</p></li>
+<li><p><strong>Voltage/Cell (S):</strong> กด <strong>Enter</strong> ไปที่ตัวเลขโวลต์ ปรับให้ตรงกับสเปคแบต (เครื่องจะคำนวณจำนวนเซลล์ S ให้อัตโนมัติ เช่น 11.1V คือ 3S)</p></li>
+<li><p><strong>Start:</strong> กดปุ่ม <strong>Start ค้างไว้ 3 วินาที</strong> เพื่อเริ่ม</p></li>
+</ol>
+<p><strong>Step 4: ยืนยันความถูกต้อง (Check)</strong>
+หน้าจอจะขึ้น <code class="docutils literal notranslate"><span class="pre">R:</span> <span class="pre">3SER</span> <span class="pre">S:</span> <span class="pre">3SER</span></code> (ตัวอย่าง)</p>
+<ul class="simple">
+<li><p><strong>R:</strong> จำนวนเซลล์ที่เครื่องนับได้จริง</p></li>
+<li><p><strong>S:</strong> จำนวนเซลล์ที่เราตั้งค่า</p></li>
+<li><p><strong>ต้องเท่ากันเท่านั้น</strong> ถ้าไม่เท่าให้กด <strong>Stop</strong> กลับไปเช็คสาย</p></li>
+</ul>
+</section>
+<section id="monitoring-safety">
+<h3>Monitoring &amp; Safety (การดูค่าและการตัดการทำงาน)<a class="headerlink" href="#monitoring-safety" title="Link to this heading"></a></h3>
+<p>ขณะชาร์จ หน้าจอจะแสดงค่า:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Li3S  2.5A  12.59V
+BAL   022:45  00682
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>บรรทัดบน:</strong> (ชนิดแบต / กระแสชาร์จ / แรงดันรวม)</p></li>
+<li><p><strong>บรรทัดล่าง:</strong> (โหมด / เวลาที่ใช้ / ประจุที่อัดเข้าหน่วย mAh)</p></li>
+</ul>
+<p>เครื่องจะตัดการทำงานอัตโนมัติเมื่อ:</p>
+<ol class="arabic simple">
+<li><p><strong>FULL:</strong> แรงดันถึงกำหนด (เช่น LiPo 4.2V/cell)</p></li>
+<li><p><strong>CAPACITY CUT-OFF:</strong> ประจุเกินค่าความปลอดภัย (Default มักตั้งไว้ 5000mAh ถ้าแบตเราใหญ่กว่านี้ต้องไปแก้ใน User Set Program)</p></li>
+<li><p><strong>TIME OVER:</strong> เวลาเกินกำหนด (Default 120 นาที)</p></li>
+</ol>
+<p>เมื่อเสร็จสิ้น ให้กด <strong>Stop</strong> และถอดสายแบตเตอรี่ออกทันที</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to RTL Lab Manual!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="bambu_a1_guide.html" class="btn btn-neutral float-right" title="Bambu Lab A1 Printing Guide (คู่มือการพิมพ์ 3 มิติ)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, RTL (ICRT), Burapha University.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

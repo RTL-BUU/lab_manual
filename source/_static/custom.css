@@ -1,123 +1,235 @@
 @import url('https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,300;0,400;0,700;1,400&display=swap');
 
-/* --- 1. ตั้งค่าพื้นฐาน (Base) --- */
+/* =========================================
+   1. BASE TYPOGRAPHY
+   ========================================= */
 body {
     font-family: 'Sarabun', sans-serif;
     color: #404040;
-    /* อย่าตั้งเล็กเกินไปตรงนี้ เพราะจะกระทบเมนูซ้าย */
-    font-size: 14px; 
+    font-size: 14px;
 }
 
-/* --- 2. เจาะจงเนื้อหาหลัก (MAIN CONTENT) --- */
-/* นี่คือจุดที่แก้ปัญหาของอาจารย์ครับ */
 .rst-content {
-    font-size: 15px;      /* ขนาดตัวหนังสือเนื้อหา */
+    font-size: 15px;
     line-height: 1.7;
 }
 
-/* บังคับย่อหน้า (Paragraph) ให้เชื่อฟัง */
 .rst-content p {
     font-size: 15px !important;
-    margin-bottom: 24px;  /* เพิ่มช่องไฟระหว่างย่อหน้าให้อ่านง่าย */
+    margin-bottom: 24px;
 }
 
-/* --- 3. กระชากหัวข้อ (HEADERS) ให้ใหญ่สวนทาง --- */
-/* ใช้ !important เพื่อทับค่าธีมเดิมแน่นอน */
-h1, h2, h3, h4, h5, h6 {
+/* =========================================
+   2. HEADERS HIERARCHY (RTL Blue Style)
+   ========================================= */
+
+/* H1: ชื่อบท */
+h1 { 
     font-family: 'Sarabun', sans-serif;
+    font-size: 220% !important;
     font-weight: 700 !important;
-    color: #2980B9; 
-    margin-top: 2em;
-}
-
-h1 { font-size: 200% !important; } /* บทที่ */
-h2 { 
-    font-size: 160% !important;    /* หัวข้อหลัก */
-    border-bottom: 2px solid #eee;
+    color: #003366; /* น้ำเงินเข้ม RTL */
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    border-bottom: 4px solid #00AEEF; /* เส้นใต้สีฟ้าสว่าง */
     padding-bottom: 10px;
 }
-h3 { font-size: 130% !important; } /* หัวข้อย่อย */
 
-/* --- 4. ปรับเมนูซ้าย (SIDEBAR) --- */
-/* ปรับให้พอดีกับสายตา ไม่เล็กตาม Body */
-.wy-nav-side {
-    font-size: 100%; 
+/* H2: หัวข้อหลัก (ไอคอนสี่เหลี่ยมสีฟ้า) */
+h2 { 
+    font-family: 'Sarabun', sans-serif;
+    font-size: 170% !important;
+    font-weight: 700 !important;
+    color: #003366; /* น้ำเงินเข้ม */
+    margin-top: 2em;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 8px;
+    display: flex;
+    align-items: center;
 }
-.wy-menu-vertical a {
-    line-height: 1.4;
+h2::before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 25px;
+    background-color: #00AEEF; /* สีฟ้าสว่าง RTL */
+    margin-right: 12px;
+    border-radius: 2px;
 }
 
-/* --- 5. Code Block --- */
+/* H3: หัวข้อย่อย (แถบซ้ายสีน้ำเงิน) */
+h3 { 
+    font-family: 'Sarabun', sans-serif;
+    font-size: 125% !important;
+    font-weight: 700 !important;
+    color: #00509E; /* น้ำเงินกลาง */
+    margin-top: 1.8em;
+    border-left: 5px solid #00509E; 
+    padding-left: 12px;
+    background-color: #f0f8ff; /* ฟ้าจางๆ */
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/* H4: หัวข้อย่อยลึกสุด */
+h4 { 
+    font-family: 'Sarabun', sans-serif;
+    font-size: 115% !important;
+    font-weight: 800 !important;
+    color: #505050; 
+    text-decoration: none;
+    margin-top: 1.5em;
+}
+h4::before {
+    content: "► ";
+    color: #00AEEF; /* ลูกศรสีฟ้า */
+    font-size: 80%;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+/* =========================================
+   3. CODE & TABLES
+   ========================================= */
 code, pre, .rst-content tt, .rst-content code {
     font-family: 'Consolas', 'Monaco', 'Courier New', monospace !important;
     font-size: 90%; 
 }
 
-/* --- FIX TABLE WRAPPING (แก้ตารางล้นจอ) --- */
-
-/* 1. บังคับให้เซลล์ในตารางยอมขึ้นบรรทัดใหม่ */
 .rst-content table.docutils td {
     white-space: normal !important;
     word-wrap: break-word !important;
 }
 
-/* 2. บังคับให้ Inline Code (กรอบสีแดง) ยอมตัดคำ */
-/* สำคัญมาก: ต้องใช้ break-all หรือ break-word เพื่อตัดชื่อยาวๆ */
-.rst-content table.docutils code.literal,
-.rst-content table.docutils tt.literal {
-    white-space: normal !important;  /* ยกเลิกห้ามตัดบรรทัด */
-    word-break: break-all;           /* ถ้าคำยาวเกินช่อง ให้หักลงมาเลย */
-    font-size: 85%;                  /* ย่อขนาดลงนิดนึงให้ดูสวยในตาราง */
+.rst-content table.docutils code.literal {
+    white-space: normal !important;
+    word-break: break-all;
+    font-size: 85%;
 }
 
-/* --- BRANDING: BATLY THEME (Yellow & Dark Grey) --- */
+/* =========================================
+   4. RTL-BUU BRANDING (Optimized for Readability)
+   ========================================= */
 
-/* 1. ส่วนหัวเมนู (Top Sidebar) - พื้นหลังเหลือง */
+/* Top Sidebar (Gradient Blue) - คงเดิม */
 .wy-side-nav-search {
-    background-color: #ffe70e !important;
+    background: linear-gradient(135deg, #001f3f 0%, #003366 100%) !important;
+    border-bottom: 3px solid #00AEEF;
 }
 
-/* ปรับสีลิงก์ชื่อโปรเจกต์ (เผื่อกรณีโลโก้ไม่ขึ้น) ให้เป็นสีเทาเข้ม */
-.wy-side-nav-search > a, .wy-side-nav-search .wy-dropdown > a {
-    color: #303030 !important;
-    font-weight: bold;
-}
-
-/* ปรับกล่องค้นหา (Search Box) ให้เข้ากับพื้นเหลือง */
+/* Search Box - คงเดิม */
 .wy-side-nav-search input[type=text] {
-    border-color: transparent;
+    border-color: #00AEEF;
     box-shadow: none;
-    background-color: #fff; /* พื้นกล่องขาว */
-    color: #303030;         /* พิมพ์ตัวหนังสือสีเทาเข้ม */
+    background-color: #ffffff;
+    color: #003366;
 }
 
-/* 2. ส่วนเมนูด้านล่าง (Sidebar Menu) - พื้นหลังเทาเข้ม */
+/* --- SIDEBAR MENU BACKGROUND (จุดที่แก้) --- */
 .wy-nav-side {
-    background-color: #303030 !important;
+    /* เปลี่ยนจากดำเข้ม (#1A1A1A) เป็นเทาอมน้ำเงิน (#263238) */
+    /* สีนี้จะนุ่มตากว่า และเข้ากับสีฟ้าได้ดีมาก */
+    background-color: #263238 !important; 
 }
 
-/* สีตัวหนังสือเมนู (ปกติ) - ให้เป็นขาวหม่นจะได้อ่านบนพื้นเทาออก */
+/* Menu Text (Normal Links) */
 .wy-menu-vertical a {
-    color: #EEEEEE; 
+    color: #ECEFF1; /* ขาวนวล (เกือบขาวบริสุทธิ์) */
+    line-height: 1.5;
 }
 
-/* 3. สีหัวข้อกลุ่ม (Captions) - ให้เป็นสีเหลือง Batly เพื่อความเด่น */
+/* --- MENU CAPTIONS (จุดที่แก้) --- */
 .wy-menu-vertical p.caption {
-    color: #ffe70e; 
+    /* ปรับจากฟ้าเข้ม (#00AEEF) เป็นฟ้าสว่างพาสเทล (#4FC3F7) */
+    /* หรือถ้ายังอ่านยาก ให้เปลี่ยนเป็น #FFFFFF (ขาว) ไปเลย */
+    color: #4FC3F7; 
     font-weight: 900; 
-    text-transform: uppercase; /* ตัวพิมพ์ใหญ่ทั้งหมด */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 1.5em; /* เว้นระยะห่างจากกลุ่มบนหน่อย */
 }
 
-/* 4. เวลาเอาเมาส์ไปชี้ (Hover) หรือหน้าที่เลือกอยู่ (Current) */
+/* Hover & Current Selection */
 .wy-menu-vertical a:hover,
 .wy-menu-vertical a.current {
-    color: #ffe70e;            /* ตัวหนังสือเปลี่ยนเป็นเหลือง */
-    background-color: #404040; /* พื้นหลังสว่างขึ้นนิดนึง (เทาอ่อนลง) */
-    border-left: 4px solid #ffe70e; /* (Optional) เพิ่มแถบสีเหลืองด้านซ้ายให้รู้ว่าเลือกอยู่ */
+    color: #ffffff;
+    /* พื้นหลังตอนเลือก ให้เป็นสีฟ้าเข้มโปร่งใส */
+    background-color: rgba(0, 174, 239, 0.2); 
+    border-left: 4px solid #00AEEF;
 }
 
-/* 5. ปุ่ม Next/Previous ด้านล่างเนื้อหา */
+/* Footer Buttons */
 .rst-footer-buttons .btn-neutral {
-    color: #303030 !important; /* ตัวหนังสือสีเทาเข้ม */
-    background-color: #f0f0f0; /* พื้นปุ่มสีเทาอ่อน */
+    color: #003366 !important;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+}
+.rst-footer-buttons .btn-neutral:hover {
+    color: #ffffff !important;
+    background-color: #003366;
+    border-color: #003366;
+}
+
+/* ปรับแต่ง Logo RTL ให้ดูเด่นขึ้น */
+.wy-side-nav-search img.logo {
+    background-color: transparent; /* หรือสีขาว #fff ถ้าอยากได้กรอบขาว */
+    padding: 10px;                 /* เว้นระยะขอบ */
+    border-radius: 8px;            /* ทำมุมมน */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3); /* ใส่เงาให้ดูลอยออกมา */
+    margin-bottom: 10px;           /* เว้นระยะห่างจากช่องค้นหา */
+    width: 90%;                    /* ปรับขนาดให้พอดีไม่ล้นขอบ */
+    max-width: 250px;              /* จำกัดความกว้างสูงสุด */
+}
+
+/* --- TEXT ABOVE LOGO (ข้อความเหนือโลโก้) --- */
+
+/* สั่งให้ลิงก์ส่วนหัว (ที่คลุมโลโก้อยู่) เพิ่มข้อความนำหน้า */
+.wy-side-nav-search > a::before {
+    content: "RTL Knowledge Base";
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif; /* ใช้ฟอนต์ UI ที่คมกว่า Sarabun */
+    font-size: 130%;
+    font-weight: 600; /* หนาปานกลาง ไม่ตัน */
+    letter-spacing: 2px; /* เพิ่มช่องไฟให้ดูแพง */
+    color: #ffffff;
+    text-transform: uppercase; /* กลับมาใช้ตัวใหญ่หมดจะดูขลังกว่า */
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.3); /* ขีดเส้นใต้จางๆ */
+    padding-bottom: 10px;
+    display: inline-block; /* ให้เส้นใต้ยาวเท่าตัวหนังสือ */
+}
+
+/* --- FIX THAI TABLE SPACING (แก้สระลอย/จมในตาราง) --- */
+
+/* 1. เพิ่มระยะห่างบรรทัดในตาราง */
+.rst-content table.docutils td, 
+.rst-content table.docutils th {
+    line-height: 1.6 !important; /* เพิ่มความสูงบรรทัด */
+    padding-top: 12px !important;    /* เพิ่มพื้นที่ด้านบนเซลล์ */
+    padding-bottom: 12px !important; /* เพิ่มพื้นที่ด้านล่างเซลล์ */
+    vertical-align: top; /* จัดชิดบน เพื่อให้อ่านง่าย */
+}
+
+/* 2. (แถม) ปรับหัวตารางให้สวยขึ้น */
+.rst-content table.docutils th {
+    background-color: #f4f6f7; /* พื้นหลังหัวตารางสีเทาอ่อน */
+    font-weight: 700;
+    color: #003366; /* สีน้ำเงินเข้ม RTL */
+    border-bottom: 2px solid #00AEEF; /* เส้นใต้สีฟ้าสว่าง */
+}
+
+/* --- FIX BREADCRUMB ICON (แก้สีไอคอนบ้าน) --- */
+
+/* เปลี่ยนสีไอคอนบ้าน */
+.wy-breadcrumbs li a {
+    color: #003366; /* น้ำเงินเข้ม */
+}
+
+/* เปลี่ยนสีข้อความ Breadcrumb */
+.wy-breadcrumbs li {
+    color: #505050; /* เทาเข้ม */
+}
+
+/* (Optional) เปลี่ยนสีเวลาเอาเมาส์ชี้ */
+.wy-breadcrumbs li a:hover {
+    color: #00AEEF; /* ฟ้าสว่าง */
 }

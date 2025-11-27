@@ -1,11 +1,12 @@
 # source/conf.py
 import os
 import sys
+from datetime import datetime
 
 # -- Project Information -----------------------------------------------------
 project = 'Batly R1 Manual'
-copyright = '2025, Intellihand Limited Partnership'
-author = 'Pisak & Batly Team'
+copyright = f'{datetime.now().year}, RTL (ICRT), Burapha University'
+author = 'Pisak & RTL Team'
 release = '1.0'
 
 # -- Extensions (The Power Tools) --------------------------------------------
@@ -41,17 +42,17 @@ html_css_files = [
 ]
 
 # หารูปโลโก้
-html_logo = '_static/batly_logo.png'
+html_logo = '_static/rtl_background.jpg'
 
 # ไอคอนตรง Tab Browser
-html_favicon = '_static/favicon_box.png'
+html_favicon = '_static/favicon_rtl.png'
 
 html_theme_options = {
     'logo_only': True,  # True ถ้าในรูปมีชื่อบริษัทอยู่แล้ว
     'display_version': True,
     'prev_next_buttons_location': 'bottom',
     'style_external_links': False,
-    'navigation_depth': 2,
+    'navigation_depth': 3,
     'collapse_navigation': False, # Keep menu open for students
 }
 
@@ -107,9 +108,6 @@ latex_elements = {
 copybutton_prompt_text = r">>> |\.\.\. |\$ |In \[\d*\]: | {2,5}\.\.\.: | {5,8}: "
 copybutton_prompt_is_regexp = True
 
-# เพิ่มข้อความลิขสิทธิ์ (ถ้ายังไม่ได้แก้)
-copyright = '2025, Intellihand LP. (Batly Robotics)'
-author = 'Pisak & Batly Team'
 
 # (Optional) ถ้าอยากลบคำว่า Built with Sphinx ออกเพื่อให้ดู Clean
 html_show_sphinx = False
