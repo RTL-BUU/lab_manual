@@ -8,12 +8,15 @@ Welcome to RTL Lab Manual!
 .. toctree::
    :maxdepth: 2
    :caption: ความปลอดภัยและไฟฟ้า:
+   :numbered:
 
    battery_guide
+   soldering_guide
 
 .. toctree::
    :maxdepth: 2
    :caption: การผลิตชิ้นงาน (3D Printing):
+   :numbered:
 
    bambu_a1_guide
 

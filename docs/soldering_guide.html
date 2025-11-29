@@ -1,0 +1,639 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2. Soldering &amp; Rework (เทคนิคการบัดกรีและเป่าลมร้อน) &mdash; RTL Lab Manual 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d8a2add5" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="_static/rtl_theme.css?v=060d35dd" />
+
+  
+    <link rel="shortcut icon" href="_static/favicon_rtl.png"/>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=30646c52"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="_static/custom.js?v=8c19a4a9"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. Bambu Lab A1 Printing Guide (คู่มือการพิมพ์ 3 มิติ)" href="bambu_a1_guide.html" />
+    <link rel="prev" title="1. Battery Technologies for Robotics" href="battery_guide.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/rtl_background.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">ความปลอดภัยและไฟฟ้า:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="battery_guide.html">1. Battery Technologies for Robotics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#technology-overview">1.1. Technology Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#battery-comparison">1.1.1. Battery Comparison</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#terminology-calculation">1.2. Terminology &amp; Calculation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#electrical-units">1.2.1. Electrical Units</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#battery-health-usage">1.2.2. Battery Health &amp; Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#configuration">1.2.3. Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#battery-pack-calculation">1.2.4. Battery Pack Calculation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#runtime-calculation">1.2.5. Runtime Calculation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#lifepo4-battery">1.3. LiFePO4 Battery</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#common-applications">1.3.1. Common Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#why-lifepo4-for-robotics">1.3.2. Why LiFePO4 for Robotics?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#technical-challenge-the-flat-discharge-curve">1.3.3. Technical Challenge: The “Flat” Discharge Curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#lifepo4-soc-table">1.3.4. LiFePO4 SOC Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#battery-specifications">1.3.5. Battery Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#connectors">1.3.6. Connectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#id1">1.3.7. Runtime Calculation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#lipo-battery">1.4. LiPo Battery</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#id2">1.4.1. Common Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#why-li-po-for-high-performance-robotics">1.4.2. Why Li-Po for High-Performance Robotics?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#technical-challenges-saftey-fragility">1.4.3. Technical Challenges: Saftey &amp; Fragility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#li-po-soc-table">1.4.4. Li-Po SOC Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#technical-insight-voltage-sag">1.4.5. Technical Insight: Voltage Sag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#id4">1.4.6. Battery Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#li-po-checker-low-voltage-alarm">1.4.7. Li-Po Checker &amp; Low Voltage Alarm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#id5">1.4.8. Runtime Calculation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#signs-of-failure">1.4.9. Signs of Failure</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#li-ion-battery">1.5. Li-ion Battery</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#applications-characteristics">1.5.1. Applications &amp; Characteristics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#why-li-ion-for-energy-density">1.5.2. Why Li-ion for Energy Density?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#technical-challenges-heat">1.5.3. Technical Challenges: Heat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#li-ion-soc-table">1.5.4. Li-ion SOC Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#id6">1.5.5. Battery Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#id7">1.5.6. Runtime Calculation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#disposal">1.6. Disposal (การกำจัดแบตเตอรี่เสื่อมสภาพ)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#standard-operating-procedure">1.6.1. ขั้นตอนการปฏิบัติ (Standard Operating Procedure)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#charging-with-imax-b6ac">1.7. Charging with IMAX B6AC (คู่มือการใช้งานเครื่องชาร์จ)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#device-specifications">1.7.1. Device Specifications (ข้อมูลจำเพาะของเครื่อง)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#control-buttons">1.7.2. Control Buttons (ปุ่มควบคุม)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#connections">1.7.3. Connections (การเชื่อมต่อสาย)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#operation-flow">1.7.4. Operation Flow (ขั้นตอนการตั้งค่า)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#monitoring-safety">1.7.5. Monitoring &amp; Safety (การดูค่าและการตัดการทำงาน)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Soldering &amp; Rework (เทคนิคการบัดกรีและเป่าลมร้อน)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#soldering-stations">2.1. Soldering Stations (เครื่องมือบัดกรีในแลป)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#atten-at8586-double-channel-rework-station">2.1.1. Atten AT8586 (Double Channel Rework Station)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#atten-at937">2.1.2. Atten AT937</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#basic-soldering-iron">2.1.3. Basic Soldering Iron (หัวแร้งแบบปากกา/ปืน)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#accessories">2.2. Accessories (อุปกรณ์เสริมที่ต้องรู้)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basic-soldering-technique">2.3. Basic Soldering Technique (เทคนิคการบัดกรีพื้นฐาน)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#safety-first">2.3.1. Safety First (ความปลอดภัย)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#steps-to-perfect-joint-4">2.3.2. 4 Steps to Perfect Joint (4 ขั้นตอนสู่การบัดกรีที่สมบูรณ์)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#soldering-iron-tips">2.4. Soldering Iron Tips (การเลือกหัวแร้งให้ถูกงาน)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tip-characteristics">2.4.1. ตารางคุณสมบัติ (Tip Characteristics)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#real-photos">2.4.2. รูปภาพหัวแร้งจริง (Real Photos)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#task-settings-guide">2.5. Task &amp; Settings Guide (ตารางแนะนำการตั้งค่า)</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">การผลิตชิ้นงาน (3D Printing):</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="bambu_a1_guide.html">1. Bambu Lab A1 Printing Guide (คู่มือการพิมพ์ 3 มิติ)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#software-setup">1.1. 1. Software Setup (เตรียมซอฟต์แวร์)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#file-formats">1.2. 2. File Formats (ประเภทไฟล์งาน)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#workflow-from-cad-to-print">1.3. 3. Workflow: From CAD to Print</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#material-profile-settings">1.4. 4. Material &amp; Profile Settings (การตั้งค่าวัสดุ)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="bambu_a1_guide.html#profile">1.4.1. วิธีโหลด Profile (สำคัญ)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bambu_a1_guide.html#id1">1.4.2. ความแตกต่างของวัสดุ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#slicer-settings-intermediate">1.5. 5. Slicer Settings (Intermediate)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#sending-to-printer">1.6. 6. Sending to Printer (สั่งพิมพ์)</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RTL Lab Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2. </span>Soldering &amp; Rework (เทคนิคการบัดกรีและเป่าลมร้อน)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/soldering_guide.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="soldering-rework">
+<h1><span class="section-number">2. </span>Soldering &amp; Rework (เทคนิคการบัดกรีและเป่าลมร้อน)<a class="headerlink" href="#soldering-rework" title="Link to this heading"></a></h1>
+<p>งานสร้างหุ่นยนต์หนีไม่พ้นเรื่องการเชื่อมต่อวงจร บทนี้จะสอนการใช้อุปกรณ์บัดกรีมาตรฐานของแลป (<strong>Atten</strong>) การเลือกหัวแร้งให้ถูกกับงาน และเทคนิคการบัดกรีที่ถูกต้องเพื่อความแข็งแรงทางไฟฟ้าและกลไก</p>
+<section id="soldering-stations">
+<h2><span class="section-number">2.1. </span>Soldering Stations (เครื่องมือบัดกรีในแลป)<a class="headerlink" href="#soldering-stations" title="Link to this heading"></a></h2>
+<p>เรามีเครื่องมือ 3 ระดับ แบ่งตามความเชี่ยวชาญของผู้ใช้งาน:</p>
+<section id="atten-at8586-double-channel-rework-station">
+<h3><span class="section-number">2.1.1. </span>Atten AT8586 (Double Channel Rework Station)<a class="headerlink" href="#atten-at8586-double-channel-rework-station" title="Link to this heading"></a></h3>
+<p>เครื่องนี้เป็นอุปกรณ์หลักประจำโต๊ะทำงาน เนื่องจากเป็นระบบ 2-in-1 ที่รวมทั้ง <strong>Soldering Iron (หัวแร้ง)</strong> และ <strong>Hot Air Gun (เป่าลมร้อน)</strong> ไว้ในเครื่องเดียว</p>
+<ul class="simple">
+<li><p><strong>ระดับผู้ใช้:</strong> Advanced / Senior Students</p></li>
+<li><p><strong>คุณสมบัติ:</strong> เป็นเครื่อง 2-in-1 มีทั้งหัวแร้งและที่เป่าลมร้อนในตัวเดียว</p></li>
+<li><p><strong>การใช้งาน:</strong> เปิดสวิตช์หลักด้านหลัง -&gt; เปิดสวิตช์ด้านหน้า (ซ้าย=ลมร้อน, ขวา=หัวแร้ง) -&gt; กดปุ่ม SET เพื่อตั้งอุณหภูมิ</p></li>
+<li><p><strong>ข้อควรระวัง:</strong> เมื่อใช้ลมร้อนเสร็จ ห้ามปิดสวิตช์ทันที ให้วางด้ามเป่าลงบนแท่นวาง รอจนกว่าเครื่องจะระบายความร้อนและตัดการทำงานเอง (อุณหภูมิต่ำกว่า 100°C)</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/AT8586.jpg"><img alt="Atten AT8586" class="align-center" src="_images/AT8586.jpg" style="width: 100%;" />
+</a>
+<p><strong>ตำแหน่งปุ่มและสวิตช์:</strong></p>
+<ul class="simple">
+<li><p><strong>สวิตช์หลัก (Main Power):</strong> สวิตช์สีดำอยู่ด้านหลังเครื่อง (ผู้ใช้งานต้องเปิดสวิตช์นี้ก่อนเสมอ เพื่อจ่ายไฟเข้าเครื่อง)</p></li>
+<li><p><strong>แผงควบคุมฝั่งซ้าย (Rework):</strong> สำหรับควบคุมชุดเป่าลมร้อน</p></li>
+<li><p><strong>แผงควบคุมฝั่งขวา (Solder):</strong> สำหรับควบคุมชุดหัวแร้งบัดกรี</p></li>
+<li><p><strong>ปุ่มหมุนกลาง (Knob):</strong> สำหรับปรับความแรงลม (Airflow) ของลมร้อน</p></li>
+</ul>
+<section id="soldering-iron">
+<h4><span class="section-number">2.1.1.1. </span>วิธีใช้งานหัวแร้ง (Soldering Iron) - ฝั่งขวา<a class="headerlink" href="#soldering-iron" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p><strong>เปิดสวิตช์หลัก:</strong> ให้ผู้ใช้งานกดสวิตช์สีดำด้านหลังเครื่องไปที่ตำแหน่ง <code class="docutils literal notranslate"><span class="pre">ON</span></code> (ไฟหน้าจอจะยังไม่ติดทันที)</p></li>
+<li><p><strong>เปิดหัวแร้ง:</strong> กดสวิตช์โยกด้านหน้า <strong>ฝั่งขวา</strong> (เขียนว่า <code class="docutils literal notranslate"><span class="pre">SOLDER</span></code>) ขึ้น</p>
+<ul class="simple">
+<li><p>หน้าจอฝั่งขวาจะแสดงอุณหภูมิปัจจุบัน</p></li>
+</ul>
+</li>
+<li><p><strong>ตั้งอุณหภูมิ:</strong></p>
+<ul class="simple">
+<li><p>ผู้ใช้งานกดปุ่ม <strong>SET</strong> (ปุ่มสีฟ้าแถวบน ตัวกลาง) 1 ครั้ง</p></li>
+<li><p>กดปุ่ม <strong>UP (<span class="math notranslate nohighlight">\(\boldsymbol{\wedge}\)</span>)</strong> หรือ <strong>DOWN (<span class="math notranslate nohighlight">\(\boldsymbol{\vee}\)</span>)</strong> ฝั่งขวา เพื่อปรับค่าอุณหภูมิ (แนะนำ 350°C สำหรับงานทั่วไป)</p></li>
+<li><p>กดปุ่ม <strong>SET</strong> อีกครั้งเพื่อยืนยัน (หรือรอสักครู่ เครื่องจะบันทึกค่าเอง)</p></li>
+</ul>
+</li>
+<li><p><strong>รออุณหภูมิ:</strong> รอจนตัวเลขวิ่งถึงค่าที่ตั้งไว้ (ไฟสถานะ <code class="docutils literal notranslate"><span class="pre">CAL</span></code> จะกระพริบเมื่ออุณหภูมิคงที่)</p></li>
+</ol>
+</section>
+<section id="hot-air-gun">
+<h4><span class="section-number">2.1.1.2. </span>วิธีใช้งานเครื่องเป่าลมร้อน (Hot Air Gun) - ฝั่งซ้าย<a class="headerlink" href="#hot-air-gun" title="Link to this heading"></a></h4>
+<p>เครื่องเป่าลมร้อนใช้สำหรับงานถอดอุปกรณ์ SMD หรือการเป่าท่อหด (Heat Shrink)</p>
+<ol class="arabic simple">
+<li><p><strong>เลือกหัวเป่า (Nozzle Selection):</strong> ก่อนเปิดเครื่อง ให้ผู้ใช้งานเลือกหัวครอบปลายท่อให้เหมาะสมกับงาน:</p>
+<ul class="simple">
+<li><p><em>งานเป่าชิ้นส่วนเล็ก (SMD):</em> ให้สวมหัวครอบรูเล็ก เพื่อโฟกัสลมไม่ให้เป่าโดนอุปกรณ์ข้างเคียงปลิว</p></li>
+<li><p><em>งานเป่าท่อหด:</em> ไม่จำเป็นต้องสวมหัวครอบ (ใช้ปากท่อปกติได้เลย)</p></li>
+</ul>
+</li>
+<li><p><strong>เปิดสวิตช์หลัก:</strong> กดสวิตช์สีดำด้านหลังเครื่อง (หากยังไม่ได้เปิด)</p></li>
+<li><p><strong>เปิดลมร้อน:</strong> กดสวิตช์โยกด้านหน้า <strong>ฝั่งซ้าย</strong> (เขียนว่า <code class="docutils literal notranslate"><span class="pre">REWORK</span></code>) ขึ้น</p></li>
+<li><p><strong>ตั้งอุณหภูมิและแรงลม:</strong></p>
+<ul class="simple">
+<li><p><strong>อุณหภูมิ (Temp):</strong> กดปุ่ม <strong>UP/DOWN ฝั่งซ้าย</strong> เพื่อปรับความร้อน</p>
+<ul>
+<li><p><em>งานท่อหด:</em> ตั้งค่าช่วง 250°C - 300°C</p></li>
+<li><p><em>งานละลายตะกั่ว (SMD):</em> ตั้งค่าช่วง 350°C - 380°C</p></li>
+</ul>
+</li>
+<li><p><strong>แรงลม (Airflow):</strong> หมุนปุ่ม <strong>Knob</strong> ตรงกลาง</p>
+<ul>
+<li><p><em>งาน SMD:</em> ให้หมุนเบาๆ (ระดับ 2-4) เพื่อป้องกันอะไหล่ปลิวหาย</p></li>
+<li><p><em>งานท่อหด:</em> สามารถหมุนแรงได้ (ระดับ 6-8) เพื่อให้หดตัวเร็วขึ้น</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>เทคนิคการเป่าลม (Technique):</strong></p>
+<ul class="simple">
+<li><p>ผู้ใช้งานต้องถือด้ามเป่าให้ตั้งฉากกับชิ้นงาน</p></li>
+<li><p><strong>ห้ามจ่อนิ่งที่จุดเดียว:</strong> ให้ผู้ใช้งานวนหัวเป่าเป็นวงกลมรอบๆ ชิ้นงาน เพื่อกระจายความร้อนให้ทั่วถึง</p></li>
+</ul>
+</li>
+<li><p><strong>เริ่มทำงาน:</strong> เมื่อผู้ใช้งานยกด้ามเป่าออกจากแท่นวาง เครื่องจะเริ่มทำงานทันที (พัดลมหมุนและฮีตเตอร์ทำความร้อน)</p></li>
+</ol>
+</section>
+<section id="safety-shutdown-procedure">
+<h4><span class="section-number">2.1.1.3. </span>ขั้นตอนการปิดเครื่อง (Safety Shutdown Procedure)<a class="headerlink" href="#safety-shutdown-procedure" title="Link to this heading"></a></h4>
+<p>เพื่อยืดอายุการใช้งานไส้ความร้อน ผู้ใช้งานต้องปฏิบัติตามขั้นตอนการปิดเครื่องดังนี้อย่างเคร่งครัด:</p>
+<p><strong>1. การปิดหัวแร้ง (ฝั่งขวา):</strong></p>
+<ul class="simple">
+<li><p>ให้กดสวิตช์โยกฝั่งขวาลง (<code class="docutils literal notranslate"><span class="pre">OFF</span></code>)</p></li>
+<li><p>เช็ดปลายหัวแร้งให้สะอาดและเติมตะกั่วเคลือบปลายไว้เล็กน้อยเพื่อป้องกันสนิม</p></li>
+</ul>
+<p><strong>2. การปิดลมร้อน (ฝั่งซ้าย) - ห้ามปิดสวิตช์ทันที!</strong></p>
+<ul class="simple">
+<li><p><strong>วางด้ามเป่ากลับลงบนแท่นวาง:</strong> ผู้ใช้งานต้องวางด้ามจับลงบนแท่นวางให้สนิท ระบบเซนเซอร์แม่เหล็กจะสั่งตัดการทำงานของฮีตเตอร์อัตโนมัติ</p></li>
+<li><p><strong>รอระบบระบายความร้อน (Cool Down):</strong> เครื่องจะเร่งพัดลมเป่าลมเย็นออกมา ให้ผู้ใช้งานรอจนกว่าอุณหภูมิหน้าจอจะลดลงต่ำกว่า <strong>100°C</strong> และพัดลมหยุดหมุน (หน้าจอจะขึ้นสัญลักษณ์ <code class="docutils literal notranslate"><span class="pre">---</span></code> หรือ <code class="docutils literal notranslate"><span class="pre">SLP</span></code>)</p></li>
+<li><p><strong>ปิดสวิตช์:</strong> เมื่อเครื่องเงียบและหยุดเป่าลมแล้ว ผู้ใช้งานจึงค่อยกดสวิตช์โยกฝั่งซ้ายลง (<code class="docutils literal notranslate"><span class="pre">OFF</span></code>)</p></li>
+</ul>
+<p><strong>3. ปิดระบบ:</strong> เมื่อเลิกใช้งานประจำวัน ให้กดปิด <strong>สวิตช์หลักด้านหลังเครื่อง</strong> เพื่อตัดไฟทั้งระบบ</p>
+</section>
+</section>
+<section id="atten-at937">
+<h3><span class="section-number">2.1.2. </span>Atten AT937<a class="headerlink" href="#atten-at937" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>ระดับผู้ใช้:</strong> General / Intermediate</p></li>
+<li><p><strong>คุณสมบัติ:</strong> หัวแร้งปรับอุณหภูมิได้ (ไม่มีลมร้อน) ใช้ด้ามจับรุ่น <strong>AP-50</strong> เหมือนรุ่น AT8586</p></li>
+<li><p><strong>การใช้งาน:</strong> เสียบปลั๊กด้ามจับ -&gt; เปิดสวิตช์ -&gt; หมุนปรับอุณหภูมิตามต้องการ</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/AT937.jpg"><img alt="Atten AT937" class="align-center" src="_images/AT937.jpg" style="width: 80%;" />
+</a>
+</section>
+<section id="basic-soldering-iron">
+<h3><span class="section-number">2.1.3. </span>Basic Soldering Iron (หัวแร้งแบบปากกา/ปืน)<a class="headerlink" href="#basic-soldering-iron" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>ระดับผู้ใช้:</strong> Beginner</p></li>
+<li><p><strong>คุณสมบัติ:</strong> ปรับอุณหภูมิไม่ได้ (เสียบปลั๊กแล้วร้อนเลย)</p></li>
+<li><p><strong>ข้อควรระวัง:</strong> ร้อนช้าแต่ร้อนจัด ระวังปลายหัวแร้งไหม้หากเสียบทิ้งไว้นาน</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/Soldering_gun.jpg"><img alt="Basic Soldering Iron" class="align-center" src="_images/Soldering_gun.jpg" style="width: 50%;" />
+</a>
+</section>
+</section>
+<section id="accessories">
+<h2><span class="section-number">2.2. </span>Accessories (อุปกรณ์เสริมที่ต้องรู้)<a class="headerlink" href="#accessories" title="Link to this heading"></a></h2>
+<p>การบัดกรีที่ดีไม่ได้ใช้แค่ตะกั่วกับหัวแร้ง ต้องรู้จักใช้อุปกรณ์ช่วยเหล่านี้เพื่อให้งานออกมาสะอาดและปลอดภัย:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 25.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Item (ชื่ออุปกรณ์)</p></th>
+<th class="head"><p>Image (รูปตัวอย่าง)</p></th>
+<th class="head"><p>Usage (วิธีใช้)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Solder Wire</strong></p>
+<p>(ตะกั่วบัดกรี)</p>
+</td>
+<td><a class="reference internal image-reference" href="_images/solder_wire_1.2.jpg"><img alt="_images/solder_wire_1.2.jpg" class="align-center" src="_images/solder_wire_1.2.jpg" style="width: 100%;" />
+</a>
+</td>
+<td><p>ใช้รุ่น <strong>ULTRACORE 60/40</strong> (บัดกรีง่าย เงางาม) มีขนาด 0.4, 0.8, 1.2 mm เลือกใช้ตามขนาดชิ้นงาน</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Soldering Flux</strong></p>
+<p>(น้ำยาประสาน)</p>
+</td>
+<td><a class="reference internal image-reference" href="_images/soldering_flux.jpg"><img alt="_images/soldering_flux.jpg" class="align-center" src="_images/soldering_flux.jpg" style="width: 100%;" />
+</a>
+</td>
+<td><p>ใช้จิ้มปลายสายไฟหรือทาบนแผ่นวงจร ช่วยให้ตะกั่ววิ่งเกาะชิ้นงานได้เร็วขึ้น และลดคราบออกไซด์</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Soldering Paste</strong></p>
+<p>(ฟลักซ์ครีม)</p>
+</td>
+<td><a class="reference internal image-reference" href="_images/soldering_paste.jpg"><img alt="_images/soldering_paste.jpg" class="align-center" src="_images/soldering_paste.jpg" style="width: 100%;" />
+</a>
+</td>
+<td><p>ใช้สำหรับงาน SMD หรือจุดที่ต้องการความละเอียดสูง (คุณภาพดีกว่าตลับแดง) บีบเพียงเล็กน้อย</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Brass Wool</strong></p>
+<p>(ฝอยขัดหัวแร้ง)</p>
+</td>
+<td><a class="reference internal image-reference" href="_images/brass_wool.jpg"><img alt="_images/brass_wool.jpg" class="align-center" src="_images/brass_wool.jpg" style="width: 100%;" />
+</a>
+</td>
+<td><p><strong>แนะนำให้ใช้</strong> สำหรับเช็ดปลายหัวแร้งขณะทำงาน (ดีกว่าฟองน้ำน้ำเพราะหัวแร้งไม่เย็นตัวลงกะทันหัน)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Solder Sucker</strong></p>
+<p>(ที่ดูดตะกั่ว)</p>
+</td>
+<td><a class="reference internal image-reference" href="_images/desoldering.jpg"><img alt="_images/desoldering.jpg" class="align-center" src="_images/desoldering.jpg" style="width: 100%;" />
+</a>
+</td>
+<td><p>ใช้ดูดตะกั่วเก่าออกเมื่อบัดกรีผิด (กดก้านลง -&gt; จ่อที่ตะกั่วเหลว -&gt; กดปุ่มดีด)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Solder Wick</strong></p>
+<p>(ลวดซับตะกั่ว)</p>
+</td>
+<td><a class="reference internal image-reference" href="_images/solder_wick.jpg"><img alt="_images/solder_wick.jpg" class="align-center" src="_images/solder_wick.jpg" style="width: 100%;" />
+</a>
+</td>
+<td><p>ใช้ซับตะกั่วส่วนเกินออกจากขา IC หรือจุดเล็กๆ ที่ที่ดูดตะกั่วเข้าไม่ถึง (วางทาบแล้วเอาหัวแร้งจี้ทับ)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Soldering Stand</strong></p>
+<p>(แท่นวาง)</p>
+</td>
+<td><a class="reference internal image-reference" href="_images/soldering_stand.jpg"><img alt="_images/soldering_stand.jpg" class="align-center" src="_images/soldering_stand.jpg" style="width: 100%;" />
+</a>
+</td>
+<td><p><strong>Safety First:</strong> ต้องวางหัวแร้งในแท่นเสมอเมื่อไม่ได้ถือใช้งาน ห้ามวางระเกะระกะกับพื้นโต๊ะ</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Silicone Pad</strong></p>
+<p>(แผ่นรองกันร้อน)</p>
+</td>
+<td><a class="reference internal image-reference" href="_images/silicone_pad.jpg"><img alt="_images/silicone_pad.jpg" class="align-center" src="_images/silicone_pad.jpg" style="width: 100%;" />
+</a>
+</td>
+<td><p>แผ่นยางสีฟ้าทนความร้อนสูง ใช้รองชิ้นงานเพื่อกันโต๊ะไหม้และกันอุปกรณ์ลื่นไหล</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="basic-soldering-technique">
+<h2><span class="section-number">2.3. </span>Basic Soldering Technique (เทคนิคการบัดกรีพื้นฐาน)<a class="headerlink" href="#basic-soldering-technique" title="Link to this heading"></a></h2>
+<section id="safety-first">
+<h3><span class="section-number">2.3.1. </span>Safety First (ความปลอดภัย)<a class="headerlink" href="#safety-first" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>ควันตะกั่ว:</strong> มีสารพิษสะสม หากไม่มีเครื่องดูดควัน ให้ใช้ <strong>พัดลมตัวเล็ก</strong> เป่าควันออกไปทางด้านข้าง (อย่าเป่าใส่บุคคลอื่นภายในบริเวณ และอย่าเป่าใส่ชิ้นงานแรงเกินไปจนหัวแร้งเย็น)</p></li>
+<li><p><strong>ความร้อน:</strong> ปลายหัวแร้งร้อน 300°C+ ห้ามสัมผัสโดนผิวหนัง หรือสายไฟของเครื่องมืออื่น</p></li>
+</ul>
+</section>
+<section id="steps-to-perfect-joint-4">
+<h3><span class="section-number">2.3.2. </span>4 Steps to Perfect Joint (4 ขั้นตอนสู่การบัดกรีที่สมบูรณ์)<a class="headerlink" href="#steps-to-perfect-joint-4" title="Link to this heading"></a></h3>
+<p><strong>สรุปขั้นตอนปฏิบัติ:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Prepare:</strong> ใช้น้ำยา <strong>Flux</strong> ทาที่ชิ้นงานเล็กน้อย หากชิ้นงานขยับได้ ให้ใช้ <strong>Masking Tape (เทปกาว)</strong> แปะยึดกับโต๊ะ</p></li>
+<li><p><strong>Heat:</strong> นำปลายหัวแร้ง (Tip) ไปแตะที่ <strong>ขาอุปกรณ์ และ แผ่นวงจร (Pad)</strong> พร้อมกันเพื่อให้ร้อนทั้งคู่ (นับ 1-2 วินาที)</p></li>
+<li><p><strong>Feed:</strong> จ่ายตะกั่วเข้าไปที่ <strong>จุดสัมผัส</strong> (ไม่ใช่จ่ายใส่หัวแร้ง) ให้ตะกั่วละลายไหลเคลือบเป็นทรงกรวยภูเขาไฟ</p></li>
+<li><p><strong>Remove:</strong> ดึงตะกั่วออก -&gt; ดึงหัวแร้งออก -&gt; รอให้แข็งตัว (ห้ามเป่า)</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>🎥 วิดีโอสาธิต (Video Tutorial)</strong></p>
+<p>คลิกที่รูปด้านล่างเพื่อรับชมวิดีโอเทคนิคการบัดกรีลงบอร์ดไข่ปลา (perfboard)</p>
+<a class="reference external image-reference" href="https://www.youtube.com/watch?v=1ijABEqGyPI"><img alt="_images/video_perfboard_soldering.PNG" class="align-center" src="_images/video_perfboard_soldering.PNG" style="width: 70%;" />
+</a>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>🎥 วิดีโอสาธิต (Video Tutorial)</strong></p>
+<p>คลิกที่รูปด้านล่างเพื่อรับชมวิดีโอเทคนิคการต่อสายไฟแบบลอย</p>
+<a class="reference external image-reference" href="https://www.youtube.com/shorts/Ez94HpQGqTk"><img alt="Watch Video on YouTube" class="align-center" src="_images/video_wire_soldering.PNG" style="width: 60%;" />
+</a>
+</div>
+</section>
+</section>
+<section id="soldering-iron-tips">
+<h2><span class="section-number">2.4. </span>Soldering Iron Tips (การเลือกหัวแร้งให้ถูกงาน)<a class="headerlink" href="#soldering-iron-tips" title="Link to this heading"></a></h2>
+<p>หัวแร้ง <strong>Atten</strong> ใช้ไส้รุ่น <strong>900M</strong> (T900 Series) มีรูปทรงหลากหลาย การเลือกผิดจะทำให้บัดกรีไม่ติด หรือทำให้อุปกรณ์เสียหาย</p>
+<p><strong>ภาพรวมรุ่นหัวแร้ง (Datasheet Overview)</strong></p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="_images/T900_overview.PNG"><img alt="T900 Tip Series Overview" src="_images/T900_overview.PNG" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.1 </span><span class="caption-text">รหัสหัวแร้ง T900 Series ทั้งหมดที่มี (เลขด้านหน้าบอกขนาดพื้นที่สัมผัส)</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="tip-characteristics">
+<h3><span class="section-number">2.4.1. </span>ตารางคุณสมบัติ (Tip Characteristics)<a class="headerlink" href="#tip-characteristics" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Shape</p></th>
+<th class="head"><p>Application</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>D Series</strong></p></td>
+<td><p>ปากแบน (Chisel)</p></td>
+<td><p><strong>พระเอกของงาน (All-rounder)</strong> หน้าสัมผัสแบนส่งความร้อนได้ดีที่สุด เหมาะกับงานทั่วไปจนถึงงานใหญ่</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>C Series</strong></p></td>
+<td><p>ปลายตัดเฉียง (Bevel)</p></td>
+<td><p><strong>งานเติมตะกั่ว</strong> หน้าตัดเฉียงช่วยอุ้มตะกั่วได้เยอะ เหมาะกับงาน Pre-tinning สายไฟ หรือลากขา IC</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>K Series</strong></p></td>
+<td><p>ทรงมีด (Knife)</p></td>
+<td><p><strong>งานลากตะกั่ว (Drag Soldering)</strong> ใช้ส่วนคมตัดพลาสติก หรือใช้ส่วนแบนลากตะกั่วเชื่อมขา IC หลายๆ ขาพร้อมกัน</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>B Series</strong></p></td>
+<td><p>ปลายแหลมมน (Conical)</p></td>
+<td><p><strong>ใช้งานทั่วไป</strong> ปลายมนทำให้เข้าถึงจุดแคบได้ดีกว่าแบบ D แต่ส่งความร้อนได้น้อยกว่า</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>I Series</strong></p></td>
+<td><p>ปลายเข็ม (Pointy)</p></td>
+<td><p><strong>งานจิ๋วเท่านั้น</strong> เหมาะกับ SMD 0603/0402 หรือซ่อมขา IC ที่งอ <strong>(ห้ามใช้กับงานทั่วไป)</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="real-photos">
+<h3><span class="section-number">2.4.2. </span>รูปภาพหัวแร้งจริง (Real Photos)<a class="headerlink" href="#real-photos" title="Link to this heading"></a></h3>
+<p>เพื่อให้เห็นภาพขนาดจริงของหัวแร้งแต่ละเบอร์ที่มีในห้องปฏิบัติการ</p>
+<p><strong>1. Type D (Chisel) - หัวแบน</strong>
+เหมาะสำหรับงานทั่วไปและงานที่ต้องการความร้อนสูง</p>
+<table class="borderless docutils align-default">
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><a class="reference internal image-reference" href="_images/T900-0.8D_pic.jpg"><img alt="_images/T900-0.8D_pic.jpg" class="align-center" src="_images/T900-0.8D_pic.jpg" style="width: 100%;" />
+</a>
+</td>
+<td><a class="reference internal image-reference" href="_images/T900-1.2D_pic.jpg"><img alt="_images/T900-1.2D_pic.jpg" class="align-center" src="_images/T900-1.2D_pic.jpg" style="width: 100%;" />
+</a>
+</td>
+</tr>
+<tr class="row-even"><td><p><strong>0.8D</strong> (จิ๋ว)</p></td>
+<td><p><strong>1.2D</strong> (เล็ก)</p></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal image-reference" href="_images/T900-1.6D_pic.jpg"><img alt="_images/T900-1.6D_pic.jpg" class="align-center" src="_images/T900-1.6D_pic.jpg" style="width: 100%;" />
+</a>
+</td>
+<td><a class="reference internal image-reference" href="_images/T900-2.4D_pic.jpg"><img alt="_images/T900-2.4D_pic.jpg" class="align-center" src="_images/T900-2.4D_pic.jpg" style="width: 100%;" />
+</a>
+</td>
+</tr>
+<tr class="row-even"><td><p><strong>1.6D</strong> (มาตรฐาน)</p></td>
+<td><p><strong>2.4D</strong> (ใหญ่)</p></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal image-reference" href="_images/T900-3.2D_pic.jpg"><img alt="_images/T900-3.2D_pic.jpg" class="align-center" src="_images/T900-3.2D_pic.jpg" style="width: 100%;" />
+</a>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>3.2D</strong> (ใหญ่พิเศษ - XT60)</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>2. Type C (Bevel) - หัวตัดเฉียง</strong>
+เหมาะสำหรับงานอุ้มตะกั่วและลากขาอุปกรณ์</p>
+<table class="borderless docutils align-default">
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><a class="reference internal image-reference" href="_images/T900-0.8C_pic.jpg"><img alt="_images/T900-0.8C_pic.jpg" class="align-center" src="_images/T900-0.8C_pic.jpg" style="width: 100%;" />
+</a>
+</td>
+<td><a class="reference internal image-reference" href="_images/T900-1C_pic.jpg"><img alt="_images/T900-1C_pic.jpg" class="align-center" src="_images/T900-1C_pic.jpg" style="width: 100%;" />
+</a>
+</td>
+</tr>
+<tr class="row-even"><td><p><strong>0.8C</strong> (จิ๋ว)</p></td>
+<td><p><strong>1C</strong> (เล็ก)</p></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal image-reference" href="_images/T900-2C_pic.jpg"><img alt="_images/T900-2C_pic.jpg" class="align-center" src="_images/T900-2C_pic.jpg" style="width: 100%;" />
+</a>
+</td>
+<td><a class="reference internal image-reference" href="_images/T900-4C_pic.jpg"><img alt="_images/T900-4C_pic.jpg" class="align-center" src="_images/T900-4C_pic.jpg" style="width: 100%;" />
+</a>
+</td>
+</tr>
+<tr class="row-even"><td><p><strong>2C</strong> (มาตรฐาน)</p></td>
+<td><p><strong>4C</strong> (ใหญ่พิเศษ - อุ้มตะกั่วเยอะ)</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>3. Type K, B, I (Special Purpose) - หัวพิเศษ</strong></p>
+<table class="borderless docutils align-default">
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><a class="reference internal image-reference" href="_images/T900-K_pic.jpg"><img alt="_images/T900-K_pic.jpg" class="align-center" src="_images/T900-K_pic.jpg" style="width: 100%;" />
+</a>
+</td>
+<td><a class="reference internal image-reference" href="_images/T900-B_pic.jpg"><img alt="_images/T900-B_pic.jpg" class="align-center" src="_images/T900-B_pic.jpg" style="width: 100%;" />
+</a>
+</td>
+</tr>
+<tr class="row-even"><td><p><strong>K (Knife)</strong> - มีดตัด/ลากตะกั่ว</p></td>
+<td><p><strong>B (Conical)</strong> - ปลายมนทั่วไป</p></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal image-reference" href="_images/T900-I_pic.jpg"><img alt="_images/T900-I_pic.jpg" class="align-center" src="_images/T900-I_pic.jpg" style="width: 100%;" />
+</a>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>I (Pointy)</strong> - ปลายเข็ม (SMD เท่านั้น)</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="task-settings-guide">
+<h2><span class="section-number">2.5. </span>Task &amp; Settings Guide (ตารางแนะนำการตั้งค่า)<a class="headerlink" href="#task-settings-guide" title="Link to this heading"></a></h2>
+<p>ปัญหาส่วนใหญ่เกิดจาก <strong>“ใช้หัวเล็ก ไปบัดกรีงานใหญ่”</strong> ทำให้ต้องเร่งความร้อนสูงจนบอร์ดไหม้ ตารางนี้คือค่ามาตรฐานที่แนะนำ</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 30.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Task (งานที่ทำ)</p></th>
+<th class="head"><p>Tip Type</p></th>
+<th class="head"><p>Temp (°C)</p></th>
+<th class="head"><p>Note</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>บอร์ดไข่ปลา / Through Hole</strong></p></td>
+<td><p>B, 1.6D</p></td>
+<td><p>320 - 350</p></td>
+<td><p>ใช้ตะกั่ว 0.8mm หรือ 1.0mm</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>สายไฟเบอร์เล็ก (AWG 18-24)</strong></p></td>
+<td><p>1.6D, 2.4D</p></td>
+<td><p>350</p></td>
+<td><p>ปอกสายไฟ -&gt; จุ่ม Flux -&gt; ไล้ตะกั่วที่สายก่อน (Pre-tin)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>ขั้ว XT30 / XT60 / XT90</strong></p></td>
+<td><p><strong>2.4D, 3.2D, C</strong></p></td>
+<td><p><strong>380 - 400</strong></p></td>
+<td><p><strong>ห้ามใช้หัวแหลม (I/B)</strong> เพราะความร้อนจะส่งไม่ทัน ทำให้ตะกั่วเป็นก้อน บัดกรีไม่ติด และพลาสติกละลาย</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>SMD (0805, 0603)</strong></p></td>
+<td><p>I, B</p></td>
+<td><p>300 - 320</p></td>
+<td><p>ใช้ <strong>Solder Paste</strong> ช่วยจะทำงานง่ายขึ้นมาก แหนบต้องนิ่ง</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>สายซิลิโคนใหญ่ (AWG 8-12)</strong></p></td>
+<td><p>3.2D, 4C</p></td>
+<td><p>400 - 420</p></td>
+<td><p>ต้องใช้หัวแร้งวัตต์สูง (AT8586) เท่านั้น หัวแร้งปากกาอาจทำไม่ได้</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="battery_guide.html" class="btn btn-neutral float-left" title="1. Battery Technologies for Robotics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="bambu_a1_guide.html" class="btn btn-neutral float-right" title="1. Bambu Lab A1 Printing Guide (คู่มือการพิมพ์ 3 มิติ)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, RTL (ICRT), Burapha University.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

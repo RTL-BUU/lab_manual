@@ -4,7 +4,7 @@ import sys
 from datetime import datetime
 
 # -- Project Information -----------------------------------------------------
-project = 'Batly R1 Manual'
+project = 'RTL Lab Manual'
 copyright = f'{datetime.now().year}, RTL (ICRT), Burapha University'
 author = 'Pisak & RTL Team'
 release = '1.0'
@@ -15,6 +15,7 @@ extensions = [
     'sphinx_rtd_theme',     # Professional Theme
     'sphinx_copybutton',    # "Copy" button on code blocks
     'sphinx_design',        # Tabs, Badges, and Dropdowns
+    'sphinxcontrib.youtube' # Embedded youtube
 ]
 
 # MyST SETTINGS (Features inside the engine)
@@ -38,7 +39,7 @@ numfig = True
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 html_css_files = [
-    'custom.css',
+    'rtl_theme.css',
 ]
 
 # หารูปโลโก้
@@ -111,3 +112,8 @@ copybutton_prompt_is_regexp = True
 
 # (Optional) ถ้าอยากลบคำว่า Built with Sphinx ออกเพื่อให้ดู Clean
 html_show_sphinx = False
+
+# สั่งให้ Sphinx โหลดไฟล์ JS ของเรา
+html_js_files = [
+    'custom.js',
+]

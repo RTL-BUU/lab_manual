@@ -6,12 +6,12 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bambu Lab A1 Printing Guide (คู่มือการพิมพ์ 3 มิติ) &mdash; Batly R1 Manual 1.0 documentation</title>
+  <title>1. Bambu Lab A1 Printing Guide (คู่มือการพิมพ์ 3 มิติ) &mdash; RTL Lab Manual 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d8a2add5" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=5a408a8c" />
+      <link rel="stylesheet" type="text/css" href="_static/rtl_theme.css?v=060d35dd" />
 
   
     <link rel="shortcut icon" href="_static/favicon_rtl.png"/>
@@ -23,10 +23,11 @@
       <script src="_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="_static/copybutton.js?v=30646c52"></script>
       <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script src="_static/custom.js?v=8c19a4a9"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Battery Technologies for Robotics" href="battery_guide.html" /> 
+    <link rel="prev" title="2. Soldering &amp; Rework (เทคนิคการบัดกรีและเป่าลมร้อน)" href="soldering_guide.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -51,78 +52,99 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">ความปลอดภัยและไฟฟ้า:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="battery_guide.html">Battery Technologies for Robotics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#technology-overview">Technology Overview</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#battery-comparison">Battery Comparison</a></li>
+<li class="toctree-l1"><a class="reference internal" href="battery_guide.html">1. Battery Technologies for Robotics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#technology-overview">1.1. Technology Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#battery-comparison">1.1.1. Battery Comparison</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#terminology-calculation">Terminology &amp; Calculation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#electrical-units">Electrical Units</a></li>
-<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#battery-health-usage">Battery Health &amp; Usage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#configuration">Configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#battery-pack-calculation">Battery Pack Calculation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#runtime-calculation">Runtime Calculation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#terminology-calculation">1.2. Terminology &amp; Calculation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#electrical-units">1.2.1. Electrical Units</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#battery-health-usage">1.2.2. Battery Health &amp; Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#configuration">1.2.3. Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#battery-pack-calculation">1.2.4. Battery Pack Calculation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#runtime-calculation">1.2.5. Runtime Calculation</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#lifepo4-battery">LiFePO4 Battery</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#common-applications">Common Applications</a></li>
-<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#why-lifepo4-for-robotics">Why LiFePO4 for Robotics?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#technical-challenge-the-flat-discharge-curve">Technical Challenge: The “Flat” Discharge Curve</a></li>
-<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#lifepo4-soc-table">LiFePO4 SOC Table</a></li>
-<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#battery-specifications">Battery Specifications</a></li>
-<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#connectors">Connectors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#id1">Runtime Calculation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#lifepo4-battery">1.3. LiFePO4 Battery</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#common-applications">1.3.1. Common Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#why-lifepo4-for-robotics">1.3.2. Why LiFePO4 for Robotics?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#technical-challenge-the-flat-discharge-curve">1.3.3. Technical Challenge: The “Flat” Discharge Curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#lifepo4-soc-table">1.3.4. LiFePO4 SOC Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#battery-specifications">1.3.5. Battery Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#connectors">1.3.6. Connectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#id1">1.3.7. Runtime Calculation</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#lipo-battery">LiPo Battery</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#id2">Common Applications</a></li>
-<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#why-li-po-for-high-performance-robotics">Why Li-Po for High-Performance Robotics?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#technical-challenges-saftey-fragility">Technical Challenges: Saftey &amp; Fragility</a></li>
-<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#li-po-soc-table">Li-Po SOC Table</a></li>
-<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#technical-insight-voltage-sag">Technical Insight: Voltage Sag</a></li>
-<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#id4">Battery Specifications</a></li>
-<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#li-po-checker-low-voltage-alarm">Li-Po Checker &amp; Low Voltage Alarm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#id5">Runtime Calculation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#signs-of-failure">Signs of Failure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#lipo-battery">1.4. LiPo Battery</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#id2">1.4.1. Common Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#why-li-po-for-high-performance-robotics">1.4.2. Why Li-Po for High-Performance Robotics?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#technical-challenges-saftey-fragility">1.4.3. Technical Challenges: Saftey &amp; Fragility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#li-po-soc-table">1.4.4. Li-Po SOC Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#technical-insight-voltage-sag">1.4.5. Technical Insight: Voltage Sag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#id4">1.4.6. Battery Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#li-po-checker-low-voltage-alarm">1.4.7. Li-Po Checker &amp; Low Voltage Alarm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#id5">1.4.8. Runtime Calculation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#signs-of-failure">1.4.9. Signs of Failure</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#li-ion-battery">Li-ion Battery</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#applications-characteristics">Applications &amp; Characteristics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#why-li-ion-for-energy-density">Why Li-ion for Energy Density?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#technical-challenges-heat">Technical Challenges: Heat</a></li>
-<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#li-ion-soc-table">Li-ion SOC Table</a></li>
-<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#id6">Battery Specifications</a></li>
-<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#id7">Runtime Calculation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#li-ion-battery">1.5. Li-ion Battery</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#applications-characteristics">1.5.1. Applications &amp; Characteristics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#why-li-ion-for-energy-density">1.5.2. Why Li-ion for Energy Density?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#technical-challenges-heat">1.5.3. Technical Challenges: Heat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#li-ion-soc-table">1.5.4. Li-ion SOC Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#id6">1.5.5. Battery Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#id7">1.5.6. Runtime Calculation</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#disposal">Disposal (การกำจัดแบตเตอรี่เสื่อมสภาพ)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#standard-operating-procedure">ขั้นตอนการปฏิบัติ (Standard Operating Procedure)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#disposal">1.6. Disposal (การกำจัดแบตเตอรี่เสื่อมสภาพ)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#standard-operating-procedure">1.6.1. ขั้นตอนการปฏิบัติ (Standard Operating Procedure)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#charging-with-imax-b6ac">Charging with IMAX B6AC (คู่มือการใช้งานเครื่องชาร์จ)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#device-specifications">Device Specifications (ข้อมูลจำเพาะของเครื่อง)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#control-buttons">Control Buttons (ปุ่มควบคุม)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#connections">Connections (การเชื่อมต่อสาย)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#operation-flow">Operation Flow (ขั้นตอนการตั้งค่า)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#monitoring-safety">Monitoring &amp; Safety (การดูค่าและการตัดการทำงาน)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#charging-with-imax-b6ac">1.7. Charging with IMAX B6AC (คู่มือการใช้งานเครื่องชาร์จ)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#device-specifications">1.7.1. Device Specifications (ข้อมูลจำเพาะของเครื่อง)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#control-buttons">1.7.2. Control Buttons (ปุ่มควบคุม)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#connections">1.7.3. Connections (การเชื่อมต่อสาย)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#operation-flow">1.7.4. Operation Flow (ขั้นตอนการตั้งค่า)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#monitoring-safety">1.7.5. Monitoring &amp; Safety (การดูค่าและการตัดการทำงาน)</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="soldering_guide.html">2. Soldering &amp; Rework (เทคนิคการบัดกรีและเป่าลมร้อน)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="soldering_guide.html#soldering-stations">2.1. Soldering Stations (เครื่องมือบัดกรีในแลป)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="soldering_guide.html#atten-at8586-double-channel-rework-station">2.1.1. Atten AT8586 (Double Channel Rework Station)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soldering_guide.html#atten-at937">2.1.2. Atten AT937</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soldering_guide.html#basic-soldering-iron">2.1.3. Basic Soldering Iron (หัวแร้งแบบปากกา/ปืน)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="soldering_guide.html#accessories">2.2. Accessories (อุปกรณ์เสริมที่ต้องรู้)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soldering_guide.html#basic-soldering-technique">2.3. Basic Soldering Technique (เทคนิคการบัดกรีพื้นฐาน)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="soldering_guide.html#safety-first">2.3.1. Safety First (ความปลอดภัย)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soldering_guide.html#steps-to-perfect-joint-4">2.3.2. 4 Steps to Perfect Joint (4 ขั้นตอนสู่การบัดกรีที่สมบูรณ์)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="soldering_guide.html#soldering-iron-tips">2.4. Soldering Iron Tips (การเลือกหัวแร้งให้ถูกงาน)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="soldering_guide.html#tip-characteristics">2.4.1. ตารางคุณสมบัติ (Tip Characteristics)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soldering_guide.html#real-photos">2.4.2. รูปภาพหัวแร้งจริง (Real Photos)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="soldering_guide.html#task-settings-guide">2.5. Task &amp; Settings Guide (ตารางแนะนำการตั้งค่า)</a></li>
 </ul>
 </li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">การผลิตชิ้นงาน (3D Printing):</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Bambu Lab A1 Printing Guide (คู่มือการพิมพ์ 3 มิติ)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#software-setup">1. Software Setup (เตรียมซอฟต์แวร์)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#file-formats">2. File Formats (ประเภทไฟล์งาน)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#workflow-from-cad-to-print">3. Workflow: From CAD to Print</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#material-profile-settings">4. Material &amp; Profile Settings (การตั้งค่าวัสดุ)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#profile">วิธีโหลด Profile (สำคัญ)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">ความแตกต่างของวัสดุ</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Bambu Lab A1 Printing Guide (คู่มือการพิมพ์ 3 มิติ)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#software-setup">1.1. 1. Software Setup (เตรียมซอฟต์แวร์)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file-formats">1.2. 2. File Formats (ประเภทไฟล์งาน)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#workflow-from-cad-to-print">1.3. 3. Workflow: From CAD to Print</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#material-profile-settings">1.4. 4. Material &amp; Profile Settings (การตั้งค่าวัสดุ)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#profile">1.4.1. วิธีโหลด Profile (สำคัญ)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">1.4.2. ความแตกต่างของวัสดุ</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#slicer-settings-intermediate">5. Slicer Settings (Intermediate)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#sending-to-printer">6. Sending to Printer (สั่งพิมพ์)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#slicer-settings-intermediate">1.5. 5. Slicer Settings (Intermediate)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sending-to-printer">1.6. 6. Sending to Printer (สั่งพิมพ์)</a></li>
 </ul>
 </li>
 </ul>
@@ -133,7 +155,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Batly R1 Manual</a>
+          <a href="index.html">RTL Lab Manual</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -141,7 +163,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Bambu Lab A1 Printing Guide (คู่มือการพิมพ์ 3 มิติ)</li>
+      <li class="breadcrumb-item active"><span class="section-number">1. </span>Bambu Lab A1 Printing Guide (คู่มือการพิมพ์ 3 มิติ)</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/bambu_a1_guide.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -152,10 +174,10 @@
            <div itemprop="articleBody">
              
   <section class="tex2jax_ignore mathjax_ignore" id="bambu-lab-a1-printing-guide-3">
-<h1>Bambu Lab A1 Printing Guide (คู่มือการพิมพ์ 3 มิติ)<a class="headerlink" href="#bambu-lab-a1-printing-guide-3" title="Link to this heading"></a></h1>
+<h1><span class="section-number">1. </span>Bambu Lab A1 Printing Guide (คู่มือการพิมพ์ 3 มิติ)<a class="headerlink" href="#bambu-lab-a1-printing-guide-3" title="Link to this heading"></a></h1>
 <p>เครื่องพิมพ์ 3 มิติรุ่น <strong>Bambu Lab A1</strong> เป็นเครื่องพิมพ์ระบบ FDM ความเร็วสูง ที่แลปของเราเลือกใช้ ในคู่มือนี้จะเน้นขั้นตอนการใช้งานสำหรับผู้ที่มีไฟล์โมเดลพร้อมพิมพ์แล้ว</p>
 <section id="software-setup">
-<h2>1. Software Setup (เตรียมซอฟต์แวร์)<a class="headerlink" href="#software-setup" title="Link to this heading"></a></h2>
+<h2><span class="section-number">1.1. </span>1. Software Setup (เตรียมซอฟต์แวร์)<a class="headerlink" href="#software-setup" title="Link to this heading"></a></h2>
 <p>เราจะไม่ใช้โปรแกรม Slicer ทั่วไป (เช่น Cura) แต่จะใช้โปรแกรมเฉพาะของค่ายนี้เพื่อประสิทธิภาพสูงสุด</p>
 <ul class="simple">
 <li><p><strong>Download:</strong> โหลดโปรแกรม <strong>Bambu Studio</strong> ได้ที่เว็บไซต์ทางการของ Bambu Lab (รองรับ Windows/Mac)</p></li>
@@ -163,7 +185,7 @@
 </ul>
 </section>
 <section id="file-formats">
-<h2>2. File Formats (ประเภทไฟล์งาน)<a class="headerlink" href="#file-formats" title="Link to this heading"></a></h2>
+<h2><span class="section-number">1.2. </span>2. File Formats (ประเภทไฟล์งาน)<a class="headerlink" href="#file-formats" title="Link to this heading"></a></h2>
 <p>เมื่อออกแบบชิ้นงานเสร็จแล้ว (เช่นจาก SolidWorks) เราต้องเลือกนามสกุลไฟล์ให้ถูกต้อง</p>
 <ul class="simple">
 <li><p><strong>STL (.stl):</strong> รูปแบบมาตรฐานดั้งเดิม เก็บเฉพาะผิวชิ้นงาน (Mesh) ไม่มีการระบุสีหรือหน่วยวัดที่แน่นอน (อาจเจอปัญหาขนาดเพี้ยนถ้าตั้งค่าหน่วยผิด)</p></li>
@@ -174,7 +196,7 @@
 <p><strong>สรุป:</strong> ปัจจุบันแลปยังใช้ <strong>STL</strong> เป็นหลัก แต่หากต้องการความแม่นยำสูงสุดแนะนำให้ลองเปลี่ยนมาใช้ <strong>3MF</strong></p>
 </section>
 <section id="workflow-from-cad-to-print">
-<h2>3. Workflow: From CAD to Print<a class="headerlink" href="#workflow-from-cad-to-print" title="Link to this heading"></a></h2>
+<h2><span class="section-number">1.3. </span>3. Workflow: From CAD to Print<a class="headerlink" href="#workflow-from-cad-to-print" title="Link to this heading"></a></h2>
 <p>ขั้นตอนการทำงานสำหรับผู้ใช้งาน SolidWorks มีดังนี้:</p>
 <ol class="arabic simple">
 <li><p><strong>SolidWorks:</strong> ไปที่ <code class="docutils literal notranslate"><span class="pre">File</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">As</span></code> เลือกประเภทไฟล์เป็น <strong>STL</strong></p>
@@ -187,10 +209,10 @@
 </ol>
 </section>
 <section id="material-profile-settings">
-<h2>4. Material &amp; Profile Settings (การตั้งค่าวัสดุ)<a class="headerlink" href="#material-profile-settings" title="Link to this heading"></a></h2>
+<h2><span class="section-number">1.4. </span>4. Material &amp; Profile Settings (การตั้งค่าวัสดุ)<a class="headerlink" href="#material-profile-settings" title="Link to this heading"></a></h2>
 <p>ที่แลปใช้เส้นพลาสติกยี่ห้อ <strong>eSun</strong> ชนิด <strong>PLA+</strong> เป็นหลัก เนื่องจากมีความเหนียวมากกว่า PLA ปกติ</p>
 <section id="profile">
-<h3>วิธีโหลด Profile (สำคัญ)<a class="headerlink" href="#profile" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.4.1. </span>วิธีโหลด Profile (สำคัญ)<a class="headerlink" href="#profile" title="Link to this heading"></a></h3>
 <ol class="arabic simple">
 <li><p>ใน Bambu Studio ช่อง <strong>Filament</strong></p></li>
 <li><p>ไม่ต้องใช้ Generic PLA ให้กดรูปเฟือง หรือเลือกเมนู Download Filament System Preset</p></li>
@@ -199,7 +221,7 @@
 </ol>
 </section>
 <section id="id1">
-<h3>ความแตกต่างของวัสดุ<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.4.2. </span>ความแตกต่างของวัสดุ<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p><strong>PLA/PLA+:</strong> พิมพ์ง่าย ไม่เหม็น แข็งแรงปานกลาง ไม่ทนร้อน (เกิน 60°C จะเริ่มนิ่ม) -&gt; <strong>ใช้เป็นหลักในแลป</strong></p></li>
 <li><p><strong>PETG:</strong> เหนียว ทนร้อนได้ดีกว่า PLA พิมพ์ยากกว่าเล็กน้อย</p></li>
@@ -209,7 +231,7 @@
 </section>
 </section>
 <section id="slicer-settings-intermediate">
-<h2>5. Slicer Settings (Intermediate)<a class="headerlink" href="#slicer-settings-intermediate" title="Link to this heading"></a></h2>
+<h2><span class="section-number">1.5. </span>5. Slicer Settings (Intermediate)<a class="headerlink" href="#slicer-settings-intermediate" title="Link to this heading"></a></h2>
 <p>ค่าที่ต้องตรวจสอบและปรับเปลี่ยนตามความเหมาะสมของชิ้นงาน</p>
 <ul class="simple">
 <li><p><strong>Strength (ความแข็งแรง):</strong></p>
@@ -235,7 +257,7 @@
 </ul>
 </section>
 <section id="sending-to-printer">
-<h2>6. Sending to Printer (สั่งพิมพ์)<a class="headerlink" href="#sending-to-printer" title="Link to this heading"></a></h2>
+<h2><span class="section-number">1.6. </span>6. Sending to Printer (สั่งพิมพ์)<a class="headerlink" href="#sending-to-printer" title="Link to this heading"></a></h2>
 <p>เครื่อง Bambu Lab A1 ที่แลปเชื่อมต่อ WiFi ชื่อ <code class="docutils literal notranslate"><span class="pre">RTL</span></code> ไว้แล้ว</p>
 <ol class="arabic simple">
 <li><p>กดปุ่ม <strong>Slice Plate</strong></p></li>
@@ -255,7 +277,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="battery_guide.html" class="btn btn-neutral float-left" title="Battery Technologies for Robotics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="soldering_guide.html" class="btn btn-neutral float-left" title="2. Soldering &amp; Rework (เทคนิคการบัดกรีและเป่าลมร้อน)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

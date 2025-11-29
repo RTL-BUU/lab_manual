@@ -6,12 +6,12 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Battery Technologies for Robotics &mdash; Batly R1 Manual 1.0 documentation</title>
+  <title>1. Battery Technologies for Robotics &mdash; RTL Lab Manual 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d8a2add5" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=5a408a8c" />
+      <link rel="stylesheet" type="text/css" href="_static/rtl_theme.css?v=060d35dd" />
 
   
     <link rel="shortcut icon" href="_static/favicon_rtl.png"/>
@@ -25,10 +25,11 @@
       <script src="_static/design-tabs.js?v=f930bc37"></script>
       <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
       <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="_static/custom.js?v=8c19a4a9"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Bambu Lab A1 Printing Guide (คู่มือการพิมพ์ 3 มิติ)" href="bambu_a1_guide.html" />
+    <link rel="next" title="2. Soldering &amp; Rework (เทคนิคการบัดกรีและเป่าลมร้อน)" href="soldering_guide.html" />
     <link rel="prev" title="Welcome to RTL Lab Manual!" href="index.html" /> 
 </head>
 
@@ -54,78 +55,99 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">ความปลอดภัยและไฟฟ้า:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Battery Technologies for Robotics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#technology-overview">Technology Overview</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#battery-comparison">Battery Comparison</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Battery Technologies for Robotics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#technology-overview">1.1. Technology Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#battery-comparison">1.1.1. Battery Comparison</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#terminology-calculation">Terminology &amp; Calculation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#electrical-units">Electrical Units</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#battery-health-usage">Battery Health &amp; Usage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#battery-pack-calculation">Battery Pack Calculation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#runtime-calculation">Runtime Calculation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#terminology-calculation">1.2. Terminology &amp; Calculation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#electrical-units">1.2.1. Electrical Units</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#battery-health-usage">1.2.2. Battery Health &amp; Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration">1.2.3. Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#battery-pack-calculation">1.2.4. Battery Pack Calculation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#runtime-calculation">1.2.5. Runtime Calculation</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#lifepo4-battery">LiFePO4 Battery</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#common-applications">Common Applications</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#why-lifepo4-for-robotics">Why LiFePO4 for Robotics?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#technical-challenge-the-flat-discharge-curve">Technical Challenge: The “Flat” Discharge Curve</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#lifepo4-soc-table">LiFePO4 SOC Table</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#battery-specifications">Battery Specifications</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#connectors">Connectors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">Runtime Calculation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lifepo4-battery">1.3. LiFePO4 Battery</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#common-applications">1.3.1. Common Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#why-lifepo4-for-robotics">1.3.2. Why LiFePO4 for Robotics?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#technical-challenge-the-flat-discharge-curve">1.3.3. Technical Challenge: The “Flat” Discharge Curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lifepo4-soc-table">1.3.4. LiFePO4 SOC Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#battery-specifications">1.3.5. Battery Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#connectors">1.3.6. Connectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">1.3.7. Runtime Calculation</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#lipo-battery">LiPo Battery</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">Common Applications</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#why-li-po-for-high-performance-robotics">Why Li-Po for High-Performance Robotics?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#technical-challenges-saftey-fragility">Technical Challenges: Saftey &amp; Fragility</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#li-po-soc-table">Li-Po SOC Table</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#technical-insight-voltage-sag">Technical Insight: Voltage Sag</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">Battery Specifications</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#li-po-checker-low-voltage-alarm">Li-Po Checker &amp; Low Voltage Alarm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">Runtime Calculation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#signs-of-failure">Signs of Failure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lipo-battery">1.4. LiPo Battery</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">1.4.1. Common Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#why-li-po-for-high-performance-robotics">1.4.2. Why Li-Po for High-Performance Robotics?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#technical-challenges-saftey-fragility">1.4.3. Technical Challenges: Saftey &amp; Fragility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#li-po-soc-table">1.4.4. Li-Po SOC Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#technical-insight-voltage-sag">1.4.5. Technical Insight: Voltage Sag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">1.4.6. Battery Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#li-po-checker-low-voltage-alarm">1.4.7. Li-Po Checker &amp; Low Voltage Alarm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">1.4.8. Runtime Calculation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#signs-of-failure">1.4.9. Signs of Failure</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#li-ion-battery">Li-ion Battery</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#applications-characteristics">Applications &amp; Characteristics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#why-li-ion-for-energy-density">Why Li-ion for Energy Density?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#technical-challenges-heat">Technical Challenges: Heat</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#li-ion-soc-table">Li-ion SOC Table</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">Battery Specifications</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id7">Runtime Calculation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#li-ion-battery">1.5. Li-ion Battery</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#applications-characteristics">1.5.1. Applications &amp; Characteristics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#why-li-ion-for-energy-density">1.5.2. Why Li-ion for Energy Density?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#technical-challenges-heat">1.5.3. Technical Challenges: Heat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#li-ion-soc-table">1.5.4. Li-ion SOC Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">1.5.5. Battery Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">1.5.6. Runtime Calculation</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#disposal">Disposal (การกำจัดแบตเตอรี่เสื่อมสภาพ)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#standard-operating-procedure">ขั้นตอนการปฏิบัติ (Standard Operating Procedure)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#disposal">1.6. Disposal (การกำจัดแบตเตอรี่เสื่อมสภาพ)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#standard-operating-procedure">1.6.1. ขั้นตอนการปฏิบัติ (Standard Operating Procedure)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#charging-with-imax-b6ac">Charging with IMAX B6AC (คู่มือการใช้งานเครื่องชาร์จ)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#device-specifications">Device Specifications (ข้อมูลจำเพาะของเครื่อง)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#control-buttons">Control Buttons (ปุ่มควบคุม)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#connections">Connections (การเชื่อมต่อสาย)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#operation-flow">Operation Flow (ขั้นตอนการตั้งค่า)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#monitoring-safety">Monitoring &amp; Safety (การดูค่าและการตัดการทำงาน)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#charging-with-imax-b6ac">1.7. Charging with IMAX B6AC (คู่มือการใช้งานเครื่องชาร์จ)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#device-specifications">1.7.1. Device Specifications (ข้อมูลจำเพาะของเครื่อง)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#control-buttons">1.7.2. Control Buttons (ปุ่มควบคุม)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#connections">1.7.3. Connections (การเชื่อมต่อสาย)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operation-flow">1.7.4. Operation Flow (ขั้นตอนการตั้งค่า)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#monitoring-safety">1.7.5. Monitoring &amp; Safety (การดูค่าและการตัดการทำงาน)</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="soldering_guide.html">2. Soldering &amp; Rework (เทคนิคการบัดกรีและเป่าลมร้อน)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="soldering_guide.html#soldering-stations">2.1. Soldering Stations (เครื่องมือบัดกรีในแลป)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="soldering_guide.html#atten-at8586-double-channel-rework-station">2.1.1. Atten AT8586 (Double Channel Rework Station)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soldering_guide.html#atten-at937">2.1.2. Atten AT937</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soldering_guide.html#basic-soldering-iron">2.1.3. Basic Soldering Iron (หัวแร้งแบบปากกา/ปืน)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="soldering_guide.html#accessories">2.2. Accessories (อุปกรณ์เสริมที่ต้องรู้)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soldering_guide.html#basic-soldering-technique">2.3. Basic Soldering Technique (เทคนิคการบัดกรีพื้นฐาน)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="soldering_guide.html#safety-first">2.3.1. Safety First (ความปลอดภัย)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soldering_guide.html#steps-to-perfect-joint-4">2.3.2. 4 Steps to Perfect Joint (4 ขั้นตอนสู่การบัดกรีที่สมบูรณ์)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="soldering_guide.html#soldering-iron-tips">2.4. Soldering Iron Tips (การเลือกหัวแร้งให้ถูกงาน)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="soldering_guide.html#tip-characteristics">2.4.1. ตารางคุณสมบัติ (Tip Characteristics)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soldering_guide.html#real-photos">2.4.2. รูปภาพหัวแร้งจริง (Real Photos)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="soldering_guide.html#task-settings-guide">2.5. Task &amp; Settings Guide (ตารางแนะนำการตั้งค่า)</a></li>
 </ul>
 </li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">การผลิตชิ้นงาน (3D Printing):</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="bambu_a1_guide.html">Bambu Lab A1 Printing Guide (คู่มือการพิมพ์ 3 มิติ)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#software-setup">1. Software Setup (เตรียมซอฟต์แวร์)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#file-formats">2. File Formats (ประเภทไฟล์งาน)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#workflow-from-cad-to-print">3. Workflow: From CAD to Print</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#material-profile-settings">4. Material &amp; Profile Settings (การตั้งค่าวัสดุ)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="bambu_a1_guide.html#profile">วิธีโหลด Profile (สำคัญ)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="bambu_a1_guide.html#id1">ความแตกต่างของวัสดุ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bambu_a1_guide.html">1. Bambu Lab A1 Printing Guide (คู่มือการพิมพ์ 3 มิติ)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#software-setup">1.1. 1. Software Setup (เตรียมซอฟต์แวร์)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#file-formats">1.2. 2. File Formats (ประเภทไฟล์งาน)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#workflow-from-cad-to-print">1.3. 3. Workflow: From CAD to Print</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#material-profile-settings">1.4. 4. Material &amp; Profile Settings (การตั้งค่าวัสดุ)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="bambu_a1_guide.html#profile">1.4.1. วิธีโหลด Profile (สำคัญ)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bambu_a1_guide.html#id1">1.4.2. ความแตกต่างของวัสดุ</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#slicer-settings-intermediate">5. Slicer Settings (Intermediate)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#sending-to-printer">6. Sending to Printer (สั่งพิมพ์)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#slicer-settings-intermediate">1.5. 5. Slicer Settings (Intermediate)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#sending-to-printer">1.6. 6. Sending to Printer (สั่งพิมพ์)</a></li>
 </ul>
 </li>
 </ul>
@@ -136,7 +158,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Batly R1 Manual</a>
+          <a href="index.html">RTL Lab Manual</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -144,7 +166,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Battery Technologies for Robotics</li>
+      <li class="breadcrumb-item active"><span class="section-number">1. </span>Battery Technologies for Robotics</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/battery_guide.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -155,10 +177,10 @@
            <div itemprop="articleBody">
              
   <section class="tex2jax_ignore mathjax_ignore" id="battery-technologies-for-robotics">
-<h1>Battery Technologies for Robotics<a class="headerlink" href="#battery-technologies-for-robotics" title="Link to this heading"></a></h1>
+<h1><span class="section-number">1. </span>Battery Technologies for Robotics<a class="headerlink" href="#battery-technologies-for-robotics" title="Link to this heading"></a></h1>
 <p>หัวใจสำคัญของหุ่นยนต์เคลื่อนที่คือแหล่งพลังงาน ในห้องปฏิบัติการของเรามีการใช้งานแบตเตอรี่หลักๆ 3 ประเภท คือ <strong>LiFePO4</strong>, <strong>Li-Po</strong>, และ <strong>Li-ion</strong> ซึ่งแต่ละชนิดมีคุณสมบัติทางเคมี ข้อดี-ข้อเสีย และการใช้งานที่แตกต่างกัน</p>
 <section id="technology-overview">
-<h2>Technology Overview<a class="headerlink" href="#technology-overview" title="Link to this heading"></a></h2>
+<h2><span class="section-number">1.1. </span>Technology Overview<a class="headerlink" href="#technology-overview" title="Link to this heading"></a></h2>
 <p>เพื่อให้เลือกใช้งานได้ถูกต้อง เราต้องเปรียบเทียบคุณสมบัติหลัก 3 ด้าน:</p>
 <ol class="arabic simple">
 <li><p><strong>Energy Density (ความหนาแน่นพลังงาน):</strong> น้ำหนักเบาแต่จุไฟได้เยอะ (สำคัญกับโดรนหรืออุปกรณ์พกพา)</p></li>
@@ -166,7 +188,7 @@
 <li><p><strong>Safety &amp; Cycle Life (ความปลอดภัยและอายุการใช้งาน):</strong> ความทนทานต่อการใช้งานและความเสี่ยงในการลุกไหม้</p></li>
 </ol>
 <section id="battery-comparison">
-<h3>Battery Comparison<a class="headerlink" href="#battery-comparison" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.1.1. </span>Battery Comparison<a class="headerlink" href="#battery-comparison" title="Link to this heading"></a></h3>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 20.0%" />
@@ -202,10 +224,10 @@
 </section>
 </section>
 <section id="terminology-calculation">
-<h2>Terminology &amp; Calculation<a class="headerlink" href="#terminology-calculation" title="Link to this heading"></a></h2>
+<h2><span class="section-number">1.2. </span>Terminology &amp; Calculation<a class="headerlink" href="#terminology-calculation" title="Link to this heading"></a></h2>
 <p>การเลือกใช้แบตเตอรี่ให้เหมาะสมกับหุ่นยนต์ จำเป็นต้องเข้าใจความหมายของค่าทางไฟฟ้าต่างๆ เพื่อคำนวณระยะเวลาการใช้งานและความปลอดภัย</p>
 <section id="electrical-units">
-<h3>Electrical Units<a class="headerlink" href="#electrical-units" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.2.1. </span>Electrical Units<a class="headerlink" href="#electrical-units" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p><strong>Nominal Voltage (แรงดันปกติ/แรงดันที่ระบุ):</strong>
 คือค่าแรงดันไฟฟ้า “กลาง” ที่ใช้เรียกชื่อแบตเตอรี่ (ไม่ใช่แรงดันตอนชาร์จเต็ม) เช่น LiFePO4 มี Nominal Voltage ที่ 3.2V แต่ชาร์จเต็มที่ 3.65V และหมดที่ 2.5V การคำนวณพลังงานจะใช้ค่านี้เป็นหลัก</p></li>
@@ -231,7 +253,7 @@
 </ul>
 </section>
 <section id="battery-health-usage">
-<h3>Battery Health &amp; Usage<a class="headerlink" href="#battery-health-usage" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.2.2. </span>Battery Health &amp; Usage<a class="headerlink" href="#battery-health-usage" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p><strong>Depth of Discharge - DOD (ระดับการคายประจุ):</strong>
 บอกว่าเราใช้แบตเตอรี่ไปแล้วกี่ % (ตรงข้ามกับ SOC ที่บอกว่าเหลือเท่าไหร่)</p>
@@ -253,7 +275,7 @@
 </ul>
 </section>
 <section id="configuration">
-<h3>Configuration<a class="headerlink" href="#configuration" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.2.3. </span>Configuration<a class="headerlink" href="#configuration" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p><strong>Battery Pack (แพคแบตเตอรี่):</strong>
 คือการนำเซลล์แบตเตอรี่ก้อนเล็กๆ (Cells) มาเชื่อมต่อกันเพื่อให้ได้แรงดันหรือความจุตามต้องการ โดยมีการห่อหุ้มและติด BMS เรียบร้อยพร้อมใช้งาน</p></li>
@@ -275,7 +297,7 @@
 </section>
 <hr class="docutils" />
 <section id="battery-pack-calculation">
-<h3>Battery Pack Calculation<a class="headerlink" href="#battery-pack-calculation" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.2.4. </span>Battery Pack Calculation<a class="headerlink" href="#battery-pack-calculation" title="Link to this heading"></a></h3>
 <p>สมมติเราใช้เซลล์ LiFePO4 ขนาด <strong>3.2V 6000mAh (6Ah)</strong> นำมาประกอบแบบ <strong>8S2P</strong></p>
 <ol class="arabic simple">
 <li><p><strong>คำนวณแรงดัน (Series 8S):</strong>
@@ -288,27 +310,27 @@ $<span class="math notranslate nohighlight">\(25.6\text{V} \times 12\text{Ah} = 
 <p><strong>สรุป:</strong> แบตเตอรี่แพคนี้คือ <strong>24V (25.6V) 12Ah</strong></p>
 </section>
 <section id="runtime-calculation">
-<h3>Runtime Calculation<a class="headerlink" href="#runtime-calculation" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.2.5. </span>Runtime Calculation<a class="headerlink" href="#runtime-calculation" title="Link to this heading"></a></h3>
 <p>สมมติเรามีหุ่นยนต์ AMR ที่ใช้พลังงานเฉลี่ย <strong>50 วัตต์ (W)</strong> และใช้แบตเตอรี่ LiFePO4 ขนาด <strong>24V 15Ah</strong></p>
 <p><strong>1. คำนวณพลังงานรวมของแบตเตอรี่ (Total Energy):</strong>
 $<span class="math notranslate nohighlight">\(E_{batt} = 24\text{V} \times 15\text{Ah} = 360\text{Wh (Watt-Hours)}\)</span>$</p>
 <p><strong>2. คำนวณระยะเวลาใช้งานทางทฤษฎี (Theoretical Runtime):</strong>
-$<span class="math notranslate nohighlight">\(Time = \frac{E_{batt}}{Power} = \frac{360\text{Wh}}{50\text{W}} = 7.2\text{ ชั่วโมง}\)</span>$</p>
+$<span class="math notranslate nohighlight">\(Time = \frac{E_{batt}}{Power} = \frac{360\text{Wh}}{50\text{W}} = 7.2\text{ hour}\)</span>$</p>
 <p><strong>3. คำนวณระยะเวลาใช้งานจริง (Practical Runtime):</strong>
 ในความเป็นจริง เราไม่ควรใช้แบตเตอรี่จนหมดเกลี้ยง (100% DOD) และต้องเผื่อค่าความสูญเสียในระบบแปลงไฟ (Efficiency ~85-90%)</p>
 <ul class="simple">
 <li><p>สมมติเราต้องการเหลือแบตไว้ 20% (ใช้ได้จริง 80%) และประสิทธิภาพระบบ 90%</p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[Real\ Time = 7.2\text{ h} \times 0.80 \times 0.90 \approx 5.18\text{ ชั่วโมง}\]</div>
+\[Real\ Time = 7.2\text{ h} \times 0.80 \times 0.90 \approx 5.18\text{ hour}\]</div>
 <p><strong>สรุป:</strong> หุ่นยนต์ตัวนี้จะวิ่งได้ต่อเนื่องประมาณ <strong>5 ชั่วโมง 10 นาที</strong> ก่อนที่แบตเตอรี่จะลดเหลือ 20%</p>
 </section>
 </section>
 <section id="lifepo4-battery">
-<h2>LiFePO4 Battery<a class="headerlink" href="#lifepo4-battery" title="Link to this heading"></a></h2>
+<h2><span class="section-number">1.3. </span>LiFePO4 Battery<a class="headerlink" href="#lifepo4-battery" title="Link to this heading"></a></h2>
 <p>แบตเตอรี่ <strong>LiFePO4</strong> (ลิเธียมฟอสเฟต) ได้รับความนิยมอย่างแพร่หลายในอุตสาหกรรมพลังงาน เนื่องจากจุดเด่นเรื่องความปลอดภัยและอายุการใช้งานที่ยาวนาน (Cycle Life &gt; 2000 รอบ)</p>
 <section id="common-applications">
-<h3>Common Applications<a class="headerlink" href="#common-applications" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.3.1. </span>Common Applications<a class="headerlink" href="#common-applications" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p><strong>Energy Storage:</strong> ระบบโซล่าเซลล์และโรงไฟฟ้าพลังงานแสงอาทิตย์ นิยมใช้เพราะทนแดดทนร้อนได้ดีและคุ้มค่าในระยะยาว</p></li>
 <li><p><strong>Electric Vehicles (EVs):</strong> รถกอล์ฟ, รถจักรยานไฟฟ้า, และรถยนต์ไฟฟ้าบางรุ่น (เช่น BYD, Tesla รุ่น Standard)</p></li>
@@ -317,7 +339,7 @@ $<span class="math notranslate nohighlight">\(Time = \frac{E_{batt}}{Power} = \f
 </ul>
 </section>
 <section id="why-lifepo4-for-robotics">
-<h3>Why LiFePO4 for Robotics?<a class="headerlink" href="#why-lifepo4-for-robotics" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.3.2. </span>Why LiFePO4 for Robotics?<a class="headerlink" href="#why-lifepo4-for-robotics" title="Link to this heading"></a></h3>
 <p>ในบริบทของหุ่นยนต์ภาคพื้นดิน (Ground Robot) หรือ AMR แบตเตอรี่ชนิดนี้มีข้อได้เปรียบคือ:</p>
 <ol class="arabic simple">
 <li><p><strong>Safety First:</strong> การเดินในอาคารร่วมกับมนุษย์ ความปลอดภัยคือสิ่งสำคัญที่สุด โครงสร้างเคมีของ LiFePO4 มีพันธะที่แข็งแรง (P-O Bond) ทำให้ไม่เกิดการลุกไหม้ (Thermal Runaway) ง่ายๆ แม้จะถูกชนหรือเจาะ</p></li>
@@ -326,7 +348,7 @@ $<span class="math notranslate nohighlight">\(Time = \frac{E_{batt}}{Power} = \f
 </ol>
 </section>
 <section id="technical-challenge-the-flat-discharge-curve">
-<h3>Technical Challenge: The “Flat” Discharge Curve<a class="headerlink" href="#technical-challenge-the-flat-discharge-curve" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.3.3. </span>Technical Challenge: The “Flat” Discharge Curve<a class="headerlink" href="#technical-challenge-the-flat-discharge-curve" title="Link to this heading"></a></h3>
 <p>สิ่งหนึ่งที่นักพัฒนาหุ่นยนต์ต้องรู้คือ <strong>“กราฟการจ่ายไฟที่เรียบแบน”</strong></p>
 <ul class="simple">
 <li><p><strong>ข้อดี:</strong> มอเตอร์จะได้รับแรงดันไฟฟ้าที่คงที่ตลอดการใช้งาน (3.2V - 3.3V) ทำให้ความเร็วหุ่นยนต์สม่ำเสมอ ไม่แผ่วปลาย</p></li>
@@ -343,7 +365,7 @@ $<span class="math notranslate nohighlight">\(Time = \frac{E_{batt}}{Power} = \f
 </ul>
 </section>
 <section id="lifepo4-soc-table">
-<h3>LiFePO4 SOC Table<a class="headerlink" href="#lifepo4-soc-table" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.3.4. </span>LiFePO4 SOC Table<a class="headerlink" href="#lifepo4-soc-table" title="Link to this heading"></a></h3>
 <p>ตารางนี้แสดงความสัมพันธ์ระหว่างเปอร์เซ็นต์ความจุแบตเตอรี่ (State of Charge - SOC) และแรงดันไฟฟ้า (Voltage) ขณะพัก (Rest Voltage) ของแบตเตอรี่ชนิด LiFePO4</p>
 <table class="docutils align-center">
 <colgroup>
@@ -440,7 +462,7 @@ $<span class="math notranslate nohighlight">\(Time = \frac{E_{batt}}{Power} = \f
 <a class="reference internal image-reference" href="_images/lifepo4_chart.png"><img alt="LiFePO4 SOC Chart" src="_images/lifepo4_chart.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">กราฟแสดงความสัมพันธ์ระหว่างแรงดันและความจุของแบตเตอรี่ LiFePO4 (SOC Curve)</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 1.1 </span><span class="caption-text">กราฟแสดงความสัมพันธ์ระหว่างแรงดันและความจุของแบตเตอรี่ LiFePO4 (SOC Curve)</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p><strong>ข้อสังเกต:</strong> แบตเตอรี่ LiFePO4 มีช่วงแรงดันที่คงที่มาก (Flat Discharge Curve) สังเกตว่าในช่วง <strong>40% - 70%</strong> แรงดันแทบจะไม่เปลี่ยนแปลงเลย (3.25V - 3.30V ต่อเซลล์) ซึ่งเป็นข้อดีที่ทำให้จ่ายไฟได้เสถียร แต่ก็ทำให้การวัดเปอร์เซ็นต์แบตเตอรี่ด้วยแรงดันเพียงอย่างเดียวทำได้ยาก</p>
@@ -448,12 +470,12 @@ $<span class="math notranslate nohighlight">\(Time = \frac{E_{batt}}{Power} = \f
 <a class="reference internal image-reference" href="_images/lifepo4_24V15Ah.jpg"><img alt="แบตเตอรี่ LiFePO4 24V 15Ah" src="_images/lifepo4_24V15Ah.jpg" style="width: 60%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">แบตเตอรี่ LiFePO4 รุ่น 24V 15Ah ที่ใช้ในห้องปฏิบัติการ พร้อมสายไฟ XT60 (Discharge) และ DC Jack (Charge)</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 1.2 </span><span class="caption-text">แบตเตอรี่ LiFePO4 รุ่น 24V 15Ah ที่ใช้ในห้องปฏิบัติการ พร้อมสายไฟ XT60 (Discharge) และ DC Jack (Charge)</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
 <section id="battery-specifications">
-<h3>Battery Specifications<a class="headerlink" href="#battery-specifications" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.3.5. </span>Battery Specifications<a class="headerlink" href="#battery-specifications" title="Link to this heading"></a></h3>
 <p>จากแบตเตอรี่รุ่น <strong>24V 15</strong> ที่เราใช้งานจริง มีรายละเอียดทางเทคนิคดังนี้:</p>
 <ul class="simple">
 <li><p><strong>Battery Model:</strong> 24V 15</p></li>
@@ -475,7 +497,7 @@ $<span class="math notranslate nohighlight">\(Time = \frac{E_{batt}}{Power} = \f
 </ul>
 </section>
 <section id="connectors">
-<h3>Connectors<a class="headerlink" href="#connectors" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.3.6. </span>Connectors<a class="headerlink" href="#connectors" title="Link to this heading"></a></h3>
 <p>แบตเตอรี่แพคนี้จะมีสายไฟออกมา 2 ชุด ซึ่งทำหน้าที่ต่างกันอย่างชัดเจน:</p>
 <ol class="arabic simple">
 <li><p><strong>XT60 (หัวสีเหลือง):</strong> สำหรับ <strong>“จ่ายไฟ” (Discharge)</strong></p>
@@ -497,25 +519,25 @@ $<span class="math notranslate nohighlight">\(Time = \frac{E_{batt}}{Power} = \f
 </div>
 </section>
 <section id="id1">
-<h3>Runtime Calculation<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.3.7. </span>Runtime Calculation<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
 <p>เพื่อให้เห็นภาพการใช้งานจริง เราจะลองคำนวณว่าหุ่นยนต์ AMR ของเราจะวิ่งได้นานแค่ไหน</p>
 <p><strong>โจทย์:</strong> หุ่นยนต์ใช้พลังงานเฉลี่ย <strong>50 วัตต์ (W)</strong> ใช้แบตเตอรี่ก้อนนี้ (25.6V 15Ah)</p>
 <p><strong>1. คำนวณพลังงานรวม (Total Energy):</strong>
 $<span class="math notranslate nohighlight">\(E_{batt} = 25.6\text{V} \times 15\text{Ah} = 384\text{Wh (Watt-Hours)}\)</span>$</p>
 <p><strong>2. คำนวณระยะเวลาใช้งานทางทฤษฎี:</strong>
-$<span class="math notranslate nohighlight">\(Time = \frac{384\text{Wh}}{50\text{W}} = 7.68\text{ ชั่วโมง}\)</span>$</p>
+$<span class="math notranslate nohighlight">\(Time = \frac{384\text{Wh}}{50\text{W}} = 7.68\text{ hour}\)</span>$</p>
 <p><strong>3. คำนวณระยะเวลาใช้งานจริง (Safety Margin 20%):</strong>
 เพื่อถนอมแบตเตอรี่ เราไม่ควรใช้จนหมดเกลี้ยง (0%) ควรเหลือไว้สัก 20% และเผื่อความสูญเสียในระบบ (Efficiency 90%)</p>
 <div class="math notranslate nohighlight">
-\[Real\ Time \approx 7.68 \times 0.80 \times 0.90 \approx 5.5\text{ ชั่วโมง}\]</div>
+\[Real\ Time \approx 7.68 \times 0.80 \times 0.90 \approx 5.5\text{ hour}\]</div>
 <p><strong>สรุป:</strong> ด้วยแบตเตอรี่ก้อนนี้ หุ่นยนต์จะสามารถเดินลาดตระเวนได้ต่อเนื่องประมาณ <strong>5 ชั่วโมงครึ่ง</strong></p>
 </section>
 </section>
 <section id="lipo-battery">
-<h2>LiPo Battery<a class="headerlink" href="#lipo-battery" title="Link to this heading"></a></h2>
+<h2><span class="section-number">1.4. </span>LiPo Battery<a class="headerlink" href="#lipo-battery" title="Link to this heading"></a></h2>
 <p>แบตเตอรี่ <strong>Li-Po</strong> (Lithium Polymer) โดดเด่นในเรื่องน้ำหนักที่เบาและการจ่ายพลังงานที่รุนแรง จึงเป็นที่นิยมในวงการ RC (Radio Control) และอุปกรณ์พกพา</p>
 <section id="id2">
-<h3>Common Applications<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.4.1. </span>Common Applications<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p><strong>UAVs &amp; Drones:</strong> โดรนและเครื่องบินบังคับวิทยุเกือบทั้งหมดใช้ Li-Po เพราะต้องการน้ำหนักเบาที่สุด (High Energy-to-Weight Ratio)</p></li>
 <li><p><strong>Competitive Robotics:</strong> หุ่นยนต์ต่อสู้ (Combat Robots), หุ่นยนต์เตะบอล, หรือหุ่นยนต์วิ่งแข่งที่ต้องการอัตราเร่งสูง</p></li>
@@ -523,7 +545,7 @@ $<span class="math notranslate nohighlight">\(Time = \frac{384\text{Wh}}{50\text
 </ul>
 </section>
 <section id="why-li-po-for-high-performance-robotics">
-<h3>Why Li-Po for High-Performance Robotics?<a class="headerlink" href="#why-li-po-for-high-performance-robotics" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.4.2. </span>Why Li-Po for High-Performance Robotics?<a class="headerlink" href="#why-li-po-for-high-performance-robotics" title="Link to this heading"></a></h3>
 <p>ในบริบทของหุ่นยนต์แข่งขันที่ต้องใช้มอเตอร์กำลังสูง Li-Po มีข้อได้เปรียบที่หาตัวจับยากคือ:</p>
 <ol class="arabic simple">
 <li><p><strong>Extreme Discharge Rate (C-Rate):</strong> Li-Po สามารถจ่ายกระแสได้สูงถึง 50C - 100C ในระยะเวลาสั้นๆ ทำให้หุ่นยนต์สามารถออกตัวกระชากหรือหยุดกะทันหันได้ดีเยี่ยม (ในขณะที่ Li-ion ปกติทำได้เพียง 5C-10C)</p></li>
@@ -532,7 +554,7 @@ $<span class="math notranslate nohighlight">\(Time = \frac{384\text{Wh}}{50\text
 </ol>
 </section>
 <section id="technical-challenges-saftey-fragility">
-<h3>Technical Challenges: Saftey &amp; Fragility<a class="headerlink" href="#technical-challenges-saftey-fragility" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.4.3. </span>Technical Challenges: Saftey &amp; Fragility<a class="headerlink" href="#technical-challenges-saftey-fragility" title="Link to this heading"></a></h3>
 <p>แม้จะมีสมรรถนะสูง แต่ Li-Po ก็มีความเปราะบางที่ต้องดูแลเป็นพิเศษ:</p>
 <ul class="simple">
 <li><p><strong>Puffing (อาการบวม):</strong> หากใช้งานหนักเกินกำลัง (Over-discharge) หรือเก็บในที่ร้อน สารเคมีภายในจะเกิดก๊าซทำให้แบตเตอรี่บวมเป่ง ซึ่งเป็นสัญญาณอันตราย <strong>ห้ามเจาะ</strong> และควรเลิกใช้งานทันที</p></li>
@@ -541,7 +563,7 @@ $<span class="math notranslate nohighlight">\(Time = \frac{384\text{Wh}}{50\text
 </ul>
 </section>
 <section id="li-po-soc-table">
-<h3>Li-Po SOC Table<a class="headerlink" href="#li-po-soc-table" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.4.4. </span>Li-Po SOC Table<a class="headerlink" href="#li-po-soc-table" title="Link to this heading"></a></h3>
 <p>ตารางแสดงความสัมพันธ์ระหว่างความจุ (SOC) และแรงดันไฟฟ้าขณะพัก (Rest Voltage) ของแบตเตอรี่ Li-Po มาตรฐาน</p>
 <table class="docutils align-center">
 <colgroup>
@@ -630,11 +652,11 @@ $<span class="math notranslate nohighlight">\(Time = \frac{384\text{Wh}}{50\text
 </table>
 </section>
 <section id="technical-insight-voltage-sag">
-<h3>Technical Insight: Voltage Sag<a class="headerlink" href="#technical-insight-voltage-sag" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.4.5. </span>Technical Insight: Voltage Sag<a class="headerlink" href="#technical-insight-voltage-sag" title="Link to this heading"></a></h3>
 <p>เคยสงสัยไหมครับว่า <strong>“ทำไมแบตเตอรี่เพิ่งชาร์จมาเต็ม 100% แต่พอหุ่นยนต์ออกตัวแรงๆ สัญญาณเตือนแบตหมดกลับดังขึ้น?”</strong></p>
 <p>ปรากฏการณ์นี้เรียกว่า <strong>Voltage Sag</strong></p>
 <section id="id3">
-<h4>สาเหตุทางฟิสิกส์<a class="headerlink" href="#id3" title="Link to this heading"></a></h4>
+<h4><span class="section-number">1.4.5.1. </span>สาเหตุทางฟิสิกส์<a class="headerlink" href="#id3" title="Link to this heading"></a></h4>
 <p>แบตเตอรี่ทุกก้อนมีความต้านทานภายใน (<strong>Internal Resistance</strong>) เปรียบเสมือนท่อน้ำที่ไม่ได้โล่งตลอดแต่มีตะกอนขวางอยู่ ตามกฎของโอห์ม:</p>
 <div class="math notranslate nohighlight">
 \[V_{load} = V_{rest} - (I_{current} \times R_{internal})\]</div>
@@ -652,7 +674,7 @@ $<span class="math notranslate nohighlight">\(Time = \frac{384\text{Wh}}{50\text
 </ul>
 </section>
 <section id="soc">
-<h4>วิธีดูค่า SOC ที่ถูกต้อง<a class="headerlink" href="#soc" title="Link to this heading"></a></h4>
+<h4><span class="section-number">1.4.5.2. </span>วิธีดูค่า SOC ที่ถูกต้อง<a class="headerlink" href="#soc" title="Link to this heading"></a></h4>
 <p>ตาราง SOC (State of Charge) ด้านบน ใช้อ้างอิงได้เฉพาะตอน <strong>Resting (แบตเตอรี่อยู่นิ่งๆ ไม่มีการจ่ายไฟ)</strong> เท่านั้น</p>
 <ul class="simple">
 <li><p><strong>ขณะหุ่นยนต์วิ่ง:</strong> ห้ามเชื่อค่า Voltage ที่อ่านได้ 100% เพราะมันคือค่าที่รวม Voltage Sag เข้าไปแล้ว (ค่าจะต่ำกว่าความเป็นจริง)</p></li>
@@ -660,7 +682,7 @@ $<span class="math notranslate nohighlight">\(Time = \frac{384\text{Wh}}{50\text
 </ul>
 </section>
 <section id="low-voltage-alarm">
-<h4>การตั้งค่า Low Voltage Alarm<a class="headerlink" href="#low-voltage-alarm" title="Link to this heading"></a></h4>
+<h4><span class="section-number">1.4.5.3. </span>การตั้งค่า Low Voltage Alarm<a class="headerlink" href="#low-voltage-alarm" title="Link to this heading"></a></h4>
 <p>เนื่องจากมี Voltage Sag เราจึงไม่ควรตั้งค่าเตือนที่จุดวิกฤตพอดีเป๊ะ</p>
 <ul class="simple">
 <li><p><strong>Li-Po Critical (Rest):</strong> 3.50V ต่อเซลล์ (แบตเกือบหมด)</p></li>
@@ -677,13 +699,13 @@ $<span class="math notranslate nohighlight">\(Time = \frac{384\text{Wh}}{50\text
 </section>
 </section>
 <section id="id4">
-<h3>Battery Specifications<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.4.6. </span>Battery Specifications<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
 <p>จากแบตเตอรี่รุ่น <strong>BT BEAT LIPO</strong> ที่ใช้ในแลป มีรายละเอียดดังนี้:</p>
 <figure class="align-center" id="id10">
 <a class="reference internal image-reference" href="_images/lipo_24V_5200mAh.jpg"><img alt="แบตเตอรี่ Li-Po 22.2V 5200mAh" src="_images/lipo_24V_5200mAh.jpg" style="width: 60%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">แบตเตอรี่ Li-Po 6S 22.2V 5200mAh (65C) พร้อมสายไฟ XT90 และ Balance Plug</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 1.3 </span><span class="caption-text">แบตเตอรี่ Li-Po 6S 22.2V 5200mAh (65C) พร้อมสายไฟ XT60 และ Balance Plug</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <ul class="simple">
@@ -702,13 +724,13 @@ $<span class="math notranslate nohighlight">\(Time = \frac{384\text{Wh}}{50\text
 </ul>
 </section>
 <section id="li-po-checker-low-voltage-alarm">
-<h3>Li-Po Checker &amp; Low Voltage Alarm<a class="headerlink" href="#li-po-checker-low-voltage-alarm" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.4.7. </span>Li-Po Checker &amp; Low Voltage Alarm<a class="headerlink" href="#li-po-checker-low-voltage-alarm" title="Link to this heading"></a></h3>
 <p>เนื่องจาก Li-Po มีความเปราะบาง หากแรงดันต่ำกว่า <strong>3.0V</strong> เซลล์จะเสียหายถาวรทันที เราจึงต้องใช้อุปกรณ์ <strong>Li-Po Checker</strong> เสียบติดไว้ตลอดการใช้งาน</p>
 <figure class="align-center" id="id11">
 <a class="reference internal image-reference" href="_images/lipo_checker.jpg"><img alt="Li-Po Checker" src="_images/lipo_checker.jpg" style="width: 40%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4 </span><span class="caption-text">อุปกรณ์ Li-Po Checker สำหรับวัดแรงดันและแจ้งเตือนเมื่อแบตเตอรี่อ่อน</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 1.4 </span><span class="caption-text">อุปกรณ์ Li-Po Checker สำหรับวัดแรงดันและแจ้งเตือนเมื่อแบตเตอรี่อ่อน</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p><strong>วิธีใช้งานและการตั้งค่า:</strong></p>
@@ -729,20 +751,20 @@ $<span class="math notranslate nohighlight">\(Time = \frac{384\text{Wh}}{50\text
 </div>
 </section>
 <section id="id5">
-<h3>Runtime Calculation<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.4.8. </span>Runtime Calculation<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
 <p><strong>โจทย์:</strong> หุ่นยนต์ Mecanum แข่งขัน ใช้พลังงานเฉลี่ย <strong>50 วัตต์ (W)</strong> ใช้แบตเตอรี่ก้อนนี้ (22.2V 5.2Ah)</p>
 <p><strong>1. คำนวณพลังงานรวม (Total Energy):</strong>
 $<span class="math notranslate nohighlight">\(E_{batt} = 22.2\text{V} \times 5.2\text{Ah} \approx 115.4\text{Wh}\)</span>$</p>
 <p><strong>2. คำนวณระยะเวลาใช้งาน (Practical Runtime):</strong>
 สำหรับ Li-Po เพื่อความปลอดภัยและยืดอายุการใช้งาน เราไม่ควรใช้จนหมดเกลี้ยง ควรเหลือไว้ประมาณ 30%</p>
 <div class="math notranslate nohighlight">
-\[Time = \frac{115.4\text{Wh}}{50\text{W}} = 2.3\text{ ชั่วโมง}\]</div>
+\[Time = \frac{115.4\text{Wh}}{50\text{W}} = 2.3\text{ hour}\]</div>
 <div class="math notranslate nohighlight">
-\[Real\ Time \approx 2.3 \times 0.70 \approx 1.6\text{ ชั่วโมง}\]</div>
+\[Real\ Time \approx 2.3 \times 0.70 \approx 1.6\text{ hour}\]</div>
 <p><strong>สรุป:</strong> หุ่นยนต์จะวิ่งได้ประมาณ <strong>1 ชั่วโมง 30 นาที</strong> ซึ่งเพียงพอสำหรับการแข่งขัน 1-2 แมตช์ แต่ต้องเตรียมแบตสำรองไว้เปลี่ยนเสมอ</p>
 </section>
 <section id="signs-of-failure">
-<h3>Signs of Failure<a class="headerlink" href="#signs-of-failure" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.4.9. </span>Signs of Failure<a class="headerlink" href="#signs-of-failure" title="Link to this heading"></a></h3>
 <p>Li-Po เป็นแบตเตอรี่ที่มีความเสี่ยงสูง หากพบอาการดังต่อไปนี้ <strong>ห้ามนำมาชาร์จหรือใช้งานเด็ดขาด</strong>:</p>
 <ol class="arabic simple">
 <li><p><strong>อาการบวม (Puffing):</strong> เกิดจากก๊าซที่สะสมภายในเนื่องจากความร้อนหรือเสื่อมสภาพ หากฝืนใช้ต่ออาจระเบิดได้</p></li>
@@ -754,10 +776,10 @@ $<span class="math notranslate nohighlight">\(E_{batt} = 22.2\text{V} \times 5.2
 </section>
 </section>
 <section id="li-ion-battery">
-<h2>Li-ion Battery<a class="headerlink" href="#li-ion-battery" title="Link to this heading"></a></h2>
+<h2><span class="section-number">1.5. </span>Li-ion Battery<a class="headerlink" href="#li-ion-battery" title="Link to this heading"></a></h2>
 <p>แบตเตอรี่ <strong>Li-ion (Lithium-ion)</strong> เป็นมาตรฐานของโลกแบตเตอรี่ในปัจจุบัน โดยเฉพาะรูปทรงกระบอก (Cylindrical Cell) เช่นขนาด <strong>18650</strong> และขนาดใหม่ <strong>21700</strong> ที่นิยมใช้ในรถยนต์ไฟฟ้าและอุปกรณ์อิเล็กทรอนิกส์</p>
 <section id="applications-characteristics">
-<h3>Applications &amp; Characteristics<a class="headerlink" href="#applications-characteristics" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.5.1. </span>Applications &amp; Characteristics<a class="headerlink" href="#applications-characteristics" title="Link to this heading"></a></h3>
 <p>ด้วยคุณสมบัติที่สมดุลระหว่างน้ำหนักและความจุ Li-ion จึงถูกใช้งานในหลากหลายอุตสาหกรรม:</p>
 <ul class="simple">
 <li><p><strong>Electric Vehicles (EVs):</strong> รถยนต์ไฟฟ้า (เช่น Tesla Model 3/Y) และมอเตอร์ไซค์ไฟฟ้า นิยมใช้เซลล์ 21700 มาประกอบเป็นแพคใหญ่ใต้ท้องรถ</p></li>
@@ -767,7 +789,7 @@ $<span class="math notranslate nohighlight">\(E_{batt} = 22.2\text{V} \times 5.2
 </ul>
 </section>
 <section id="why-li-ion-for-energy-density">
-<h3>Why Li-ion for Energy Density?<a class="headerlink" href="#why-li-ion-for-energy-density" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.5.2. </span>Why Li-ion for Energy Density?<a class="headerlink" href="#why-li-ion-for-energy-density" title="Link to this heading"></a></h3>
 <p>จุดเด่นที่สุดของ Li-ion คือ <strong>Energy Density (ความหนาแน่นพลังงาน)</strong></p>
 <ol class="arabic simple">
 <li><p><strong>Lightweight High Capacity:</strong> ในน้ำหนักที่เท่ากัน Li-ion สามารถเก็บไฟได้มากกว่า LiFePO4 ถึง 1.5 - 2 เท่า ทำให้เหมาะกับอุปกรณ์ที่ต้องพกพาหรือบิน</p></li>
@@ -776,7 +798,7 @@ $<span class="math notranslate nohighlight">\(E_{batt} = 22.2\text{V} \times 5.2
 </ol>
 </section>
 <section id="technical-challenges-heat">
-<h3>Technical Challenges: Heat<a class="headerlink" href="#technical-challenges-heat" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.5.3. </span>Technical Challenges: Heat<a class="headerlink" href="#technical-challenges-heat" title="Link to this heading"></a></h3>
 <p>จากการใช้งานจริงในห้องปฏิบัติการ พบข้อจำกัดที่ผู้ใช้ต้องระวัง:</p>
 <ul class="simple">
 <li><p><strong>Heat Generation (ความร้อนสะสม):</strong></p>
@@ -795,7 +817,7 @@ $<span class="math notranslate nohighlight">\(E_{batt} = 22.2\text{V} \times 5.2
 </ul>
 </section>
 <section id="li-ion-soc-table">
-<h3>Li-ion SOC Table<a class="headerlink" href="#li-ion-soc-table" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.5.4. </span>Li-ion SOC Table<a class="headerlink" href="#li-ion-soc-table" title="Link to this heading"></a></h3>
 <p>ตารางแสดงความสัมพันธ์ระหว่างความจุและแรงดันของ Li-ion (NMC/NCA Chemistry)</p>
 <table class="docutils align-center">
 <colgroup>
@@ -886,7 +908,7 @@ $<span class="math notranslate nohighlight">\(E_{batt} = 22.2\text{V} \times 5.2
 <a class="reference internal image-reference" href="_images/liion_chart.png"><img alt="Li-ion SOC Chart" src="_images/liion_chart.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">กราฟแสดงความสัมพันธ์ระหว่างแรงดันและความจุของแบตเตอรี่ Li-ion (SOC Curve)</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 1.5 </span><span class="caption-text">กราฟแสดงความสัมพันธ์ระหว่างแรงดันและความจุของแบตเตอรี่ Li-ion (SOC Curve)</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p><strong>ข้อสังเกต:</strong></p>
@@ -895,13 +917,13 @@ $<span class="math notranslate nohighlight">\(E_{batt} = 22.2\text{V} \times 5.2
 </ul>
 </section>
 <section id="id6">
-<h3>Battery Specifications<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.5.5. </span>Battery Specifications<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
 <p>จากแบตเตอรี่รุ่น <strong>NCR21700</strong> ที่ใช้ในแลป มีรายละเอียดดังนี้:</p>
 <figure class="align-center" id="id13">
 <a class="reference internal image-reference" href="_images/li-ion_NCR21700_4800.jpg"><img alt="แบตเตอรี่ Panasonic NCR21700 4800mAh" src="_images/li-ion_NCR21700_4800.jpg" style="width: 60%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">แบตเตอรี่ Li-ion ขนาด 21700 รุ่นความจุสูง (4800mAh) สำหรับงาน IoT และงานทั่วไป</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 1.6 </span><span class="caption-text">แบตเตอรี่ Li-ion ขนาด 21700 รุ่นความจุสูง (4800mAh) สำหรับงาน IoT และงานทั่วไป</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <ul class="simple">
@@ -913,23 +935,23 @@ $<span class="math notranslate nohighlight">\(E_{batt} = 22.2\text{V} \times 5.2
 </ul>
 </section>
 <section id="id7">
-<h3>Runtime Calculation<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.5.6. </span>Runtime Calculation<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
 <p><strong>โจทย์:</strong> ใช้งานเซลล์นี้ (1 ก้อน) จ่ายไฟให้กับ <strong>ระบบ IoT</strong> ที่กินพลังงาน <strong>5 วัตต์ (W)</strong></p>
 <p><strong>1. พลังงานรวม (Total Energy):</strong>
 ระบุบนฉลาก = <strong>17.8 Wh</strong></p>
 <p><strong>2. คำนวณระยะเวลาใช้งาน (Practical Runtime):</strong>
 กำหนดให้ใช้แบตเตอรี่ได้ 85% (เหลือ 15%) และประสิทธิภาพวงจรแปลงไฟ 90%</p>
 <div class="math notranslate nohighlight">
-\[Time = \frac{17.8\text{Wh}}{5\text{W}} \times 0.85 \times 0.90 \approx 2.72\text{ ชั่วโมง}\]</div>
+\[Time = \frac{17.8\text{Wh}}{5\text{W}} \times 0.85 \times 0.90 \approx 2.72\text{ hour}\]</div>
 <p><strong>สรุป:</strong> แบตเตอรี่ก้อนเดียวสามารถขับเคลื่อนอุปกรณ์ IoT 5W ได้นานประมาณ <strong>2 ชั่วโมง 40 นาที</strong></p>
 </section>
 </section>
 <section id="disposal">
-<h2>Disposal (การกำจัดแบตเตอรี่เสื่อมสภาพ)<a class="headerlink" href="#disposal" title="Link to this heading"></a></h2>
+<h2><span class="section-number">1.6. </span>Disposal (การกำจัดแบตเตอรี่เสื่อมสภาพ)<a class="headerlink" href="#disposal" title="Link to this heading"></a></h2>
 <p>แบตเตอรี่ลิเธียมที่บวม เสื่อมสภาพ หรือชำรุด ถือเป็น “วัตถุระเบิด” หากยังมีประจุไฟค้างอยู่ การทิ้งลงถังขยะทันที (แม้จะเป็นถังแดง) มีความเสี่ยงสูงที่แบตเตอรี่จะถูกกระแทกจนไฟลุกไหม้ได้</p>
 <p>ทางห้องปฏิบัติการ RTL จึงกำหนดมาตรฐานการกำจัดด้วยวิธี <strong>Saltwater Immersion (การแช่น้ำเกลือ)</strong> เพื่อคายประจุให้เหลือ 0V อย่างสมบูรณ์ก่อนนำไปทิ้ง</p>
 <section id="standard-operating-procedure">
-<h3>ขั้นตอนการปฏิบัติ (Standard Operating Procedure)<a class="headerlink" href="#standard-operating-procedure" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.6.1. </span>ขั้นตอนการปฏิบัติ (Standard Operating Procedure)<a class="headerlink" href="#standard-operating-procedure" title="Link to this heading"></a></h3>
 <p>วิธีนี้ใช้ได้กับแบตเตอรี่ลิเธียมทุกชนิด (<strong>Li-Po, Li-ion, LiFePO4</strong>)</p>
 <p><strong>1. เตรียมสถานที่และอุปกรณ์:</strong></p>
 <ul class="simple">
@@ -966,10 +988,10 @@ $<span class="math notranslate nohighlight">\(E_{batt} = 22.2\text{V} \times 5.2
 </section>
 </section>
 <section id="charging-with-imax-b6ac">
-<h2>Charging with IMAX B6AC (คู่มือการใช้งานเครื่องชาร์จ)<a class="headerlink" href="#charging-with-imax-b6ac" title="Link to this heading"></a></h2>
+<h2><span class="section-number">1.7. </span>Charging with IMAX B6AC (คู่มือการใช้งานเครื่องชาร์จ)<a class="headerlink" href="#charging-with-imax-b6ac" title="Link to this heading"></a></h2>
 <p>เครื่องชาร์จ <strong>IMAX B6AC</strong> เป็นอุปกรณ์มาตรฐานในห้องปฏิบัติการ รองรับแบตเตอรี่หลากหลายชนิดและมีระบบความปลอดภัยพื้นฐาน แต่เนื่องจากอินเทอร์เฟซเป็นปุ่มกดและมีข้อจำกัดด้านกำลังไฟ ผู้ใช้จึงต้องเข้าใจสเปคของเครื่องให้ชัดเจน</p>
 <section id="device-specifications">
-<h3>Device Specifications (ข้อมูลจำเพาะของเครื่อง)<a class="headerlink" href="#device-specifications" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.7.1. </span>Device Specifications (ข้อมูลจำเพาะของเครื่อง)<a class="headerlink" href="#device-specifications" title="Link to this heading"></a></h3>
 <p>ข้อมูลจากหน้าเครื่องและคู่มือระบุขีดความสามารถไว้ดังนี้:</p>
 <ul class="simple">
 <li><p><strong>Input Voltage (ไฟเข้า):</strong></p>
@@ -1002,7 +1024,7 @@ $<span class="math notranslate nohighlight">\(E_{batt} = 22.2\text{V} \times 5.2
 <a class="reference internal image-reference" href="_images/imax_6bac.jpg"><img alt="IMAX B6AC Charger" src="_images/imax_6bac.jpg" style="width: 70%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 7 </span><span class="caption-text">หน้าจอขณะตั้งค่าโหมด <strong>LiPo BALANCE</strong> ด้วยกระแส <strong>2.5A</strong> สำหรับแบตเตอรี่ <strong>11.1V (3S)</strong></span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 1.7 </span><span class="caption-text">หน้าจอขณะตั้งค่าโหมด <strong>LiPo BALANCE</strong> ด้วยกระแส <strong>2.5A</strong> สำหรับแบตเตอรี่ <strong>11.1V (3S)</strong></span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <div class="admonition warning">
@@ -1020,7 +1042,7 @@ $<span class="math notranslate nohighlight">\(E_{batt} = 22.2\text{V} \times 5.2
 </div>
 </section>
 <section id="control-buttons">
-<h3>Control Buttons (ปุ่มควบคุม)<a class="headerlink" href="#control-buttons" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.7.2. </span>Control Buttons (ปุ่มควบคุม)<a class="headerlink" href="#control-buttons" title="Link to this heading"></a></h3>
 <p>เครื่องมีปุ่มเรียงจากซ้ายไปขวา 4 ปุ่ม ให้จำหน้าที่ดังนี้:</p>
 <ol class="arabic simple">
 <li><p><strong>Type / Stop (ปุ่มซ้ายสุด):</strong> เลือกชนิดแบตเตอรี่ / ย้อนกลับ / หยุดทำงาน</p></li>
@@ -1030,7 +1052,7 @@ $<span class="math notranslate nohighlight">\(E_{batt} = 22.2\text{V} \times 5.2
 </ol>
 </section>
 <section id="connections">
-<h3>Connections (การเชื่อมต่อสาย)<a class="headerlink" href="#connections" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.7.3. </span>Connections (การเชื่อมต่อสาย)<a class="headerlink" href="#connections" title="Link to this heading"></a></h3>
 <p>ก่อนเปิดเครื่อง ต้องต่อสายให้ครบถ้วนถูกต้อง:</p>
 <ol class="arabic simple">
 <li><p><strong>Power Input:</strong> เสียบปลั๊กไฟบ้าน (AC) หรือเสียบสาย DC ด้านข้าง (อย่างใดอย่างหนึ่ง)</p></li>
@@ -1053,7 +1075,7 @@ $<span class="math notranslate nohighlight">\(E_{batt} = 22.2\text{V} \times 5.2
 </div>
 </section>
 <section id="operation-flow">
-<h3>Operation Flow (ขั้นตอนการตั้งค่า)<a class="headerlink" href="#operation-flow" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.7.4. </span>Operation Flow (ขั้นตอนการตั้งค่า)<a class="headerlink" href="#operation-flow" title="Link to this heading"></a></h3>
 <p><strong>Step 1: เลือกชนิดแบตเตอรี่ (Battery Type)</strong>
 กด <strong>Stop</strong> หรือ <strong>&lt; &gt;</strong> จนเจอเมนู <code class="docutils literal notranslate"><span class="pre">PROGRAM</span> <span class="pre">SELECT</span></code> และกด <strong>Enter</strong> เลือกให้ตรงชนิดแบต (สำคัญมาก เพราะแรงดันตัดต่างกัน):</p>
 <ul class="simple">
@@ -1084,7 +1106,7 @@ $<span class="math notranslate nohighlight">\(E_{batt} = 22.2\text{V} \times 5.2
 </ul>
 </section>
 <section id="monitoring-safety">
-<h3>Monitoring &amp; Safety (การดูค่าและการตัดการทำงาน)<a class="headerlink" href="#monitoring-safety" title="Link to this heading"></a></h3>
+<h3><span class="section-number">1.7.5. </span>Monitoring &amp; Safety (การดูค่าและการตัดการทำงาน)<a class="headerlink" href="#monitoring-safety" title="Link to this heading"></a></h3>
 <p>ขณะชาร์จ หน้าจอจะแสดงค่า:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Li3S  2.5A  12.59V
 BAL   022:45  00682
@@ -1110,7 +1132,7 @@ BAL   022:45  00682
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="Welcome to RTL Lab Manual!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="bambu_a1_guide.html" class="btn btn-neutral float-right" title="Bambu Lab A1 Printing Guide (คู่มือการพิมพ์ 3 มิติ)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="soldering_guide.html" class="btn btn-neutral float-right" title="2. Soldering &amp; Rework (เทคนิคการบัดกรีและเป่าลมร้อน)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
