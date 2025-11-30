@@ -45,8 +45,6 @@ h2 {
     margin-top: 2em;
     border-bottom: 1px solid #ddd;
     padding-bottom: 8px;
-    display: flex;
-    align-items: center;
 }
 h2::before {
     content: "";
@@ -240,4 +238,46 @@ code, pre, .rst-content tt, .rst-content code {
 }
 .wy-breadcrumbs li a:hover {
     color: #00AEEF;
+}
+
+/* --- FIX SIDEBAR MENU INDENTATION (แก้ตัวเลขหัวข้อตกบรรทัด) --- */
+
+/* เจาะจงไปที่ลิงก์ในเมนู */
+.wy-menu-vertical li a {
+    /* 1. ยกเลิก text-indent แบบเดิม */
+    text-indent: 0;
+    
+    /* 2. ใช้ Padding แทน เพื่อดันข้อความทั้งหมดเข้าไป */
+    padding-left: 20px; 
+    
+    /* 3. ตั้งค่าการแสดงผลให้เป็น Block */
+    display: block;
+    position: relative;
+}
+
+/* ปรับระยะห่างสำหรับหัวข้อย่อยแต่ละระดับ (Nested Levels) */
+/* ระดับ 1 (toctree-l1) */
+.wy-menu-vertical li.toctree-l1 > a {
+    padding-left: 15px; 
+}
+
+/* ระดับ 2 (toctree-l2) - จุดที่มีปัญหา */
+.wy-menu-vertical li.toctree-l2 > a {
+    padding-left: 25px; 
+}
+
+/* ระดับ 3 (toctree-l3) */
+.wy-menu-vertical li.toctree-l3 > a {
+    padding-left: 35px;
+}
+
+/* ระดับ 4 (toctree-l4) */
+.wy-menu-vertical li.toctree-l4 > a {
+    padding-left: 45px;
+}
+
+/* (Optional) ทำให้บรรทัดห่างกันนิดนึงให้อ่านง่าย */
+.wy-menu-vertical li a {
+    padding-top: 5px;
+    padding-bottom: 5px;
 }

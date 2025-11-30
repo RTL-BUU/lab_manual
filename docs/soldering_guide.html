@@ -11,7 +11,7 @@
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-      <link rel="stylesheet" type="text/css" href="_static/rtl_theme.css?v=060d35dd" />
+      <link rel="stylesheet" type="text/css" href="_static/rtl_theme.css?v=713a75c8" />
 
   
     <link rel="shortcut icon" href="_static/favicon_rtl.png"/>
@@ -111,6 +111,7 @@
 <li class="toctree-l3"><a class="reference internal" href="battery_guide.html#monitoring-safety">1.7.5. Monitoring &amp; Safety (การดูค่าและการตัดการทำงาน)</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#troubleshooting">1.8. 8. Troubleshooting (ปัญหาที่พบบ่อยและวิธีแก้)</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">2. Soldering &amp; Rework (เทคนิคการบัดกรีและเป่าลมร้อน)</a><ul>
@@ -132,6 +133,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#task-settings-guide">2.5. Task &amp; Settings Guide (ตารางแนะนำการตั้งค่า)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#troubleshooting">2.6. Troubleshooting (ปัญหาที่พบบ่อยและวิธีแก้)</a></li>
 </ul>
 </li>
 </ul>
@@ -179,6 +181,25 @@
   <section class="tex2jax_ignore mathjax_ignore" id="soldering-rework">
 <h1><span class="section-number">2. </span>Soldering &amp; Rework (เทคนิคการบัดกรีและเป่าลมร้อน)<a class="headerlink" href="#soldering-rework" title="Link to this heading"></a></h1>
 <p>งานสร้างหุ่นยนต์หนีไม่พ้นเรื่องการเชื่อมต่อวงจร บทนี้จะสอนการใช้อุปกรณ์บัดกรีมาตรฐานของแลป (<strong>Atten</strong>) การเลือกหัวแร้งให้ถูกกับงาน และเทคนิคการบัดกรีที่ถูกต้องเพื่อความแข็งแรงทางไฟฟ้าและกลไก</p>
+<div class="important admonition">
+<p class="admonition-title">⚡ สรุปสำหรับมือใหม่ (Beginner Summary)</p>
+<p>หากคุณไม่มีเวลาอ่านทั้งหมด นี่คือ <strong>4 กฎเหล็ก</strong> ที่ต้องทำตาม:</p>
+<ol class="arabic simple">
+<li><p><strong>Safety First:</strong> หัวแร้งร้อน 350°C ห้ามโดนผิวหนัง และ <strong>ต้องปิดสวิตช์ + ถอดปลั๊กทุกครั้งเมื่อเลิกใช้</strong></p></li>
+<li><p><strong>Heat Transfer:</strong> การบัดกรีคือการทำให้ชิ้นงานร้อน <strong>ไม่ใช่แค่ละลายตะกั่ว</strong></p>
+<ul class="simple">
+<li><p><em>วิธีทำ:</em> เอาปลายหัวแร้งแตะ ขาอุปกรณ์+แผ่นวงจร พร้อมกัน นับ 1-2 วินาทีให้ร้อน แล้วค่อยป้อนตะกั่วตามเข้าไป</p></li>
+</ul>
+</li>
+<li><p><strong>Tool Selection (เลือกหัวให้ถูก):</strong> ห้ามใช้หัวเข็มทำงานใหญ่!</p>
+<ul class="simple">
+<li><p><strong>งานเล็ก/วงจรทั่วไป:</strong> ใช้หัวเบอร์ <strong>T900-1.6D</strong> (ปากแบนเล็ก)</p></li>
+<li><p><strong>งานใหญ่/สายไฟ/XT60:</strong> ใช้หัวเบอร์ <strong>T900-2.4D</strong> (ปากแบนใหญ่)</p></li>
+</ul>
+</li>
+<li><p><strong>Magic Helper:</strong> หากบัดกรียาก ตะกั่วไม่เกาะ หรือดูด้านๆ ให้แต้ม <strong>Flux (น้ำยาประสาน)</strong> ช่วยเสมอ</p></li>
+</ol>
+</div>
 <section id="soldering-stations">
 <h2><span class="section-number">2.1. </span>Soldering Stations (เครื่องมือบัดกรีในแลป)<a class="headerlink" href="#soldering-stations" title="Link to this heading"></a></h2>
 <p>เรามีเครื่องมือ 3 ระดับ แบ่งตามความเชี่ยวชาญของผู้ใช้งาน:</p>
@@ -605,6 +626,52 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section id="troubleshooting">
+<h2><span class="section-number">2.6. </span>Troubleshooting (ปัญหาที่พบบ่อยและวิธีแก้)<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h2>
+<p>หากบัดกรีแล้วไม่ได้ผลลัพธ์ตามต้องการ ให้ลองตรวจสอบตามอาการดังนี้:</p>
+<p><strong>1. หัวแร้งไม่ร้อนเลย (No Heat)</strong></p>
+<ul class="simple">
+<li><p><strong>เช็คไฟ:</strong> เสียบปลั๊กแน่นหรือยัง? เปิดสวิตช์รางปลั๊กไฟหรือยัง?</p></li>
+<li><p><strong>เช็คเครื่อง:</strong> เปิดสวิตช์หลัก (ด้านหลัง) และสวิตช์หน้าเครื่อง (Solder) หรือยัง?</p></li>
+<li><p><strong>Action:</strong> หากเปิดครบแล้วยังไม่ร้อน แสดงว่าไส้ความร้อนอาจจะขาด <strong>ห้ามซ่อมเอง</strong> ให้แจ้งอาจารย์หรือรุ่นพี่เพื่อเบิกอะไหล่เปลี่ยนด้ามใหม่ (Handle AP-50)</p></li>
+</ul>
+<p><strong>2. จี้หัวแร้งนานแล้ว แต่ตะกั่วไม่ยอมละลาย (Solder won’t melt)</strong></p>
+<ul class="simple">
+<li><p><strong>สาเหตุ:</strong> ปลายหัวแร้งเล็กเกินไป (เช่นใช้หัวเข็มกับงานใหญ่) ทำให้ส่งความร้อนไม่ทัน หรือตั้งอุณหภูมิต่ำเกินไป</p></li>
+<li><p><strong>Action:</strong> เปลี่ยนมาใช้หัวแร้งแบบ <strong>D Series (ปากแบน)</strong> หรือเพิ่มอุณหภูมิขึ้นเล็กน้อย (350°C -&gt; 380°C)</p></li>
+</ul>
+<p><strong>3. ต้องเติมตะกั่วนานมากกว่าจะเต็มรู (Filling takes too long)</strong></p>
+<ul class="simple">
+<li><p><strong>สาเหตุ:</strong> ใช้ลวดตะกั่วเส้นเล็กเกินไปกับจุดบัดกรีใหญ่</p></li>
+<li><p><strong>Action:</strong> เปลี่ยนขนาดลวดตะกั่วให้ใหญ่ขึ้น (ที่แลปมีขนาด <strong>0.8mm</strong> และ <strong>1.2mm</strong> ให้เลือกใช้)</p></li>
+</ul>
+<p><strong>4. บัดกรีแล้วตะกั่วล้น เลอะเทอะไปหมด (Too much solder)</strong></p>
+<ul class="simple">
+<li><p><strong>สาเหตุ:</strong> ใช้ลวดตะกั่วเส้นใหญ่เกินไป ทำให้คุมปริมาณยาก</p></li>
+<li><p><strong>Action:</strong> เปลี่ยนมาใช้ลวดขนาด <strong>0.4mm</strong> หรือใช้ <strong>ที่ดูดตะกั่ว</strong> ดูดของเก่าออกแล้วทำใหม่</p></li>
+</ul>
+<p><strong>5. ตะกั่วเป็น “ตุ่มแหลม” หรือ “ดึงยืด” (Solder Spikes/Icicles)</strong></p>
+<ul class="simple">
+<li><p><strong>สาเหตุ:</strong> ความร้อนไม่พอขณะดึงออก, น้ำยาประสาน (Flux) ระเหยหมดแล้ว, หรือดึงหัวแร้งออกผิดจังหวะ</p></li>
+<li><p><strong>Action:</strong></p>
+<ol class="arabic simple">
+<li><p>แต้ม <strong>Flux</strong> เพิ่ม หรือเติมตะกั่วใหม่นิดหน่อย (เพื่อให้มี Flux ใหม่)</p></li>
+<li><p>จี้ให้ละลายทั่วกันอีกครั้ง</p></li>
+<li><p><strong>ดึงหัวแร้งออกในแนวเฉียง (45 องศา)</strong> ด้วยความเร็วที่มั่นคง (ไม่ช้าจนยืด)</p></li>
+</ol>
+</li>
+</ul>
+<p><strong>6. ตะกั่วกลิ้งเป็น “ลูกบอล” ไม่ยอมเกาะขาอุปกรณ์ (Cold Joint/Bad Wetting)</strong></p>
+<ul class="simple">
+<li><p><strong>สาเหตุ:</strong> <strong>“ชิ้นงานไม่ร้อน”</strong> (คุณอาจจะเอาตะกั่วไปละลายบนหัวแร้ง แล้วค่อยเอาไปป้าย ซึ่งเป็นวิธีที่ผิด!)</p></li>
+<li><p><strong>Action:</strong> ให้เอาหัวแร้งจี้ที่ <strong>ขาอุปกรณ์และแผ่นวงจร</strong> ให้ร้อนก่อน แล้วค่อยป้อนตะกั่วใส่ชิ้นงาน ตะกั่วจะไหลไปเคลือบเอง</p></li>
+</ul>
+<p><strong>7. ปลายหัวแร้งดำ ไม่กินตะกั่ว (Oxidized Tip)</strong></p>
+<ul class="simple">
+<li><p><strong>สาเหตุ:</strong> เปิดความร้อนสูงทิ้งไว้นานโดยไม่มีตะกั่วเคลือบ ทำให้ปลายเกิดคราบเขม่า (Oxide)</p></li>
+<li><p><strong>Action:</strong> จิ้มปลายหัวแร้งลงใน <strong>ฝอยขัด (Brass Wool)</strong> เพื่อขัดคราบดำออก แล้วรีบเติมตะกั่วเคลือบปลายทันที (Tinning) ทำซ้ำๆ จนกว่าปลายจะกลับมาเงา</p></li>
+</ul>
 </section>
 </section>
 

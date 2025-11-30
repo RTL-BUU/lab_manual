@@ -11,7 +11,7 @@
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-      <link rel="stylesheet" type="text/css" href="_static/rtl_theme.css?v=060d35dd" />
+      <link rel="stylesheet" type="text/css" href="_static/rtl_theme.css?v=713a75c8" />
 
   
     <link rel="shortcut icon" href="_static/favicon_rtl.png"/>
@@ -111,6 +111,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#monitoring-safety">1.7.5. Monitoring &amp; Safety (การดูค่าและการตัดการทำงาน)</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#troubleshooting">1.8. 8. Troubleshooting (ปัญหาที่พบบ่อยและวิธีแก้)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="soldering_guide.html">2. Soldering &amp; Rework (เทคนิคการบัดกรีและเป่าลมร้อน)</a><ul>
@@ -132,6 +133,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="soldering_guide.html#task-settings-guide">2.5. Task &amp; Settings Guide (ตารางแนะนำการตั้งค่า)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soldering_guide.html#troubleshooting">2.6. Troubleshooting (ปัญหาที่พบบ่อยและวิธีแก้)</a></li>
 </ul>
 </li>
 </ul>
@@ -179,6 +181,16 @@
   <section class="tex2jax_ignore mathjax_ignore" id="battery-technologies-for-robotics">
 <h1><span class="section-number">1. </span>Battery Technologies for Robotics<a class="headerlink" href="#battery-technologies-for-robotics" title="Link to this heading"></a></h1>
 <p>หัวใจสำคัญของหุ่นยนต์เคลื่อนที่คือแหล่งพลังงาน ในห้องปฏิบัติการของเรามีการใช้งานแบตเตอรี่หลักๆ 3 ประเภท คือ <strong>LiFePO4</strong>, <strong>Li-Po</strong>, และ <strong>Li-ion</strong> ซึ่งแต่ละชนิดมีคุณสมบัติทางเคมี ข้อดี-ข้อเสีย และการใช้งานที่แตกต่างกัน</p>
+<div class="important admonition">
+<p class="admonition-title">⚡ สรุปสำหรับมือใหม่ (Beginner Summary)</p>
+<p>หากคุณไม่มีเวลาอ่านทั้งหมด นี่คือ <strong>4 กฎเหล็ก</strong> ของการใช้แบตเตอรี่ในห้องปฏิบัติการ RTL:</p>
+<ol class="arabic simple">
+<li><p><strong>Stop at 20%:</strong> ห้ามใช้แบตเตอรี่จนหมดเกลี้ยง! หากหุ่นยนต์เริ่มวิ่งช้าหรือมีเสียงเตือนจาก Li-Po Checker ให้หยุดและนำมาชาร์จทันที (แบต Li-Po พังทันทีถ้าแรงดันเซลล์ใดเซลล์นึงต่ำกว่า 3.0V)</p></li>
+<li><p><strong>Unplug After Use:</strong> เมื่อเลิกใช้งานหุ่นยนต์ <strong>ต้องถอดสายขั้วแบตเตอรี่ออกเสมอ</strong> ห้ามเสียบคาไว้ เพราะวงจรจะกินไฟจนแบตพัง</p></li>
+<li><p><strong>Balance Charge Only:</strong> เวลาชาร์จแบตเตอรี่แพค (ที่มีหลายเซลล์และมีสาย Balance) ต้องเสียบ <strong>สาย Balance (หัวขาว)</strong> ทุกครั้ง และเลือกโหมด <strong>BALANCE</strong> ที่เครื่องชาร์จเสมอ</p></li>
+<li><p><strong>Storage Mode:</strong> หากจะไม่ใช้งานนานเกิน 3 วัน ต้องนำแบตเตอรี่มาชาร์จ/ดิสชาร์จให้อยู่ในโหมด <strong>STORAGE</strong> (3.8V หรือ 3.3V ดูที่หัวข้อแยกของแบตเตอรี่แต่ละชนิด) ห้ามเก็บตอนเต็มหรือหมด</p></li>
+</ol>
+</div>
 <section id="technology-overview">
 <h2><span class="section-number">1.1. </span>Technology Overview<a class="headerlink" href="#technology-overview" title="Link to this heading"></a></h2>
 <p>เพื่อให้เลือกใช้งานได้ถูกต้อง เราต้องเปรียบเทียบคุณสมบัติหลัก 3 ด้าน:</p>
@@ -1124,6 +1136,43 @@ BAL   022:45  00682
 </ol>
 <p>เมื่อเสร็จสิ้น ให้กด <strong>Stop</strong> และถอดสายแบตเตอรี่ออกทันที</p>
 </section>
+</section>
+<section id="troubleshooting">
+<h2><span class="section-number">1.8. </span>8. Troubleshooting (ปัญหาที่พบบ่อยและวิธีแก้)<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h2>
+<p>หากใช้งานแบตเตอรี่หรือเครื่องชาร์จแล้วติดขัด ให้ลองตรวจสอบตามอาการดังนี้:</p>
+<p><strong>1. เครื่องชาร์จฟ้อง “CONNECTION BREAK”</strong></p>
+<ul class="simple">
+<li><p><strong>อาการ:</strong> กด Start แล้วเครื่องร้องเตือนทันที</p></li>
+<li><p><strong>สาเหตุ:</strong> สายไฟขาดใน, เสียบสายไม่แน่น, หรือลืมเสียบสายหลัก (Main Lead)</p></li>
+<li><p><strong>Action:</strong> ขยับขั้ว XT60 ให้แน่น หรือลองเปลี่ยนสายชาร์จใหม่</p></li>
+</ul>
+<p><strong>2. เครื่องชาร์จฟ้อง “CELL ERROR” หรือ “VOLTAGE ERROR”</strong></p>
+<ul class="simple">
+<li><p><strong>อาการ:</strong> ชาร์จไม่เข้า วัดแรงดันไม่ได้</p></li>
+<li><p><strong>สาเหตุ:</strong> ลืมเสียบสาย Balance, สาย Balance ขาด, หรือมีเซลล์ใดเซลล์หนึ่งตาย (0V)</p></li>
+<li><p><strong>Action:</strong> เช็คสายแพสีขาวว่าเสียบถูกช่องและแน่นหรือไม่ หากเสียบแน่นแล้วยังขึ้น แสดงว่าแบตเสีย (ห้ามใช้งานต่อ)</p></li>
+</ul>
+<p><strong>3. ชาร์จแป๊บเดียวเต็ม แต่ใช้งานได้นิดเดียวหมด (False Peak)</strong></p>
+<ul class="simple">
+<li><p><strong>อาการ:</strong> หน้าจอขึ้น FULL เร็วผิดปกติ (เช่นภายใน 5 นาที) แต่เอาไปวิ่งได้แค่ 1 นาที</p></li>
+<li><p><strong>สาเหตุ:</strong> แบตเตอรี่เสื่อมสภาพ (ค่าความต้านทานภายในสูง)</p></li>
+<li><p><strong>Action:</strong> ลอง Discharge และ Charge ใหม่ 1 รอบ ถ้าอาการไม่หาย ให้คัดแยกเป็นแบตเสื่อม (เขียนป้ายแปะไว้)</p></li>
+</ul>
+<p><strong>4. เครื่องชาร์จร้อนจัด หรือมีเสียงพัดลมดังผิดปกติ</strong></p>
+<ul class="simple">
+<li><p><strong>สาเหตุ:</strong> ตั้งกระแสชาร์จ (Amp) สูงเกินไป</p></li>
+<li><p><strong>Action:</strong> ลดกระแสชาร์จลง (เช่นจาก 5A เหลือ 2A) เพื่อถนอมเครื่องชาร์จ</p></li>
+</ul>
+<p><strong>5. แบตเตอรี่บวม (Puffing)</strong></p>
+<ul class="simple">
+<li><p><strong>สาเหตุ:</strong> เกิดก๊าซภายในเนื่องจากความร้อนสูง, การใช้งานหนักเกิน (Over-discharge), หรือเก็บรักษาผิดวิธี</p></li>
+<li><p><strong>Action:</strong> <strong>ห้ามเจาะและห้ามชาร์จต่อเด็ดขาด</strong> ให้ทำลายทิ้งด้วยการแช่น้ำเกลือทันที</p></li>
+</ul>
+<p><strong>6. Li-Po Checker ร้องเตือนทั้งที่เพิ่งชาร์จมา (Voltage Sag)</strong></p>
+<ul class="simple">
+<li><p><strong>สาเหตุ:</strong> ตั้งค่าเตือน (Alarm) สูงเกินไป ทำให้พอดึงกระแสไฟแล้วแรงดันตกจนถึงจุดเตือน</p></li>
+<li><p><strong>Action:</strong> ปรับค่าเตือนลงมาที่ <strong>3.40V - 3.50V</strong> (กดปุ่มเล็กๆ ระหว่างลำโพงเพื่อตั้งค่า)</p></li>
+</ul>
 </section>
 </section>
 
