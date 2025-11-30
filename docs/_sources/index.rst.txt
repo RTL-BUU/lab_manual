@@ -22,6 +22,13 @@ Welcome to RTL Lab Manual!
 
 .. toctree::
    :maxdepth: 2
+   :caption: เตรียมการแข่งขันหุ่นยนต์:
+   :numbered:
+
+   robot_prep_esp32
+
+.. toctree::
+   :maxdepth: 2
    :caption: การใช้งานเครื่องมืออื่นๆ:
    
    # (ใส่ชื่อไฟล์อื่นๆ ในอนาคต เช่น oscilloscope_guide)

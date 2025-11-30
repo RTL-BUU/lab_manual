@@ -1,0 +1,1250 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1. Robot Competition Preparation (เตรียมความพร้อมสู่สนามแข่ง) &mdash; RTL Lab Manual 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d8a2add5" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="_static/rtl_theme.css?v=713a75c8" />
+
+  
+    <link rel="shortcut icon" href="_static/favicon_rtl.png"/>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=30646c52"></script>
+      <script src="_static/design-tabs.js?v=f930bc37"></script>
+      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="_static/custom.js?v=8c19a4a9"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="1. Bambu Lab A1 Printing Guide (คู่มือการพิมพ์ 3 มิติ)" href="bambu_a1_guide.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/rtl_background.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">ความปลอดภัยและไฟฟ้า:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="battery_guide.html">1. Battery Technologies for Robotics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#technology-overview">1.1. Technology Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#battery-comparison">1.1.1. Battery Comparison</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#terminology-calculation">1.2. Terminology &amp; Calculation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#electrical-units">1.2.1. Electrical Units</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#battery-health-usage">1.2.2. Battery Health &amp; Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#configuration">1.2.3. Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#battery-pack-calculation">1.2.4. Battery Pack Calculation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#runtime-calculation">1.2.5. Runtime Calculation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#lifepo4-battery">1.3. LiFePO4 Battery</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#common-applications">1.3.1. Common Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#why-lifepo4-for-robotics">1.3.2. Why LiFePO4 for Robotics?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#technical-challenge-the-flat-discharge-curve">1.3.3. Technical Challenge: The “Flat” Discharge Curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#lifepo4-soc-table">1.3.4. LiFePO4 SOC Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#battery-specifications">1.3.5. Battery Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#connectors">1.3.6. Connectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#id1">1.3.7. Runtime Calculation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#lipo-battery">1.4. LiPo Battery</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#id2">1.4.1. Common Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#why-li-po-for-high-performance-robotics">1.4.2. Why Li-Po for High-Performance Robotics?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#technical-challenges-saftey-fragility">1.4.3. Technical Challenges: Saftey &amp; Fragility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#li-po-soc-table">1.4.4. Li-Po SOC Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#technical-insight-voltage-sag">1.4.5. Technical Insight: Voltage Sag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#id4">1.4.6. Battery Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#li-po-checker-low-voltage-alarm">1.4.7. Li-Po Checker &amp; Low Voltage Alarm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#id5">1.4.8. Runtime Calculation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#signs-of-failure">1.4.9. Signs of Failure</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#li-ion-battery">1.5. Li-ion Battery</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#applications-characteristics">1.5.1. Applications &amp; Characteristics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#why-li-ion-for-energy-density">1.5.2. Why Li-ion for Energy Density?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#technical-challenges-heat">1.5.3. Technical Challenges: Heat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#li-ion-soc-table">1.5.4. Li-ion SOC Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#id6">1.5.5. Battery Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#id7">1.5.6. Runtime Calculation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#disposal">1.6. Disposal (การกำจัดแบตเตอรี่เสื่อมสภาพ)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#standard-operating-procedure">1.6.1. ขั้นตอนการปฏิบัติ (Standard Operating Procedure)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#charging-with-imax-b6ac">1.7. Charging with IMAX B6AC (คู่มือการใช้งานเครื่องชาร์จ)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#device-specifications">1.7.1. Device Specifications (ข้อมูลจำเพาะของเครื่อง)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#control-buttons">1.7.2. Control Buttons (ปุ่มควบคุม)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#connections">1.7.3. Connections (การเชื่อมต่อสาย)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#operation-flow">1.7.4. Operation Flow (ขั้นตอนการตั้งค่า)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="battery_guide.html#monitoring-safety">1.7.5. Monitoring &amp; Safety (การดูค่าและการตัดการทำงาน)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="battery_guide.html#troubleshooting">1.8. 8. Troubleshooting (ปัญหาที่พบบ่อยและวิธีแก้)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="soldering_guide.html">2. Soldering &amp; Rework (เทคนิคการบัดกรีและเป่าลมร้อน)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="soldering_guide.html#soldering-stations">2.1. Soldering Stations (เครื่องมือบัดกรีในแลป)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="soldering_guide.html#atten-at8586-double-channel-rework-station">2.1.1. Atten AT8586 (Double Channel Rework Station)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soldering_guide.html#atten-at937">2.1.2. Atten AT937</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soldering_guide.html#basic-soldering-iron">2.1.3. Basic Soldering Iron (หัวแร้งแบบปากกา/ปืน)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="soldering_guide.html#accessories">2.2. Accessories (อุปกรณ์เสริมที่ต้องรู้)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soldering_guide.html#basic-soldering-technique">2.3. Basic Soldering Technique (เทคนิคการบัดกรีพื้นฐาน)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="soldering_guide.html#safety-first">2.3.1. Safety First (ความปลอดภัย)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soldering_guide.html#steps-to-perfect-joint-4">2.3.2. 4 Steps to Perfect Joint (4 ขั้นตอนสู่การบัดกรีที่สมบูรณ์)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="soldering_guide.html#soldering-iron-tips">2.4. Soldering Iron Tips (การเลือกหัวแร้งให้ถูกงาน)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="soldering_guide.html#tip-characteristics">2.4.1. ตารางคุณสมบัติ (Tip Characteristics)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soldering_guide.html#real-photos">2.4.2. รูปภาพหัวแร้งจริง (Real Photos)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="soldering_guide.html#task-settings-guide">2.5. Task &amp; Settings Guide (ตารางแนะนำการตั้งค่า)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soldering_guide.html#troubleshooting">2.6. Troubleshooting (ปัญหาที่พบบ่อยและวิธีแก้)</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">การผลิตชิ้นงาน (3D Printing):</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="bambu_a1_guide.html">1. Bambu Lab A1 Printing Guide (คู่มือการพิมพ์ 3 มิติ)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#software-setup">1.1. 1. Software Setup (เตรียมซอฟต์แวร์)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#file-formats">1.2. 2. File Formats (ประเภทไฟล์งาน)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#workflow-from-cad-to-print">1.3. 3. Workflow: From CAD to Print</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#material-profile-settings">1.4. 4. Material &amp; Profile Settings (การตั้งค่าวัสดุ)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="bambu_a1_guide.html#profile">1.4.1. วิธีโหลด Profile (สำคัญ)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bambu_a1_guide.html#id1">1.4.2. ความแตกต่างของวัสดุ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#slicer-settings-intermediate">1.5. 5. Slicer Settings (Intermediate)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bambu_a1_guide.html#sending-to-printer">1.6. 6. Sending to Printer (สั่งพิมพ์)</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">เตรียมการแข่งขันหุ่นยนต์:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Robot Competition Preparation (เตรียมความพร้อมสู่สนามแข่ง)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#esp32-fundamentals-esp32">1.1. ESP32 Fundamentals (พื้นฐานฮาร์ดแวร์ ESP32)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#electrical-specs-limits">1.1.1. Electrical Specs &amp; Limits (ข้อจำกัดทางไฟฟ้า)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#esp32-pinout-guide">1.1.2. ESP32 Pinout Guide (คู่มือการเลือกใช้ขาพิน)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pin">1.1.3. ตารางสรุปฟังก์ชันของบอร์ด 38-Pin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pwm-analogwrite-vs-ledc">1.1.4. PWM: analogWrite vs LEDC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#wireless-controller-ps4-ps5">1.2. Wireless Controller (การควบคุมด้วยจอย PS4/PS5)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#bluetooth-basics">1.2.1. Bluetooth Basics (พื้นฐานบลูทูธ)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controller-mapping">1.2.2. Controller Mapping (รู้จักปุ่มกด)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pairing-connection">1.2.3. Pairing &amp; Connection (การจับคู่)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hardware-setup-for-demos">1.2.4. Hardware Setup for Demos (การต่อวงจรสำหรับทดลอง)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#motor-control-with-bts7960">1.3. Motor Control with BTS7960 (การขับมอเตอร์กำลังสูง)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pin-definition-wiring">1.3.1. Pin Definition &amp; Wiring (ผังการต่อสาย)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-example-motor-control-function">1.3.2. Code Example: Motor Control Function</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#final-mission-wireless-motor-control">1.4. Final Mission: Wireless Motor Control (ภารกิจพิชิตมอเตอร์ไร้สาย)</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RTL Lab Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">1. </span>Robot Competition Preparation (เตรียมความพร้อมสู่สนามแข่ง)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/robot_prep_esp32.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="robot-competition-preparation">
+<h1><span class="section-number">1. </span>Robot Competition Preparation (เตรียมความพร้อมสู่สนามแข่ง)<a class="headerlink" href="#robot-competition-preparation" title="Link to this heading"></a></h1>
+<p>ในบทนี้เรามารู้จักไมโครคอนโทรลเลอร์ <strong>ESP32</strong> ซึ่งทำหน้าที่เป็น “Low-level Controller” คอยรับคำสั่งจากจอยเกมและขับเคลื่อนมอเตอร์หุ่นยนต์ในสนามแข่งขัน</p>
+<section id="esp32-fundamentals-esp32">
+<h2><span class="section-number">1.1. </span>ESP32 Fundamentals (พื้นฐานฮาร์ดแวร์ ESP32)<a class="headerlink" href="#esp32-fundamentals-esp32" title="Link to this heading"></a></h2>
+<p><strong>ESP32</strong> เป็นชิปยอดนิยมสำหรับหุ่นยนต์เนื่องจากเป็น Dual Core ความเร็วสูงและมีราคาประหยัด แต่มีข้อจำกัดทางไฟฟ้าที่ต้องระวังเคร่งครัด</p>
+<section id="electrical-specs-limits">
+<h3><span class="section-number">1.1.1. </span>Electrical Specs &amp; Limits (ข้อจำกัดทางไฟฟ้า)<a class="headerlink" href="#electrical-specs-limits" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><strong>Logic Voltage:</strong> ESP32 ทำงานที่แรงดัน <strong>3.3V</strong> เท่านั้น!</p>
+<ul class="simple">
+<li><p><strong>ห้าม</strong> ต่อเซนเซอร์ 5V เข้าขา Input โดยตรง (ต้องใช้ Logic Level Converter)</p></li>
+<li><p><strong>ห้าม</strong> จ่ายไฟ 5V เข้าขา 3.3V</p></li>
+</ul>
+</li>
+<li><p><strong>Current Limit (กระแส):</strong></p>
+<ul class="simple">
+<li><p>จ่ายกระแสต่อขาได้สูงสุด <strong>12 mA</strong> (แนะนำ) ถึง 40 mA (สูงสุด)</p></li>
+<li><p>กระแสรวมทั้งชิปไม่ควรเกิน <strong>1200 mA</strong></p></li>
+</ul>
+</li>
+<li><p><strong>Power Input (การจ่ายไฟ):</strong></p>
+<ul class="simple">
+<li><p><strong>USB Port:</strong> จ่ายไฟ 5V จากคอมพิวเตอร์หรือ Power Bank (เหมาะตอนเขียนโค้ด)</p></li>
+<li><p><strong>VIN (5V Pin):</strong> จ่ายไฟ 5V จากบอร์ดแปลงไฟ (Buck Converter) ของหุ่นยนต์ -&gt; <strong>วิธีที่แนะนำที่สุดสำหรับหุ่นยนต์</strong></p></li>
+<li><p><strong>3.3V Pin:</strong> จ่ายไฟ 3.3V ที่ผ่านการ Regulate มาแล้ว (ไม่แนะนำ เพราะเสี่ยงไฟเกิน)</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="esp32-pinout-guide">
+<h3><span class="section-number">1.1.2. </span>ESP32 Pinout Guide (คู่มือการเลือกใช้ขาพิน)<a class="headerlink" href="#esp32-pinout-guide" title="Link to this heading"></a></h3>
+<p>ESP32 รุ่น 38-Pin มีขาให้ใช้เยอะมาก แต่ไม่ใช่ทุกขาที่เหมือนกัน เพื่อให้การทำหุ่นยนต์ราบรื่น ขอให้ยึดหลักการ <strong>“ไฟจราจร”</strong> ในการเลือกใช้ขาดังนี้</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="_images/esp32-diyables.jpg"><img alt="ESP32 38-Pin Pinout" src="_images/esp32-diyables.jpg" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 1.8 </span><span class="caption-text">ผังขาของ ESP32 รุ่น 38-Pin (Source: DIYables.io)</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="safe-pins">
+<h4><span class="section-number">1.1.2.1. </span>ปลอดภัย: ขาที่ควรเลือกใช้เป็นอันดับแรก (Safe Pins)<a class="headerlink" href="#safe-pins" title="Link to this heading"></a></h4>
+<p>ขาเหล่านี้ไม่มีข้อจำกัดพิเศษ เป็น Input/Output ได้ปกติ เหมาะสำหรับต่อ <strong>LED, Motor Driver (BTS7960), Relay, หรือปุ่มกด</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>GPIO</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>16, 17</strong></p></td>
+<td><p>ขา UART2 (แต่ใช้เป็น GPIO ปกติได้ดีมาก)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>25, 26, 27</strong></p></td>
+<td><p>ขา GPIO มาตรฐาน (25, 26 เป็น DAC ได้ด้วย)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>32, 33</strong></p></td>
+<td><p>ขา GPIO มาตรฐาน (ต่อ Crystal 32K ได้ แต่ปกติไม่ได้ใช้)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>13, 14, 27</strong></p></td>
+<td><p>ขา GPIO มาตรฐาน</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="use-with-caution">
+<h4><span class="section-number">1.1.2.2. </span>ระวัง: ขาที่ใช้ได้แต่ต้องระวัง (Use with Caution)<a class="headerlink" href="#use-with-caution" title="Link to this heading"></a></h4>
+<p>กลุ่มนี้ใช้งานได้ แต่มีเงื่อนไขเฉพาะตัว</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>GPIO</p></th>
+<th class="head"><p>ข้อควรระวัง</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>34, 35, 36, 39</strong></p></td>
+<td><p><strong>Input Only!</strong> ขาพวกนี้ (VP, VN) รับค่าได้อย่างเดียว <strong>ห้าม</strong> สั่ง <code class="docutils literal notranslate"><span class="pre">pinMode(OUTPUT)</span></code> หรือต่อไฟ LED เด็ดขาด (พังทันที) – <em>เหมาะสำหรับต่อ Sensor</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>1, 3</strong></p></td>
+<td><p><strong>TX0, RX0:</strong> เป็นขาที่ใช้คุยกับคอมพิวเตอร์ (Upload Code / Serial Monitor) ถ้าเอาไปต่อเซนเซอร์ การอัปโหลดโค้ดจะล้มเหลว</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>2</strong></p></td>
+<td><p><strong>On-board LED:</strong> ขานี้ต่อกับไฟสีฟ้าบนบอร์ด ถ้าต่ออุปกรณ์ภายนอกที่ดึงไฟเยอะ อาจทำให้ไฟบนบอร์ดหรี่หรือมีปัญหาตอน Boot</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>12</strong></p></td>
+<td><p><strong>Boot Fail:</strong> ถ้าขานี้ถูกดึงขึ้น HIGH ตอนเปิดเครื่อง… บอร์ดจะบูทไม่ขึ้น (ควรเลี่ยง)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>15</strong></p></td>
+<td><p><strong>Boot Fail:</strong> ถ้าขานี้ถูกดึงลง LOW ตอนเปิดเครื่อง… บอร์ดจะเงียบกริบ</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="do-not-use">
+<h4><span class="section-number">1.1.2.3. </span>ห้ามใช้: ห้ามยุ่งเด็ดขาด (Do Not Use)<a class="headerlink" href="#do-not-use" title="Link to this heading"></a></h4>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>GPIO</p></th>
+<th class="head"><p>เหตุผล</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>6, 7, 8, 9, 10, 11</strong></p></td>
+<td><p>เชื่อมต่อกับ <strong>SPI Flash Memory</strong> ภายในบอร์ด ถ้าไปยุ่งกับขาพวกนี้ ESP32 จะเอ๋อหรือค้างทันที (ส่วนมากขาพวกนี้จะไม่ได้ต่อออกมาให้ใช้ แต่ถ้าเจอให้ข้ามไป)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="pin">
+<h3><span class="section-number">1.1.3. </span>ตารางสรุปฟังก์ชันของบอร์ด 38-Pin<a class="headerlink" href="#pin" title="Link to this heading"></a></h3>
+<p>เพื่อให้ง่ายต่อการต่อสาย นี่คือตารางไล่ตามตำแหน่งจริงบนบอร์ด (ซ้าย/ขวา)</p>
+<p><strong>ฝั่งซ้าย (LEFT SIDE) - หันพอร์ต USB ลง</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15.0%" />
+<col style="width: 25.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin #</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Recommended Use (การใช้งานที่แนะนำ)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>3.3V</p></td>
+<td><p>ไฟเลี้ยงอุปกรณ์ 3.3V (กระแสต่ำ)</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>EN (Reset)</p></td>
+<td><p>ปุ่มรีเซ็ต (ไม่ต้องต่อ)</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>GPIO 36 (VP)</p></td>
+<td><p><strong>Input Only:</strong> Analog Sensor / Digital Input</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>GPIO 39 (VN)</p></td>
+<td><p><strong>Input Only:</strong> Analog Sensor / Digital Input</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>GPIO 34</p></td>
+<td><p><strong>Input Only:</strong> Digital Input (เช่น ปุ่มกด)</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>GPIO 35</p></td>
+<td><p><strong>Input Only:</strong> Digital Input</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>GPIO 32</p></td>
+<td><p>General I/O (LED, Motor)</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>GPIO 33</p></td>
+<td><p>General I/O (LED, Motor)</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>GPIO 25</p></td>
+<td><p>General I/O, DAC (เสียง)</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>GPIO 26</p></td>
+<td><p>General I/O, DAC (เสียง)</p></td>
+</tr>
+<tr class="row-even"><td><p>11</p></td>
+<td><p>GPIO 27</p></td>
+<td><p>General I/O</p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td><p>GPIO 14</p></td>
+<td><p>General I/O</p></td>
+</tr>
+<tr class="row-even"><td><p>13</p></td>
+<td><p>GPIO 12</p></td>
+<td><p><strong>ระวัง:</strong> Boot Strap Pin (เลี่ยงได้เลี่ยง)</p></td>
+</tr>
+<tr class="row-odd"><td><p>14</p></td>
+<td><p>GND</p></td>
+<td><p>กราวด์</p></td>
+</tr>
+<tr class="row-even"><td><p>15</p></td>
+<td><p>GPIO 13</p></td>
+<td><p>General I/O</p></td>
+</tr>
+<tr class="row-odd"><td><p>16-18</p></td>
+<td><p>Flash Pins</p></td>
+<td><p><strong>ห้ามใช้ (9, 10, 11)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>19</p></td>
+<td><p><strong>VIN (5V)</strong></p></td>
+<td><p><strong>สำคัญ:</strong> ใช้จ่ายไฟเข้าบอร์ด (6-12V) หรือดึงไฟ 5V ไปเลี้ยงเซนเซอร์</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>ฝั่งขวา (RIGHT SIDE) - หันพอร์ต USB ลง</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15.0%" />
+<col style="width: 25.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin #</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Recommended Use (การใช้งานที่แนะนำ)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>38</p></td>
+<td><p>GND</p></td>
+<td><p>กราวด์</p></td>
+</tr>
+<tr class="row-odd"><td><p>37</p></td>
+<td><p>GPIO 23</p></td>
+<td><p>SPI MOSI / General I/O</p></td>
+</tr>
+<tr class="row-even"><td><p>36</p></td>
+<td><p>GPIO 22</p></td>
+<td><p>I2C SCL (จอ OLED, Gyro)</p></td>
+</tr>
+<tr class="row-odd"><td><p>35</p></td>
+<td><p>GPIO 1 (TX0)</p></td>
+<td><p><strong>ห้ามใช้</strong> (Serial Console)</p></td>
+</tr>
+<tr class="row-even"><td><p>34</p></td>
+<td><p>GPIO 3 (RX0)</p></td>
+<td><p><strong>ห้ามใช้</strong> (Serial Console)</p></td>
+</tr>
+<tr class="row-odd"><td><p>33</p></td>
+<td><p>GPIO 21</p></td>
+<td><p>I2C SDA (จอ OLED, Gyro)</p></td>
+</tr>
+<tr class="row-even"><td><p>32</p></td>
+<td><p>GND</p></td>
+<td><p>กราวด์</p></td>
+</tr>
+<tr class="row-odd"><td><p>31</p></td>
+<td><p>GPIO 19</p></td>
+<td><p>SPI MISO / General I/O</p></td>
+</tr>
+<tr class="row-even"><td><p>30</p></td>
+<td><p>GPIO 18</p></td>
+<td><p>SPI SCK / General I/O</p></td>
+</tr>
+<tr class="row-odd"><td><p>29</p></td>
+<td><p>GPIO 5</p></td>
+<td><p>SPI CS / General I/O</p></td>
+</tr>
+<tr class="row-even"><td><p>28</p></td>
+<td><p>GPIO 17</p></td>
+<td><p>UART2 TX / General I/O</p></td>
+</tr>
+<tr class="row-odd"><td><p>27</p></td>
+<td><p>GPIO 16</p></td>
+<td><p>UART2 RX / General I/O</p></td>
+</tr>
+<tr class="row-even"><td><p>26</p></td>
+<td><p>GPIO 4</p></td>
+<td><p>General I/O</p></td>
+</tr>
+<tr class="row-odd"><td><p>25</p></td>
+<td><p>GPIO 0</p></td>
+<td><p><strong>ห้ามใช้:</strong> Boot Button</p></td>
+</tr>
+<tr class="row-even"><td><p>24</p></td>
+<td><p>GPIO 2</p></td>
+<td><p>On-board LED / Boot Strap</p></td>
+</tr>
+<tr class="row-odd"><td><p>23</p></td>
+<td><p>GPIO 15</p></td>
+<td><p><strong>ระวัง:</strong> Boot Strap Pin (เลี่ยงได้เลี่ยง)</p></td>
+</tr>
+<tr class="row-even"><td><p>20-22</p></td>
+<td><p>Flash Pins</p></td>
+<td><p><strong>ห้ามใช้ (6, 7, 8)</strong></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Coding Tip: เวลาเขียนโค้ดต้องเรียกขาว่าอะไร?</strong></p>
+<p>ใน Arduino IDE สำหรับบอร์ด ESP32 เราจะอ้างอิงขาด้วย <strong>“หมายเลข GPIO”</strong> (ตัวเลขเพียวๆ) เป็นหลัก ไม่ต้องใส่ตัว D นำหน้าเหมือน NodeMCU รุ่นเก่า</p>
+<p><strong>หลักการแปล:</strong></p>
+<ul class="simple">
+<li><p>บนบอร์ดเขียนว่า <strong>GPIO 25</strong> <span class="math notranslate nohighlight">\(\rightarrow\)</span> ในโค้ดเขียนเลข <code class="docutils literal notranslate"><span class="pre">25</span></code></p></li>
+<li><p>บนบอร์ดเขียนว่า <strong>RX2 (16)</strong> <span class="math notranslate nohighlight">\(\rightarrow\)</span> ในโค้ดเขียนเลข <code class="docutils literal notranslate"><span class="pre">16</span></code></p></li>
+</ul>
+<p><strong>ตัวอย่างการใช้งาน:</strong></p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// ถูกต้อง: ใช้ตัวเลขตรงๆ</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ledPin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">buttonPin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">34</span><span class="p">;</span>
+
+<span class="c1">// ไม่แนะนำ: ใส่ D นำหน้า (บางบอร์ดอาจไม่รองรับ)</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ledPin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">D2</span><span class="p">;</span><span class="w"> </span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="pwm-analogwrite-vs-ledc">
+<h3><span class="section-number">1.1.4. </span>PWM: analogWrite vs LEDC<a class="headerlink" href="#pwm-analogwrite-vs-ledc" title="Link to this heading"></a></h3>
+<p>ใน Arduino ปกติเราใช้ <code class="docutils literal notranslate"><span class="pre">analogWrite</span></code> แต่ใน ESP32 ฟังก์ชันนี้เป็น Software Simulation ซึ่งอาจไปรบกวนการทำงานอื่น (เช่น WiFi/Bluetooth)</p>
+<p>เราแนะนำให้ใช้ <strong>LEDC (LED Control)</strong> ซึ่งเป็น <strong>Hardware PWM</strong> แท้ๆ ของ ESP32 ทำงานแยกอิสระ ไม่กินแรง CPU</p>
+<p><strong>ตัวอย่างโค้ด: การหรี่ไฟ LED ด้วย LEDC</strong></p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">// Define Pin</span>
+<span class="linenos"> 2</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ledPin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">  </span><span class="c1">// Built-in LED</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="c1">// PWM Settings</span>
+<span class="linenos"> 5</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">freq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5000</span><span class="p">;</span>
+<span class="linenos"> 6</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ledChannel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos"> 7</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">resolution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span><span class="w"> </span><span class="c1">// 8-bit = 0-255</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">10</span><span class="w">  </span><span class="c1">// 1. Setup PWM Channel</span>
+<span class="linenos">11</span><span class="w">  </span><span class="n">ledcSetup</span><span class="p">(</span><span class="n">ledChannel</span><span class="p">,</span><span class="w"> </span><span class="n">freq</span><span class="p">,</span><span class="w"> </span><span class="n">resolution</span><span class="p">);</span>
+<span class="linenos">12</span><span class="w">  </span>
+<span class="linenos">13</span><span class="w">  </span><span class="c1">// 2. Attach Pin to Channel</span>
+<span class="linenos">14</span><span class="w">  </span><span class="n">ledcAttachPin</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span><span class="w"> </span><span class="n">ledChannel</span><span class="p">);</span>
+<span class="linenos">15</span><span class="p">}</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">18</span><span class="w">  </span><span class="c1">// Fade In</span>
+<span class="linenos">19</span><span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">dutyCycle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">dutyCycle</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">255</span><span class="p">;</span><span class="w"> </span><span class="n">dutyCycle</span><span class="o">++</span><span class="p">){</span><span class="w">   </span>
+<span class="linenos">20</span><span class="w">    </span><span class="n">ledcWrite</span><span class="p">(</span><span class="n">ledChannel</span><span class="p">,</span><span class="w"> </span><span class="n">dutyCycle</span><span class="p">);</span>
+<span class="linenos">21</span><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="linenos">22</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">23</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="wireless-controller-ps4-ps5">
+<h2><span class="section-number">1.2. </span>Wireless Controller (การควบคุมด้วยจอย PS4/PS5)<a class="headerlink" href="#wireless-controller-ps4-ps5" title="Link to this heading"></a></h2>
+<p>การควบคุมหุ่นยนต์ด้วยจอยสติ๊กไร้สายเป็นมาตรฐานของการแข่งขันหุ่นยนต์แทบทุกรายการ ในบทนี้เราจะใช้ <strong>Sony DualShock 4 (PS4)</strong> หรือ <strong>DualSense (PS5)</strong> เชื่อมต่อกับ ESP32 ผ่าน Bluetooth</p>
+<section id="bluetooth-basics">
+<h3><span class="section-number">1.2.1. </span>Bluetooth Basics (พื้นฐานบลูทูธ)<a class="headerlink" href="#bluetooth-basics" title="Link to this heading"></a></h3>
+<p>ESP32 รองรับ Bluetooth 2 ระบบ ซึ่งใช้งานต่างกัน:</p>
+<ul class="simple">
+<li><p><strong>Bluetooth Low Energy (BLE):</strong> ประหยัดไฟ ส่งข้อมูลทีละน้อยๆ เหมาะกับ IoT Sensor</p></li>
+<li><p><strong>Bluetooth Classic (BR/EDR):</strong> กินไฟมากกว่า แต่ส่งข้อมูลได้รวดเร็วและต่อเนื่อง เหมาะสำหรับ <strong>จอยเกม (Gamepads)</strong> และลำโพง</p></li>
+</ul>
+<p>สำหรับจอย PS4/PS5 เราจะใช้ระบบ <strong>Bluetooth Classic</strong> ผ่านไลบรารีที่ชื่อว่า <strong>Bluepad32</strong></p>
+<p><strong>Library Reference:</strong></p>
+<ul class="simple">
+<li><p><strong>Official Repo:</strong> <a class="reference external" href="https://github.com/ricardoquesada/bluepad32">https://github.com/ricardoquesada/bluepad32</a></p></li>
+<li><p><strong>Installation:</strong> ค้นหาใน Arduino Library Manager ว่า <code class="docutils literal notranslate"><span class="pre">Bluepad32</span></code> (โดย Ricardo Quesada) แล้วกด Install</p></li>
+</ul>
+</section>
+<section id="controller-mapping">
+<h3><span class="section-number">1.2.2. </span>Controller Mapping (รู้จักปุ่มกด)<a class="headerlink" href="#controller-mapping" title="Link to this heading"></a></h3>
+<p>จอยเกมมีปุ่มกด 2 ประเภทหลักที่ส่งค่าออกมาต่างกัน:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Button Type</p></th>
+<th class="head"><p>Output</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Digital Buttons</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code> หรือ <code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+<td><p>ปุ่มกดทั่วไป: <strong>Cross (X), Circle (O), Square, Triangle</strong> และปุ่มลูกศร (D-Pad) รวมถึงปุ่ม L1, R1, L3, R3 (กดที่ก้านอนาล็อก)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Analog Buttons</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code> ถึง <code class="docutils literal notranslate"><span class="pre">1023</span></code></p></td>
+<td><p>ปุ่มไกปืนด้านหลัง: <strong>L2, R2</strong> ยิ่งกดลึกค่ายิ่งมาก (เหมาะสำหรับทำคันเร่งหรือเบรก)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Analog Sticks</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-512</span></code> ถึง <code class="docutils literal notranslate"><span class="pre">511</span></code></p></td>
+<td><p>ก้านโยกซ้าย/ขวา (Left Stick / Right Stick) มีค่าแกน X (ซ้าย-ขวา) และ Y (บน-ล่าง)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Axis Y Note:</strong> โดยปกติค่าแกน Y ของจอยเกมจะเป็นค่าติดลบเมื่อดันขึ้น (Up = -512) และเป็นบวกเมื่อดึงลง (Down = 511) ต้องระวังตอนเขียนโค้ดกลับทิศ</p>
+</div>
+</section>
+<section id="pairing-connection">
+<h3><span class="section-number">1.2.3. </span>Pairing &amp; Connection (การจับคู่)<a class="headerlink" href="#pairing-connection" title="Link to this heading"></a></h3>
+<p>การจับคู่จอยกับ ESP32 ไม่ได้ทำผ่านเมนู Bluetooth ของมือถือ แต่ทำผ่านโค้ดโดยตรง</p>
+<p><strong>ขั้นตอนการ Pair (ทำครั้งแรกครั้งเดียว):</strong></p>
+<ol class="arabic simple">
+<li><p>อัปโหลดโค้ด (ตามตัวอย่างด้านล่าง) ลงบอร์ด ESP32</p></li>
+<li><p>เปิด Serial Monitor เพื่อดูสถานะ</p></li>
+<li><p>ทำให้จอยเข้าสู่โหมด Pairing:</p>
+<ul class="simple">
+<li><p><strong>PS4:</strong> กดปุ่ม <strong>PS + Share</strong> ค้างไว้พร้อมกัน จนกว่าไฟจะกระพริบเป็นจังหวะรัวๆ (ขาวๆ)</p></li>
+<li><p><strong>PS5:</strong> กดปุ่ม <strong>PS + Create (ปุ่มเล็กซ้ายบน)</strong> ค้างไว้พร้อมกัน จนกว่าไฟสีน้ำเงินจะกระพริบ</p></li>
+</ul>
+</li>
+<li><p>รอสักครู่ ESP32 จะค้นหาและเชื่อมต่ออัตโนมัติ (ไฟที่จอยจะหยุดกระพริบและติดค้างเป็นสีน้ำเงินหรือแดง)</p></li>
+<li><p><strong>สำคัญ:</strong> ESP32 จะจำ <strong>MAC Address</strong> ของจอยตัวนี้ไว้ ครั้งต่อไปแค่กดปุ่ม PS ทีเดียว มันจะเชื่อมต่อเองทันที</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Pairing Issues:</strong> หากต้องการเปลี่ยนไปใช้จอยตัวใหม่ หรือย้าย ESP32 ตัวนี้ไปหุ่นยนต์ตัวอื่น ต้องทำการ <strong>“ล้างค่า” (Forget Bluetooth Keys)</strong> ก่อน โดยใช้โค้ดตัวอย่าง <code class="docutils literal notranslate"><span class="pre">ForgetBluetoothKeys</span></code> ใน Library หรือกดปุ่ม Boot ค้างไว้ตอนเริ่มทำงาน (ถ้าโค้ดรองรับ แบบตัวอย่างด้านล่าง สังเกตใน void setup())</p>
+</div>
+<section id="code-example">
+<h4><span class="section-number">1.2.3.1. </span>Code Example (ตัวอย่างโค้ด)<a class="headerlink" href="#code-example" title="Link to this heading"></a></h4>
+<p>ตัวอย่างนี้แสดงการอ่านค่าปุ่มกด (Digital) และก้านโยก (Analog) พร้อมกัน</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Bluepad32.h&gt;</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="n">ControllerPtr</span><span class="w"> </span><span class="n">myControllers</span><span class="p">[</span><span class="n">BP32_MAX_GAMEPADS</span><span class="p">];</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="c1">// Callback: เมื่อจอยเชื่อมต่อสำเร็จ</span>
+<span class="linenos"> 6</span><span class="kt">void</span><span class="w"> </span><span class="nf">onConnectedController</span><span class="p">(</span><span class="n">ControllerPtr</span><span class="w"> </span><span class="n">ctl</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 7</span><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Controller connected: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ctl</span><span class="o">-&gt;</span><span class="n">getModelName</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
+<span class="linenos"> 8</span><span class="w">    </span><span class="c1">// ตั้งสีไฟ LED ของจอยได้ (Red, Green, Blue)</span>
+<span class="linenos"> 9</span><span class="w">    </span><span class="n">ctl</span><span class="o">-&gt;</span><span class="n">setColorLED</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// สีเขียว</span>
+<span class="linenos">10</span><span class="p">}</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="kt">void</span><span class="w"> </span><span class="nf">onDisconnectedController</span><span class="p">(</span><span class="n">ControllerPtr</span><span class="w"> </span><span class="n">ctl</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">13</span><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Controller disconnected</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="linenos">14</span><span class="p">}</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span><span class="kt">void</span><span class="w"> </span><span class="nf">processGamepad</span><span class="p">(</span><span class="n">ControllerPtr</span><span class="w"> </span><span class="n">ctl</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">17</span><span class="w">    </span><span class="c1">// --- 1. Digital Buttons (0 or 1) ---</span>
+<span class="linenos">18</span><span class="w">    </span><span class="c1">// PS4: Cross(X), Circle(O), Triangle, Square</span>
+<span class="linenos">19</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ctl</span><span class="o">-&gt;</span><span class="n">a</span><span class="p">())</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Button X pressed&quot;</span><span class="p">);</span>
+<span class="linenos">20</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ctl</span><span class="o">-&gt;</span><span class="n">b</span><span class="p">())</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Button O pressed&quot;</span><span class="p">);</span>
+<span class="linenos">21</span><span class="w">    </span>
+<span class="linenos">22</span><span class="w">    </span><span class="c1">// D-Pad (ลูกศร)</span>
+<span class="linenos">23</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ctl</span><span class="o">-&gt;</span><span class="n">dpad</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0x01</span><span class="p">)</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;D-Pad Up&quot;</span><span class="p">);</span>
+<span class="linenos">24</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ctl</span><span class="o">-&gt;</span><span class="n">dpad</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0x02</span><span class="p">)</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;D-Pad Down&quot;</span><span class="p">);</span>
+<span class="linenos">25</span>
+<span class="linenos">26</span><span class="w">    </span><span class="c1">// --- 2. Analog Triggers (0 - 1023) ---</span>
+<span class="linenos">27</span><span class="w">    </span><span class="c1">// L2 / R2</span>
+<span class="linenos">28</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ctl</span><span class="o">-&gt;</span><span class="n">l2</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;L2: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ctl</span><span class="o">-&gt;</span><span class="n">l2</span><span class="p">());</span>
+<span class="linenos">29</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ctl</span><span class="o">-&gt;</span><span class="n">r2</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;R2: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ctl</span><span class="o">-&gt;</span><span class="n">r2</span><span class="p">());</span>
+<span class="linenos">30</span>
+<span class="linenos">31</span><span class="w">    </span><span class="c1">// --- 3. Analog Sticks (-512 to 511) ---</span>
+<span class="linenos">32</span><span class="w">    </span><span class="c1">// Left Stick (LX, LY) used for Driving</span>
+<span class="linenos">33</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">lx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctl</span><span class="o">-&gt;</span><span class="n">axisX</span><span class="p">();</span><span class="w"> </span><span class="c1">// Left - Right</span>
+<span class="linenos">34</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ly</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctl</span><span class="o">-&gt;</span><span class="n">axisY</span><span class="p">();</span><span class="w"> </span><span class="c1">// Up - Down</span>
+<span class="linenos">35</span><span class="w">    </span>
+<span class="linenos">36</span><span class="w">    </span><span class="c1">// Filter noise (Deadzone)</span>
+<span class="linenos">37</span><span class="w">    </span><span class="c1">// ถ้าค่าน้อยๆ (มือสั่น) ให้ตัดเป็น 0</span>
+<span class="linenos">38</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">abs</span><span class="p">(</span><span class="n">lx</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="n">lx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">39</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">abs</span><span class="p">(</span><span class="n">ly</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="n">ly</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">40</span>
+<span class="linenos">41</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lx</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">ly</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">42</span><span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Left Stick: X=%d, Y=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">lx</span><span class="p">,</span><span class="w"> </span><span class="n">ly</span><span class="p">);</span>
+<span class="linenos">43</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">44</span><span class="p">}</span>
+<span class="linenos">45</span>
+<span class="linenos">46</span><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">47</span><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span>
+<span class="linenos">48</span>
+<span class="linenos">49</span><span class="w">    </span><span class="c1">// ตรวจสอบว่าปุ่ม BOOT (GPIO 0) ถูกกดค้างไว้หรือไม่</span>
+<span class="linenos">50</span><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="p">);</span><span class="w"> </span><span class="c1">// ปุ่ม BOOT ปกติคือ GPIO 0</span>
+<span class="linenos">51</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">digitalRead</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">LOW</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// LOW แปลว่าถูกกด</span>
+<span class="linenos">52</span><span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Boot button pressed! Erasing stored keys...&quot;</span><span class="p">);</span>
+<span class="linenos">53</span><span class="w">        </span><span class="n">BP32</span><span class="p">.</span><span class="n">forgetBluetoothKeys</span><span class="p">();</span><span class="w"> </span><span class="c1">// คำสั่งล้างความจำ Bluetooth</span>
+<span class="linenos">54</span><span class="w">        </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w"> </span><span class="c1">// หน่วงเวลาให้มั่นใจว่าลบเสร็จ</span>
+<span class="linenos">55</span><span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Keys erased! Ready to pair new controller.&quot;</span><span class="p">);</span>
+<span class="linenos">56</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">57</span>
+<span class="linenos">58</span><span class="w">    </span><span class="c1">// Setup Bluepad32 platform</span>
+<span class="linenos">59</span><span class="w">    </span><span class="c1">// บรรทัดนี้สำคัญมาก เป็นการบอกชื่อ Bluetooth ให้คนอื่นเห็น</span>
+<span class="linenos">60</span><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">fv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BP32</span><span class="p">.</span><span class="n">firmwareVersion</span><span class="p">();</span>
+<span class="linenos">61</span><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Firmware: &quot;</span><span class="p">);</span>
+<span class="linenos">62</span><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">fv</span><span class="p">);</span>
+<span class="linenos">63</span>
+<span class="linenos">64</span><span class="w">    </span><span class="c1">// Setup callbacks</span>
+<span class="linenos">65</span><span class="w">    </span><span class="n">BP32</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span><span class="o">&amp;</span><span class="n">onConnectedController</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">onDisconnectedController</span><span class="p">);</span>
+<span class="linenos">66</span><span class="p">}</span>
+<span class="linenos">67</span>
+<span class="linenos">68</span><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">69</span><span class="w">    </span><span class="c1">// ต้องเรียก update() บ่อยๆ เพื่อดึงข้อมูลล่าสุด</span>
+<span class="linenos">70</span><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">dataUpdated</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BP32</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
+<span class="linenos">71</span><span class="w">    </span>
+<span class="linenos">72</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dataUpdated</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">73</span><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">BP32_MAX_GAMEPADS</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">74</span><span class="w">            </span><span class="n">ControllerPtr</span><span class="w"> </span><span class="n">ctl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">myControllers</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="linenos">75</span><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ctl</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ctl</span><span class="o">-&gt;</span><span class="n">isConnected</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">76</span><span class="w">                </span><span class="n">processGamepad</span><span class="p">(</span><span class="n">ctl</span><span class="p">);</span>
+<span class="linenos">77</span><span class="w">            </span><span class="p">}</span>
+<span class="linenos">78</span><span class="w">        </span><span class="p">}</span>
+<span class="linenos">79</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">80</span><span class="w">    </span><span class="c1">// ห้ามใส่ delay() ยาวๆ ใน loop นี้ เพราะจะทำให้จอยหลุดการเชื่อมต่อ</span>
+<span class="linenos">81</span><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w"> </span>
+<span class="linenos">82</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="hardware-setup-for-demos">
+<h3><span class="section-number">1.2.4. </span>Hardware Setup for Demos (การต่อวงจรสำหรับทดลอง)<a class="headerlink" href="#hardware-setup-for-demos" title="Link to this heading"></a></h3>
+<p>เนื่องจากบอร์ด ESP32 บางรุ่นในท้องตลาดอาจไม่มีไฟสถานะ (Built-in LED) หรือใช้ขาที่ไม่ตรงกัน เพื่อให้การทดลองราบรื่นและเห็นผลลัพธ์ชัดเจน เราจะต่อ <strong>LED ภายนอก</strong> เพิ่มเติม</p>
+<p><strong>อุปกรณ์ที่ต้องใช้:</strong></p>
+<ul class="simple">
+<li><p>1x LED (สีอะไรก็ได้)</p></li>
+<li><p>1x ตัวต้านทาน (Resistor) 220Ω - 1kΩ</p></li>
+<li><p>สาย Jumper</p></li>
+</ul>
+<p><strong>ตารางการต่อสาย (Wiring Table)</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 40.0%" />
+<col style="width: 40.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>ESP32 Pin</p></th>
+<th class="head"><p>Connect To (อุปกรณ์)</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>GPIO 23</strong></p></td>
+<td><p><strong>LED (ขาบวก/ขายาว)</strong></p></td>
+<td><p>ขา Signal ที่จะสั่งเปิด/ปิด หรือหรี่ไฟ (เลือกขา 23 เพราะหาง่ายและปลอดภัย)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>GND</strong></p></td>
+<td><p><strong>LED (ขาลบ/ขาสั้น)</strong></p></td>
+<td><p>ต่อผ่านตัวต้านทานเพื่อป้องกันหลอดขาด</p></td>
+</tr>
+</tbody>
+</table>
+<section id="code-example-1-digital-button">
+<h4><span class="section-number">1.2.4.1. </span>Code Example 1: Digital Button (ปุ่มกดเปิด-ปิดไฟ)<a class="headerlink" href="#code-example-1-digital-button" title="Link to this heading"></a></h4>
+<p><strong>โจทย์:</strong> กดปุ่ม <strong>Cross (X)</strong> เพื่อเปิดไฟ, กด <strong>Circle (O)</strong> เพื่อปิดไฟ</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Bluepad32.h&gt;</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="n">ControllerPtr</span><span class="w"> </span><span class="n">myControllers</span><span class="p">[</span><span class="n">BP32_MAX_GAMEPADS</span><span class="p">];</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="c1">// กำหนดขา LED ภายนอก (GPIO 23)</span>
+<span class="linenos"> 6</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ledPin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">23</span><span class="p">;</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="c1">// Callback when controller is connected</span>
+<span class="linenos"> 9</span><span class="kt">void</span><span class="w"> </span><span class="nf">onConnectedController</span><span class="p">(</span><span class="n">ControllerPtr</span><span class="w"> </span><span class="n">ctl</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">10</span><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Controller connected</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="linenos">11</span><span class="p">}</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="kt">void</span><span class="w"> </span><span class="nf">onDisconnectedController</span><span class="p">(</span><span class="n">ControllerPtr</span><span class="w"> </span><span class="n">ctl</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">14</span><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Controller disconnected</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="linenos">15</span><span class="p">}</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span><span class="kt">void</span><span class="w"> </span><span class="nf">processGamepad</span><span class="p">(</span><span class="n">ControllerPtr</span><span class="w"> </span><span class="n">ctl</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">18</span><span class="w">    </span><span class="c1">// Check digital buttons</span>
+<span class="linenos">19</span><span class="w">    </span><span class="c1">// a() = Cross (X), b() = Circle (O)</span>
+<span class="linenos">20</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ctl</span><span class="o">-&gt;</span><span class="n">a</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">21</span><span class="w">        </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"> </span><span class="c1">// ไฟติด</span>
+<span class="linenos">22</span><span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;LED ON&quot;</span><span class="p">);</span>
+<span class="linenos">23</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">24</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ctl</span><span class="o">-&gt;</span><span class="n">b</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">25</span><span class="w">        </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w">  </span><span class="c1">// ไฟดับ</span>
+<span class="linenos">26</span><span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;LED OFF&quot;</span><span class="p">);</span>
+<span class="linenos">27</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">28</span><span class="p">}</span>
+<span class="linenos">29</span>
+<span class="linenos">30</span><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">31</span><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span>
+<span class="linenos">32</span>
+<span class="linenos">33</span><span class="w">    </span><span class="c1">// Logic ล้างค่า Bluetooth (กด Boot ค้างตอนเสียบสาย)</span>
+<span class="linenos">34</span><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="p">);</span>
+<span class="linenos">35</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">digitalRead</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">LOW</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">36</span><span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Boot button pressed! Erasing stored keys...&quot;</span><span class="p">);</span>
+<span class="linenos">37</span><span class="w">        </span><span class="n">BP32</span><span class="p">.</span><span class="n">forgetBluetoothKeys</span><span class="p">();</span>
+<span class="linenos">38</span><span class="w">        </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="linenos">39</span><span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Keys erased! Ready to pair new controller.&quot;</span><span class="p">);</span>
+<span class="linenos">40</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">41</span>
+<span class="linenos">42</span><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="linenos">43</span>
+<span class="linenos">44</span><span class="w">    </span><span class="c1">// Setup Bluepad32</span>
+<span class="linenos">45</span><span class="w">    </span><span class="n">BP32</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span><span class="o">&amp;</span><span class="n">onConnectedController</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">onDisconnectedController</span><span class="p">);</span>
+<span class="linenos">46</span><span class="p">}</span>
+<span class="linenos">47</span>
+<span class="linenos">48</span><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">49</span><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">dataUpdated</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BP32</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
+<span class="linenos">50</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dataUpdated</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">51</span><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">BP32_MAX_GAMEPADS</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">52</span><span class="w">            </span><span class="n">ControllerPtr</span><span class="w"> </span><span class="n">ctl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">myControllers</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="linenos">53</span><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ctl</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ctl</span><span class="o">-&gt;</span><span class="n">isConnected</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">54</span><span class="w">                </span><span class="n">processGamepad</span><span class="p">(</span><span class="n">ctl</span><span class="p">);</span>
+<span class="linenos">55</span><span class="w">            </span><span class="p">}</span>
+<span class="linenos">56</span><span class="w">        </span><span class="p">}</span>
+<span class="linenos">57</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">58</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="code-example-2-analog-control">
+<h4><span class="section-number">1.2.4.2. </span>Code Example 2: Analog Control (คันโยกหรี่ไฟ)<a class="headerlink" href="#code-example-2-analog-control" title="Link to this heading"></a></h4>
+<p><strong>โจทย์:</strong> ใช้แกน Analog ซ้าย (Left Stick Y) ควบคุมความสว่าง LED โดยใช้หลักการ <strong>PWM</strong></p>
+<ul class="simple">
+<li><p><strong>Wiring:</strong> ต่อวงจรเหมือนเดิม (GPIO 23) แต่การสั่งงานจะเปลี่ยนจาก <code class="docutils literal notranslate"><span class="pre">digitalWrite</span></code> (ติด/ดับ) เป็น <code class="docutils literal notranslate"><span class="pre">ledcWrite</span></code> (หรี่แสง)</p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Bluepad32.h&gt;</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="n">ControllerPtr</span><span class="w"> </span><span class="n">myControllers</span><span class="p">[</span><span class="n">BP32_MAX_GAMEPADS</span><span class="p">];</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="c1">// กำหนดขา LED และค่า PWM</span>
+<span class="linenos"> 6</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ledPin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">23</span><span class="p">;</span><span class="w">      </span><span class="c1">// ใช้ขา 23 เหมือนเดิม</span>
+<span class="linenos"> 7</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ledChannel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">   </span><span class="c1">// ช่องสัญญาณ PWM (0-15)</span>
+<span class="linenos"> 8</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">freq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5000</span><span class="p">;</span><span class="w">      </span><span class="c1">// ความถี่ 5 kHz</span>
+<span class="linenos"> 9</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">resolution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span><span class="w">   </span><span class="c1">// ความละเอียด 8-bit (0-255)</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="c1">// --- 1. ประกาศ Callback Functions ---</span>
+<span class="linenos">12</span><span class="kt">void</span><span class="w"> </span><span class="nf">onConnectedController</span><span class="p">(</span><span class="n">ControllerPtr</span><span class="w"> </span><span class="n">ctl</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">13</span><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Controller connected</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="linenos">14</span><span class="p">}</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span><span class="kt">void</span><span class="w"> </span><span class="nf">onDisconnectedController</span><span class="p">(</span><span class="n">ControllerPtr</span><span class="w"> </span><span class="n">ctl</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">17</span><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Controller disconnected</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="linenos">18</span><span class="p">}</span>
+<span class="linenos">19</span>
+<span class="linenos">20</span><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">21</span><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span>
+<span class="linenos">22</span>
+<span class="linenos">23</span><span class="w">    </span><span class="c1">// Logic ล้างค่า Bluetooth</span>
+<span class="linenos">24</span><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="p">);</span>
+<span class="linenos">25</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">digitalRead</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">LOW</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">26</span><span class="w">        </span><span class="n">BP32</span><span class="p">.</span><span class="n">forgetBluetoothKeys</span><span class="p">();</span>
+<span class="linenos">27</span><span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Keys erased!&quot;</span><span class="p">);</span>
+<span class="linenos">28</span><span class="w">        </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="linenos">29</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">30</span>
+<span class="linenos">31</span><span class="w">    </span><span class="c1">// --- 2. ตั้งค่า PWM (LEDC) ---</span>
+<span class="linenos">32</span><span class="w">    </span><span class="n">ledcSetup</span><span class="p">(</span><span class="n">ledChannel</span><span class="p">,</span><span class="w"> </span><span class="n">freq</span><span class="p">,</span><span class="w"> </span><span class="n">resolution</span><span class="p">);</span>
+<span class="linenos">33</span><span class="w">    </span><span class="n">ledcAttachPin</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span><span class="w"> </span><span class="n">ledChannel</span><span class="p">);</span>
+<span class="linenos">34</span>
+<span class="linenos">35</span><span class="w">    </span><span class="n">BP32</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span><span class="o">&amp;</span><span class="n">onConnectedController</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">onDisconnectedController</span><span class="p">);</span>
+<span class="linenos">36</span><span class="p">}</span>
+<span class="linenos">37</span>
+<span class="linenos">38</span><span class="kt">void</span><span class="w"> </span><span class="nf">processGamepad</span><span class="p">(</span><span class="n">ControllerPtr</span><span class="w"> </span><span class="n">ctl</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">39</span><span class="w">    </span><span class="c1">// 1. อ่านค่าแกน Analog (-512 ถึง 511)</span>
+<span class="linenos">40</span><span class="w">    </span><span class="c1">// axisY: ดันขึ้นค่าเป็นลบ (-), ดึงลงค่าเป็นบวก (+)</span>
+<span class="linenos">41</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">axisY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctl</span><span class="o">-&gt;</span><span class="n">axisY</span><span class="p">();</span><span class="w"> </span>
+<span class="linenos">42</span><span class="w">    </span>
+<span class="linenos">43</span><span class="w">    </span><span class="c1">// 2. แปลงค่า (Map)</span>
+<span class="linenos">44</span><span class="w">    </span><span class="c1">// ใช้ abs() เพื่อให้ดันขึ้นหรือลงก็สว่างเหมือนกัน</span>
+<span class="linenos">45</span><span class="w">    </span><span class="c1">// ตัดค่า Noise (Deadzone) เล็กน้อย</span>
+<span class="linenos">46</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="n">axisY</span><span class="p">);</span>
+<span class="linenos">47</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">val</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">48</span>
+<span class="linenos">49</span><span class="w">    </span><span class="c1">// แปลงช่วง 0-512 (แกนจอย) เป็น 0-255 (PWM LED)</span>
+<span class="linenos">50</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">brightness</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">map</span><span class="p">(</span><span class="n">val</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">512</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">);</span>
+<span class="linenos">51</span><span class="w">    </span>
+<span class="linenos">52</span><span class="w">    </span><span class="c1">// 3. สั่งงาน LED</span>
+<span class="linenos">53</span><span class="w">    </span><span class="n">ledcWrite</span><span class="p">(</span><span class="n">ledChannel</span><span class="p">,</span><span class="w"> </span><span class="n">brightness</span><span class="p">);</span>
+<span class="linenos">54</span><span class="p">}</span>
+<span class="linenos">55</span>
+<span class="linenos">56</span><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">57</span><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">dataUpdated</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BP32</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
+<span class="linenos">58</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dataUpdated</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">59</span><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">BP32_MAX_GAMEPADS</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">60</span><span class="w">            </span><span class="n">ControllerPtr</span><span class="w"> </span><span class="n">ctl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">myControllers</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="linenos">61</span><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ctl</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ctl</span><span class="o">-&gt;</span><span class="n">isConnected</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">62</span><span class="w">                </span><span class="n">processGamepad</span><span class="p">(</span><span class="n">ctl</span><span class="p">);</span>
+<span class="linenos">63</span><span class="w">            </span><span class="p">}</span>
+<span class="linenos">64</span><span class="w">        </span><span class="p">}</span>
+<span class="linenos">65</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">66</span><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span><span class="w"> </span><span class="c1">// หน่วงเวลาเล็กน้อยเพื่อความเสถียร</span>
+<span class="linenos">67</span><span class="p">}</span>
+</pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">🧠 Deep Dive: ทำไมต้องใช้ LEDC แทน analogWrite ใน ESP32?</p>
+<p>หากคุณเคยชินกับ Arduino UNO คุณอาจคุ้นเคยกับคำสั่ง <code class="docutils literal notranslate"><span class="pre">analogWrite(pin,</span> <span class="pre">value)</span></code> แต่เมื่อย้ายมาใช้ <strong>ESP32</strong> คำสั่งนี้กลับมีข้อจำกัดร้ายแรงที่อาจทำให้หุ่นยนต์ของคุณรวนได้</p>
+<p class="rubric" id="analogwrite-esp32">1. ปัญหาของ <code class="docutils literal notranslate"><span class="pre">analogWrite</span></code> บน ESP32</p>
+<p>ใน Arduino ESP32 Core เวอร์ชันเก่า (หรือบางไลบรารี) คำสั่ง <code class="docutils literal notranslate"><span class="pre">analogWrite</span></code> ไม่ได้ใช้ฮาร์ดแวร์ PWM โดยตรง แต่ใช้วิธี <strong>Software Simulation</strong> หรือไปแย่งทรัพยากรกับฟังก์ชันอื่น</p>
+<ul class="simple">
+<li><p><strong>Pin Conflict (พินชนกัน):</strong> ตัวอย่างที่พบบ่อยคือ หากคุณใช้ <code class="docutils literal notranslate"><span class="pre">analogWrite</span></code> บนขา <strong>GPIO 25</strong> หรือ <strong>26</strong> (ซึ่งเป็นขา DAC - Digital to Analog Converter) มันจะไปขัดแย้งกับการทำงานของ WiFi หรือ Bluetooth ทำให้สัญญาณขาดๆ หายๆ</p></li>
+<li><p><strong>Performance:</strong> การใช้ Software PWM กินแรง CPU ทำให้จังหวะการส่งข้อมูล Serial หรือการอ่านค่าเซนเซอร์ช้าลง</p></li>
+</ul>
+<p class="rubric" id="ledc-led-control">2. ทางแก้ปัญหา: <code class="docutils literal notranslate"><span class="pre">ledc</span></code> (LED Control)</p>
+<p><strong>LEDC</strong> คือโมดูลฮาร์ดแวร์พิเศษในชิป ESP32 ที่ออกแบบมาเพื่อสร้างสัญญาณ PWM โดยเฉพาะ (Hardware PWM) โดย <strong>ไม่กินแรง CPU เลย</strong> ทำให้มอเตอร์หมุนเรียบเนียนแม้ CPU จะทำงานหนัก</p>
+<p><strong>ตารางเลือกขาสำหรับ PWM (LEDC Pins)</strong>
+ESP32 สามารถทำ PWM ได้เกือบทุกขา <strong>ยกเว้น</strong> ขาที่เป็น Input Only</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Status</p></th>
+<th class="head"><p>GPIO Pins</p></th>
+<th class="head"><p>Note</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>✅ <strong>แนะนำ (Safe)</strong></p></td>
+<td><p><strong>4, 5, 13, 14, 16, 17, 18, 19, 21, 22, 23, 25, 26, 27, 32, 33</strong></p></td>
+<td><p>ใช้ได้เลย ปลอดภัยที่สุด</p></td>
+</tr>
+<tr class="row-odd"><td><p>⚠️ <strong>ใช้ได้แต่ต้องระวัง</strong></p></td>
+<td><p><strong>2</strong> (On-board LED ในบางรุ่น), <strong>12</strong> (Boot Fail if High), <strong>15</strong> (Boot Fail if Low)</p></td>
+<td><p>ใช้ได้ แต่ระวังตอนเปิดเครื่อง (Boot) อย่าให้ขานี้ถูกดึงไฟค้างไว้</p></td>
+</tr>
+<tr class="row-even"><td><p>⛔ <strong>ห้ามใช้ (Reserved)</strong></p></td>
+<td><p><strong>1, 3</strong> (Serial TX/RX), <strong>6, 7, 8, 9, 10, 11</strong> (Flash Memory)</p></td>
+<td><p>ห้ามยุ่งเด็ดขาด ระบบจะพังหรืออัปโหลดโค้ดไม่ได้</p></td>
+</tr>
+<tr class="row-odd"><td><p>❌ <strong>ใช้ไม่ได้ (Input Only)</strong></p></td>
+<td><p><strong>34, 35, 36 (VP), 39 (VN)</strong></p></td>
+<td><p>ขาพวกนี้รับค่าได้อย่างเดียว ปล่อยไฟ PWM ไม่ได้</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric" id="motor-driver-bts7960">3. การตั้งค่าที่เหมาะสมสำหรับ Motor Driver (BTS7960)</p>
+<p>การใช้งานกับมอเตอร์ขนาดใหญ่ เราต้องตั้งค่า 3 อย่างให้เหมาะสม:</p>
+<ol class="arabic simple">
+<li><p><strong>Frequency (ความถี่):</strong> แนะนำ <strong>5,000 Hz - 20,000 Hz</strong> (5-20 kHz)</p>
+<ul class="simple">
+<li><p><em>ทำไม?</em> ถ้าความถี่ต่ำเกินไป (เช่น 50 Hz) มอเตอร์จะสั่นและมีเสียงคราง แต่ถ้าสูงเกินไป Driver จะร้อนจัด</p></li>
+</ul>
+</li>
+<li><p><strong>Resolution (ความละเอียด):</strong> แนะนำ <strong>8-bit</strong> (ค่า 0-255) เพื่อให้ง่ายต่อการ map ค่า</p></li>
+<li><p><strong>Channel (ช่องสัญญาณ):</strong> ESP32 มี “ตัวกำเนิดสัญญาณ” อิสระอยู่ 16 ช่อง (0-15)</p>
+<ul class="simple">
+<li><p><strong>เปรียบเทียบ:</strong> ช่อง (Channel) เหมือน <strong>“ดีเจเปิดเพลง”</strong> ส่วนขาพินเหมือน <strong>“ลำโพง”</strong></p></li>
+<li><p><strong>กฎการใช้งาน:</strong></p>
+<ul>
+<li><p>หากต้องการควบคุมอุปกรณ์ให้ทำงาน <strong>ต่างกัน</strong> (เช่น ล้อซ้ายหมุนเร็ว, ล้อขวาหมุนช้า) ต้องใช้ <strong>Channel คนละช่อง</strong> (เช่น ช่อง 0 และ ช่อง 1)</p></li>
+<li><p>หากใช้ Channel เดียวกัน ขาพินเหล่านั้นจะได้รับคำสั่งเหมือนกันเป๊ะๆ (เช่น ไฟหน้าซ้าย-ขวา หรี่พร้อมกัน)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p><strong>สรุป:</strong> การใช้ <code class="docutils literal notranslate"><span class="pre">ledc</span></code> ทำให้การขับเคลื่อนหุ่นยนต์ <strong>“นิ่ง, เงียบ, และไม่รวน”</strong> กว่าการใช้ <code class="docutils literal notranslate"><span class="pre">analogWrite</span></code> แบบเดิมมาก</p>
+<p><strong>ตัวอย่างโค้ดการตั้งค่า (Setup Code):</strong></p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">// กำหนดขาพิน (ตัวอย่างสำหรับ BTS7960)</span>
+<span class="linenos"> 2</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">RPWM_PIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">26</span><span class="p">;</span>
+<span class="linenos"> 3</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">LPWM_PIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">27</span><span class="p">;</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="c1">// กำหนดคุณสมบัติ PWM</span>
+<span class="linenos"> 6</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">freq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5000</span><span class="p">;</span><span class="w">      </span><span class="c1">// ความถี่ 5 kHz (เหมาะกับ Motor Driver ส่วนใหญ่)</span>
+<span class="linenos"> 7</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">resolution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span><span class="w">   </span><span class="c1">// ความละเอียด 8-bit (ค่า 0-255)</span>
+<span class="linenos"> 8</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">channel_R</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">    </span><span class="c1">// ช่องสัญญาณ 0 สำหรับหมุนขวา</span>
+<span class="linenos"> 9</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">channel_L</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">// ช่องสัญญาณ 1 สำหรับหมุนซ้าย</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">12</span><span class="w">  </span><span class="c1">// 1. ตั้งค่าช่องสัญญาณ PWM (Setup Channels)</span>
+<span class="linenos">13</span><span class="w">  </span><span class="n">ledcSetup</span><span class="p">(</span><span class="n">channel_R</span><span class="p">,</span><span class="w"> </span><span class="n">freq</span><span class="p">,</span><span class="w"> </span><span class="n">resolution</span><span class="p">);</span>
+<span class="linenos">14</span><span class="w">  </span><span class="n">ledcSetup</span><span class="p">(</span><span class="n">channel_L</span><span class="p">,</span><span class="w"> </span><span class="n">freq</span><span class="p">,</span><span class="w"> </span><span class="n">resolution</span><span class="p">);</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span><span class="w">  </span><span class="c1">// 2. เชื่อมขาพินเข้ากับช่องสัญญาณ (Attach Pins)</span>
+<span class="linenos">17</span><span class="w">  </span><span class="n">ledcAttachPin</span><span class="p">(</span><span class="n">RPWM_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">channel_R</span><span class="p">);</span>
+<span class="linenos">18</span><span class="w">  </span><span class="n">ledcAttachPin</span><span class="p">(</span><span class="n">LPWM_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">channel_L</span><span class="p">);</span>
+<span class="linenos">19</span><span class="p">}</span>
+<span class="linenos">20</span>
+<span class="linenos">21</span><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">22</span><span class="w">  </span><span class="c1">// control logic</span>
+<span class="linenos">23</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="motor-control-with-bts7960">
+<h2><span class="section-number">1.3. </span>Motor Control with BTS7960 (การขับมอเตอร์กำลังสูง)<a class="headerlink" href="#motor-control-with-bts7960" title="Link to this heading"></a></h2>
+<p><strong>BTS7960</strong> เป็น Motor Driver แบบ H-Bridge ที่นิยมที่สุดในงานแข่ง เพราะราคาถูกและรับกระแสได้สูงถึง <strong>43A</strong> (Peak)</p>
+<section id="pin-definition-wiring">
+<h3><span class="section-number">1.3.1. </span>Pin Definition &amp; Wiring (ผังการต่อสาย)<a class="headerlink" href="#pin-definition-wiring" title="Link to this heading"></a></h3>
+<p>ความยากของการใช้ BTS7960 คือขาต่อเยอะมาก ตารางนี้สรุปวิธีการต่อกับ ESP32 ให้ทำงานได้ชัวร์</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 40.0%" />
+<col style="width: 40.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>BTS7960 Pin</p></th>
+<th class="head"><p>Connect To (ESP32 / Power)</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>VCC</strong></p></td>
+<td><p><strong>5V</strong> (ESP32 Vin or 5V)</p></td>
+<td><p>ไฟเลี้ยงวงจร Logic (ห้ามต่อ 24V เข้าช่องนี้!)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>GND</strong></p></td>
+<td><p><strong>GND</strong> (ESP32)</p></td>
+<td><p>กราวด์ร่วม (Common Ground)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>R_IS / L_IS</strong></p></td>
+<td><p><em>(ปล่อยลอย)</em></p></td>
+<td><p>ขาเช็คกระแส (Current Sense) ไม่ต้องใช้ในเบื้องต้น</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>R_EN</strong></p></td>
+<td><p><strong>3.3V</strong> (ESP32)</p></td>
+<td><p>Right Enable (ต้องจ่ายไฟถึงจะทำงาน)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>L_EN</strong></p></td>
+<td><p><strong>3.3V</strong> (ESP32)</p></td>
+<td><p>Left Enable (ต้องจ่ายไฟถึงจะทำงาน)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>R_PWM</strong></p></td>
+<td><p><strong>GPIO 26</strong> (Example)</p></td>
+<td><p>สัญญาณ PWM สำหรับหมุนขวา</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>L_PWM</strong></p></td>
+<td><p><strong>GPIO 27</strong> (Example)</p></td>
+<td><p>สัญญาณ PWM สำหรับหมุนซ้าย</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>B+ / B-</strong></p></td>
+<td><p><strong>Battery (24V)</strong></p></td>
+<td><p>ไฟเลี้ยงมอเตอร์ (เส้นใหญ่)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>M+ / M-</strong></p></td>
+<td><p><strong>Motor</strong></p></td>
+<td><p>ขั้วมอเตอร์</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>ระวัง:</strong> ขา <code class="docutils literal notranslate"><span class="pre">R_EN</span></code> และ <code class="docutils literal notranslate"><span class="pre">L_EN</span></code> ต้องต่อไฟเลี้ยง (HIGH) เสมอ ไม่อย่างนั้นมอเตอร์จะไม่หมุน บางคนชอบเขียนโค้ด <code class="docutils literal notranslate"><span class="pre">digitalWrite(EN,</span> <span class="pre">HIGH)</span></code> แต่การต่อเข้ากับขา 3.3V ของ ESP32 โดยตรงจะประหยัดขา GPIO ได้ดีกว่า</p>
+</div>
+</section>
+<section id="code-example-motor-control-function">
+<h3><span class="section-number">1.3.2. </span>Code Example: Motor Control Function<a class="headerlink" href="#code-example-motor-control-function" title="Link to this heading"></a></h3>
+<p>โค้ดสำหรับควบคุมความเร็วและทิศทางมอเตอร์</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">// Pin Definitions</span>
+<span class="linenos"> 2</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">RPWM_PIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">26</span><span class="p">;</span>
+<span class="linenos"> 3</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">LPWM_PIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">27</span><span class="p">;</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="c1">// PWM Properties</span>
+<span class="linenos"> 6</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">freq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5000</span><span class="p">;</span>
+<span class="linenos"> 7</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">pwmChannel_R</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos"> 8</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">pwmChannel_L</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="linenos"> 9</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">resolution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">12</span><span class="w">  </span><span class="c1">// Setup PWM for both directions</span>
+<span class="linenos">13</span><span class="w">  </span><span class="n">ledcSetup</span><span class="p">(</span><span class="n">pwmChannel_R</span><span class="p">,</span><span class="w"> </span><span class="n">freq</span><span class="p">,</span><span class="w"> </span><span class="n">resolution</span><span class="p">);</span>
+<span class="linenos">14</span><span class="w">  </span><span class="n">ledcSetup</span><span class="p">(</span><span class="n">pwmChannel_L</span><span class="p">,</span><span class="w"> </span><span class="n">freq</span><span class="p">,</span><span class="w"> </span><span class="n">resolution</span><span class="p">);</span>
+<span class="linenos">15</span><span class="w">  </span>
+<span class="linenos">16</span><span class="w">  </span><span class="n">ledcAttachPin</span><span class="p">(</span><span class="n">RPWM_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">pwmChannel_R</span><span class="p">);</span>
+<span class="linenos">17</span><span class="w">  </span><span class="n">ledcAttachPin</span><span class="p">(</span><span class="n">LPWM_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">pwmChannel_L</span><span class="p">);</span>
+<span class="linenos">18</span><span class="p">}</span>
+<span class="linenos">19</span>
+<span class="linenos">20</span><span class="c1">// Helper Function: Drive Motor</span>
+<span class="linenos">21</span><span class="c1">// speed: -255 to 255 (Negative = Reverse)</span>
+<span class="linenos">22</span><span class="kt">void</span><span class="w"> </span><span class="nf">driveMotor</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">speed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">23</span><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">speed</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">24</span><span class="w">    </span><span class="c1">// Forward</span>
+<span class="linenos">25</span><span class="w">    </span><span class="n">ledcWrite</span><span class="p">(</span><span class="n">pwmChannel_R</span><span class="p">,</span><span class="w"> </span><span class="n">speed</span><span class="p">);</span>
+<span class="linenos">26</span><span class="w">    </span><span class="n">ledcWrite</span><span class="p">(</span><span class="n">pwmChannel_L</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="linenos">27</span><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">speed</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">28</span><span class="w">    </span><span class="c1">// Backward (Convert negative to positive)</span>
+<span class="linenos">29</span><span class="w">    </span><span class="n">ledcWrite</span><span class="p">(</span><span class="n">pwmChannel_R</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="linenos">30</span><span class="w">    </span><span class="n">ledcWrite</span><span class="p">(</span><span class="n">pwmChannel_L</span><span class="p">,</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="n">speed</span><span class="p">));</span>
+<span class="linenos">31</span><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">32</span><span class="w">    </span><span class="c1">// Stop</span>
+<span class="linenos">33</span><span class="w">    </span><span class="n">ledcWrite</span><span class="p">(</span><span class="n">pwmChannel_R</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="linenos">34</span><span class="w">    </span><span class="n">ledcWrite</span><span class="p">(</span><span class="n">pwmChannel_L</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="linenos">35</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">36</span><span class="p">}</span>
+<span class="linenos">37</span>
+<span class="linenos">38</span><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">39</span><span class="w">  </span><span class="c1">// Example: Accelerate forward</span>
+<span class="linenos">40</span><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="mi">255</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">41</span><span class="w">    </span><span class="n">driveMotor</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="linenos">42</span><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="linenos">43</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">44</span><span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="linenos">45</span><span class="w">  </span>
+<span class="linenos">46</span><span class="w">  </span><span class="c1">// Example: Reverse</span>
+<span class="linenos">47</span><span class="w">  </span><span class="n">driveMotor</span><span class="p">(</span><span class="mi">-150</span><span class="p">);</span>
+<span class="linenos">48</span><span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+<span class="linenos">49</span><span class="w">  </span>
+<span class="linenos">50</span><span class="w">  </span><span class="n">driveMotor</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// Stop</span>
+<span class="linenos">51</span><span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+<span class="linenos">52</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="final-mission-wireless-motor-control">
+<h2><span class="section-number">1.4. </span>Final Mission: Wireless Motor Control (ภารกิจพิชิตมอเตอร์ไร้สาย)<a class="headerlink" href="#final-mission-wireless-motor-control" title="Link to this heading"></a></h2>
+<p>หลังจากเรียนรู้ส่วนประกอบทั้งหมดแล้ว ถึงเวลาทดสอบความเข้าใจด้วยการนำทุกอย่างมารวมกัน</p>
+<p><strong>โจทย์:</strong> จงเขียนโปรแกรมควบคุมความเร็วและทิศทางของ <strong>DC Motor 1 ตัว</strong> ผ่านบอร์ดขับ <strong>BTS7960</strong> โดยใช้ <strong>ก้านอนาล็อกซ้าย (Left Stick)</strong> ของจอย PS4/PS5</p>
+<p><strong>เงื่อนไขการทำงาน (Requirements):</strong></p>
+<ol class="arabic simple">
+<li><p><strong>ดันก้านขึ้น (Up):</strong> มอเตอร์หมุนเดินหน้า (Forward) ยิ่งดันสุดยิ่งหมุนเร็ว</p></li>
+<li><p><strong>ดึงก้านลง (Down):</strong> มอเตอร์หมุนถอยหลัง (Backward) ยิ่งดึงสุดยิ่งหมุนเร็ว</p></li>
+<li><p><strong>ปล่อยก้าน (Center):</strong> มอเตอร์หยุดหมุน</p></li>
+<li><p><strong>Deadzone:</strong> ต้องมีการตัดค่ารบกวนตรงกลาง (เช่นค่า &lt; 20 ให้ถือเป็น 0) เพื่อป้องกันมอเตอร์คราง</p></li>
+<li><p><strong>PWM:</strong> ใช้ <code class="docutils literal notranslate"><span class="pre">ledc</span></code> ความถี่ 5 kHz ความละเอียด 8-bit</p></li>
+</ol>
+<p><strong>คำใบ้ (Hints):</strong></p>
+<ul class="simple">
+<li><p>ค่าแกน Y (<code class="docutils literal notranslate"><span class="pre">axisY</span></code>) ปกติ: ดันขึ้น = ติดลบ (-512), ดึงลง = บวก (511)</p></li>
+<li><p>คุณต้องใช้ฟังก์ชัน <code class="docutils literal notranslate"><span class="pre">map()</span></code> เพื่อแปลงย่านข้อมูลจากจอย (-512 ถึง 512) ให้เป็นย่าน PWM ของมอเตอร์ (-255 ถึง 255) หรือจะใช้วิธีแยกทิศทางก็ได้</p></li>
+</ul>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-success sd-bg-text-success">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-code" viewBox="0 0 16 16" aria-hidden="true"><path d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215Zm-6.56 0a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"></path></svg></span><span class="sd-summary-text"><strong>คลิกเพื่อดูเฉลยโค้ด (Full Solution Code)</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Bluepad32.h&gt;</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="n">ControllerPtr</span><span class="w"> </span><span class="n">myControllers</span><span class="p">[</span><span class="n">BP32_MAX_GAMEPADS</span><span class="p">];</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="c1">// --- Pins for BTS7960 ---</span>
+<span class="linenos"> 6</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">RPWM_PIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">26</span><span class="p">;</span><span class="w"> </span><span class="c1">// Forward PWM</span>
+<span class="linenos"> 7</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">LPWM_PIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">27</span><span class="p">;</span><span class="w"> </span><span class="c1">// Backward PWM</span>
+<span class="linenos"> 8</span><span class="c1">// Note: R_EN and L_EN should be connected to 3.3V</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="c1">// --- PWM Settings ---</span>
+<span class="linenos">11</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">freq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5000</span><span class="p">;</span>
+<span class="linenos">12</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">resolution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+<span class="linenos">13</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ch_R</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">14</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ch_L</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span><span class="c1">// --- Setup Functions ---</span>
+<span class="linenos">17</span><span class="kt">void</span><span class="w"> </span><span class="nf">onConnectedController</span><span class="p">(</span><span class="n">ControllerPtr</span><span class="w"> </span><span class="n">ctl</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">18</span><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Controller connected</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="linenos">19</span><span class="p">}</span>
+<span class="linenos">20</span>
+<span class="linenos">21</span><span class="kt">void</span><span class="w"> </span><span class="nf">onDisconnectedController</span><span class="p">(</span><span class="n">ControllerPtr</span><span class="w"> </span><span class="n">ctl</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">22</span><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Controller disconnected</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="linenos">23</span><span class="p">}</span>
+<span class="linenos">24</span>
+<span class="linenos">25</span><span class="c1">// Helper: Drive Motor (-255 to 255)</span>
+<span class="linenos">26</span><span class="kt">void</span><span class="w"> </span><span class="nf">driveMotor</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">speed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">27</span><span class="w">    </span><span class="c1">// Constrain speed to valid PWM range</span>
+<span class="linenos">28</span><span class="w">    </span><span class="n">speed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">constrain</span><span class="p">(</span><span class="n">speed</span><span class="p">,</span><span class="w"> </span><span class="mi">-255</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">);</span>
+<span class="linenos">29</span>
+<span class="linenos">30</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">speed</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">31</span><span class="w">        </span><span class="c1">// Forward: Activate RPWM, Stop LPWM</span>
+<span class="linenos">32</span><span class="w">        </span><span class="n">ledcWrite</span><span class="p">(</span><span class="n">ch_R</span><span class="p">,</span><span class="w"> </span><span class="n">speed</span><span class="p">);</span>
+<span class="linenos">33</span><span class="w">        </span><span class="n">ledcWrite</span><span class="p">(</span><span class="n">ch_L</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="linenos">34</span><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">speed</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">35</span><span class="w">        </span><span class="c1">// Backward: Activate LPWM, Stop RPWM</span>
+<span class="linenos">36</span><span class="w">        </span><span class="n">ledcWrite</span><span class="p">(</span><span class="n">ch_R</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="linenos">37</span><span class="w">        </span><span class="n">ledcWrite</span><span class="p">(</span><span class="n">ch_L</span><span class="p">,</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="n">speed</span><span class="p">));</span>
+<span class="linenos">38</span><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">39</span><span class="w">        </span><span class="c1">// Stop</span>
+<span class="linenos">40</span><span class="w">        </span><span class="n">ledcWrite</span><span class="p">(</span><span class="n">ch_R</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="linenos">41</span><span class="w">        </span><span class="n">ledcWrite</span><span class="p">(</span><span class="n">ch_L</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="linenos">42</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">43</span><span class="p">}</span>
+<span class="linenos">44</span>
+<span class="linenos">45</span><span class="kt">void</span><span class="w"> </span><span class="nf">processGamepad</span><span class="p">(</span><span class="n">ControllerPtr</span><span class="w"> </span><span class="n">ctl</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">46</span><span class="w">    </span><span class="c1">// 1. Read Left Stick Y (-512 to 511)</span>
+<span class="linenos">47</span><span class="w">    </span><span class="c1">// Up is negative, Down is positive</span>
+<span class="linenos">48</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">rawY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctl</span><span class="o">-&gt;</span><span class="n">axisY</span><span class="p">();</span>
+<span class="linenos">49</span>
+<span class="linenos">50</span><span class="w">    </span><span class="c1">// 2. Apply Deadzone (Filter small movements)</span>
+<span class="linenos">51</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">abs</span><span class="p">(</span><span class="n">rawY</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="n">rawY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">52</span>
+<span class="linenos">53</span><span class="w">    </span><span class="c1">// 3. Map to PWM (-255 to 255)</span>
+<span class="linenos">54</span><span class="w">    </span><span class="c1">// We invert the mapping so:</span>
+<span class="linenos">55</span><span class="w">    </span><span class="c1">// -512 (Up)   -&gt; 255 (Forward)</span>
+<span class="linenos">56</span><span class="w">    </span><span class="c1">//  512 (Down) -&gt; -255 (Backward)</span>
+<span class="linenos">57</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">motorSpeed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">map</span><span class="p">(</span><span class="n">rawY</span><span class="p">,</span><span class="w"> </span><span class="mi">-512</span><span class="p">,</span><span class="w"> </span><span class="mi">512</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">-255</span><span class="p">);</span>
+<span class="linenos">58</span>
+<span class="linenos">59</span><span class="w">    </span><span class="c1">// 4. Drive Motor</span>
+<span class="linenos">60</span><span class="w">    </span><span class="n">driveMotor</span><span class="p">(</span><span class="n">motorSpeed</span><span class="p">);</span>
+<span class="linenos">61</span><span class="w">    </span>
+<span class="linenos">62</span><span class="w">    </span><span class="c1">// Debug</span>
+<span class="linenos">63</span><span class="w">    </span><span class="c1">// Serial.printf(&quot;Raw: %d -&gt; Speed: %d\n&quot;, rawY, motorSpeed);</span>
+<span class="linenos">64</span><span class="p">}</span>
+<span class="linenos">65</span>
+<span class="linenos">66</span><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">67</span><span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span>
+<span class="linenos">68</span>
+<span class="linenos">69</span><span class="w">    </span><span class="c1">// Reset Bluetooth logic (Boot button)</span>
+<span class="linenos">70</span><span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="p">);</span>
+<span class="linenos">71</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">digitalRead</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">LOW</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">72</span><span class="w">        </span><span class="n">BP32</span><span class="p">.</span><span class="n">forgetBluetoothKeys</span><span class="p">();</span>
+<span class="linenos">73</span><span class="w">        </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="linenos">74</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">75</span>
+<span class="linenos">76</span><span class="w">    </span><span class="c1">// PWM Setup</span>
+<span class="linenos">77</span><span class="w">    </span><span class="n">ledcSetup</span><span class="p">(</span><span class="n">ch_R</span><span class="p">,</span><span class="w"> </span><span class="n">freq</span><span class="p">,</span><span class="w"> </span><span class="n">resolution</span><span class="p">);</span>
+<span class="linenos">78</span><span class="w">    </span><span class="n">ledcSetup</span><span class="p">(</span><span class="n">ch_L</span><span class="p">,</span><span class="w"> </span><span class="n">freq</span><span class="p">,</span><span class="w"> </span><span class="n">resolution</span><span class="p">);</span>
+<span class="linenos">79</span><span class="w">    </span><span class="n">ledcAttachPin</span><span class="p">(</span><span class="n">RPWM_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">ch_R</span><span class="p">);</span>
+<span class="linenos">80</span><span class="w">    </span><span class="n">ledcAttachPin</span><span class="p">(</span><span class="n">LPWM_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">ch_L</span><span class="p">);</span>
+<span class="linenos">81</span>
+<span class="linenos">82</span><span class="w">    </span><span class="c1">// Bluepad Setup</span>
+<span class="linenos">83</span><span class="w">    </span><span class="n">BP32</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span><span class="o">&amp;</span><span class="n">onConnectedController</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">onDisconnectedController</span><span class="p">);</span>
+<span class="linenos">84</span><span class="p">}</span>
+<span class="linenos">85</span>
+<span class="linenos">86</span><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">87</span><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">dataUpdated</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BP32</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
+<span class="linenos">88</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dataUpdated</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">89</span><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">BP32_MAX_GAMEPADS</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">90</span><span class="w">            </span><span class="n">ControllerPtr</span><span class="w"> </span><span class="n">ctl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">myControllers</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="linenos">91</span><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ctl</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ctl</span><span class="o">-&gt;</span><span class="n">isConnected</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">92</span><span class="w">                </span><span class="n">processGamepad</span><span class="p">(</span><span class="n">ctl</span><span class="p">);</span>
+<span class="linenos">93</span><span class="w">            </span><span class="p">}</span>
+<span class="linenos">94</span><span class="w">        </span><span class="p">}</span>
+<span class="linenos">95</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">96</span><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+<span class="linenos">97</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</details></section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="bambu_a1_guide.html" class="btn btn-neutral float-left" title="1. Bambu Lab A1 Printing Guide (คู่มือการพิมพ์ 3 มิติ)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, RTL (ICRT), Burapha University.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
